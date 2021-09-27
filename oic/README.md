@@ -15,6 +15,9 @@ For Hong Kong, you may find 3D buildings from governmental organisations (e.g. H
  -->
 A custom geoprocessing tool is made using [https://overpass-turbo.eu/](Overpass-Turbo) to convert OSM-Buildings into extruded features. It is not possible to directly import GeoJSON from OSM-Buildings into ArcGIS Pro, because the GeoJSON format is quite unstructured. Without a fixed schema, some records probably have missing attributes. Therefore, you should use the toolbox instead. It can get attributes such as building names.
 
+### Caution!
+Unlike point clouds, the 3D buildings do not fit into the photo perfectly since they are low-poly polyhedra with smooth, flat surfaces. In reality, building exteriors (especially roofs) are bumpy.
+
 ### Demos
 * [Kowloon Bay/Kai Tak, Hong Kong](https://dord.mynetgear.com/oic)
 * [Hongkou District, Shanghai](https://dord.mynetgear.com/oicsh)
