@@ -7,7 +7,7 @@
 The Python tool leverages the open-source YOLOv3 convolutional neural network (CNN) library bundled in the [`arcgis.learn` Python library](https://developers.arcgis.com/python/api-reference/arcgis.learn.toc.html). The neural network is designed for fast object detection.
 
 ### Instructions
-For the detection to be useful, some work needs to be done beforehand. First, draw the polygons for each traffic lane, and the tool will turn them into pixel coordinates.
+For the detection to be useful, some work needs to be done beforehand. First, run the script and a GUI will open. Open a reference image, draw the polygons for each traffic lane, and the tool will turn them into pixel coordinates.
 
 ![Fig. 1](img/define_polygons.png)  ![Fig. 2](img/define_polygons2.png)
 
