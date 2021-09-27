@@ -70,7 +70,7 @@ class OSMBldsToFeatureLyr(object):
         
         out_features.schema.clone = True
 
-        parameters = [table, zcolumn, out_features]
+        parameters = [xmin, xmax, ymin, ymax, out_features]
         
         return parameters
 
