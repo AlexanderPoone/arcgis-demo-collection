@@ -70,6 +70,7 @@ class OSMBldsToFeatureLyr(object):
         
         out_features.schema.clone = True
 
+        #"22.029637800701" w="113.41117858887" n="22.252877311245" e="113.82316589355"
         parameters = [xmin, xmax, ymin, ymax, out_features]
         
         return parameters
@@ -98,7 +99,7 @@ relation["building"]["type"="multipolygon"]({parameters[0].valueAsText},{paramet
   <print e="" from="_" geometry="skeleton" ids="yes" limit="" mode="body" n="" order="quadtile" s="" w=""/>
 </osm-script>'''
 
-        r = Request('http://overpass-api.de/api/interpreter', data=query)
+        r = Request('http://overpass-api.de/api/interpreter', data=query.encode())
 
         v = urlopen(r)
         # Convert unstructured GeoJSON into structured data

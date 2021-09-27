@@ -56,7 +56,12 @@ Stream output video to a HTML page
 
 ## 2. TomTom Traffic Data
 
-See [`tomtom_intermediate_traffic.py`](tomtom_intermediate_traffic.py).
+See [`tomtom_intermediate_traffic.py`](tomtom_intermediate_traffic.py). The script pushes live traffic data to ArcGIS Online every half minute. Enter your own ArcGIS login credentials and TomTom Intermediate Traffic API Key into the file.
+
+To install the dependencies, enter the following in the command line:
+```
+pip3 install -r requirements.txt
+```
 
 ### Future enhancements
 
