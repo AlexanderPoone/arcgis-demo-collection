@@ -10,7 +10,7 @@
 import arcpy
 from json import loads, dumps
 from time import sleep
-from urllib.request import urlopen
+from urllib.request import urlopen, Request
 
 class Toolbox(object):
     def __init__(self):
@@ -30,7 +30,7 @@ class OSMBldsToFeatureLyr(object):
 
         # BBox xmin
         xmin = arcpy.Parameter(
-            displayName="Extent xmin",
+            displayName="Extent min longitude (xmin)",
             name="xmin",
             datatype="GPDouble",
             parameterType="Required",
@@ -38,7 +38,7 @@ class OSMBldsToFeatureLyr(object):
 
         # Extent xmax
         xmax = arcpy.Parameter(
-            displayName="Extent xmax",
+            displayName="Extent max longitude (xmax)",
             name="xmax",
             datatype="GPDouble",
             parameterType="Required",
@@ -46,7 +46,7 @@ class OSMBldsToFeatureLyr(object):
 
         # Extent ymin
         ymin = arcpy.Parameter(
-            displayName="Extent ymin",
+            displayName="Extent min latitude (ymin)",
             name="ymin",
             datatype="GPDouble",
             parameterType="Required",
@@ -54,7 +54,7 @@ class OSMBldsToFeatureLyr(object):
 
         # Extent ymax
         ymax = arcpy.Parameter(
-            displayName="Extent ymax",
+            displayName="Extent max latitude (ymax)",
             name="ymax",
             datatype="GPDouble",
             parameterType="Required",
@@ -76,18 +76,34 @@ class OSMBldsToFeatureLyr(object):
 
 
     def execute(self, parameters, messages):
-        
-        query = f'''[out:json][timeout:999];(
-way["building"]({parameters[0].valueAsText},{parameters[1].valueAsText},{parameters[2].valueAsText},{parameters[3].valueAsText});
-relation["building"]["type"="multipolygon"]({parameters[0].valueAsText},{parameters[1].valueAsText},{parameters[2].valueAsText},{parameters[3].valueAsText});
+        '''[out:json][timeout:999];(
+way["building"]({parameters[0].valueAsText},{parameters[2].valueAsText},{parameters[1].valueAsText},{parameters[3].valueAsText});
+relation["building"]["type"="multipolygon"]({parameters[0].valueAsText},{parameters[2].valueAsText},{parameters[1].valueAsText},{parameters[3].valueAsText});
 );out;>;out qt;'''
 
-        urlopen('https://overpass-turbo.eu/')
+        query = f'''<osm-script output="json" output-config="" timeout="999">
+  <union into="_">
+    <query into="_" type="way">
+      <has-kv k="building" modv="" v=""/>
+      <bbox-query s="{parameters[0].valueAsText}" w="{parameters[2].valueAsText}" n="{parameters[1].valueAsText}" e="{parameters[3].valueAsText}"/>
+    </query>
+    <query into="_" type="relation">
+      <has-kv k="building" modv="" v=""/>
+      <has-kv k="type" modv="" v="multipolygon"/>
+      <bbox-query s="{parameters[0].valueAsText}" w="{parameters[2].valueAsText}" n="{parameters[1].valueAsText}" e="{parameters[3].valueAsText}"/>
+    </query>
+  </union>
+  <print e="" from="_" geometry="skeleton" ids="yes" limit="" mode="body" n="" order="id" s="" w=""/>
+  <recurse from="_" into="_" type="down"/>
+  <print e="" from="_" geometry="skeleton" ids="yes" limit="" mode="body" n="" order="quadtile" s="" w=""/>
+</osm-script>'''
 
+        r = Request('http://overpass-api.de/api/interpreter', data=query)
+
+        v = urlopen(r)
         # Convert unstructured GeoJSON into structured data
 
-        with open('export.geojson', 'r', encoding='utf-8') as f:
-            obj = loads(f.read())
+        obj = loads(v.read().decode(encoding='utf-8'))
 
         keys = set()
 
