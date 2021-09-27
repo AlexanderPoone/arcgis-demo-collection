@@ -24,7 +24,8 @@ Calculate Intersections, Historical Panel
 
 ## Image segmentation
 
-### 
+### Future enhancements
+i18n, more models
 
 ### Demos
 * [Various locations](https://dord.mynetgear.com/oiclayout)

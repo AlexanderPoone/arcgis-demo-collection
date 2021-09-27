@@ -56,6 +56,8 @@ Stream output video to a HTML page
 
 ## 2. TomTom Traffic Data
 
+[![TomTom traffic layer updates every 0.5 minutes (that’s the limit)](https://img.youtube.com/vi/RaSymtkdyhA/0.jpg)](https://www.youtube.com/watch?v=RaSymtkdyhA "TomTom traffic layer updates every 0.5 minutes (that’s the limit)")
+
 See [`tomtom_intermediate_traffic.py`](tomtom_intermediate_traffic.py). The script pushes live traffic data to ArcGIS Online every half minute. Enter your own ArcGIS login credentials and TomTom Intermediate Traffic API Key into the file.
 
 To install the dependencies, enter the following in the command line:
