@@ -21,7 +21,7 @@ Stream output video to a HTML page
 
 ## 2. TomTom Traffic Data
 
-See `cron.py`.
+See [`tomtom_intermediate_traffic.py`](tomtom_intermediate_traffic.py).
 
 ### Instructions
 
