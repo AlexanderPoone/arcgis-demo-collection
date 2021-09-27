@@ -8,3 +8,8 @@ If we can bundle `Blender` and `ImageMagick`, both of them open-source software,
 * Format conversion for most formats to most formats
 * Thumbnail creation for most formats
 * Coordinates and footprint extraction
+
+To install the dependencies, enter the following in the command line:
+```
+pip3 install -r requirements.txt
+```
