@@ -1,0 +1,161 @@
+{% for item in listings %}
+<div data-test="list-card" id="ember1392" class="search-result list-card container-fluid ember-view">
+    <div class="row card-row card-head-row">
+        <div class="col-sm-12">
+            <div>
+                <svg width="20px" height="20px" draggable="auto" aria-label="Data" style="" id="{{ item.typeTitle }}"
+                    class="category-icon svgstore-image ember-view">
+                    <title>{{ item.typeTitle }}</title>
+                    <use xlink:href="#ember-arcgis-hub-components-hub-icons-data"></use>
+                </svg>
+                <strong class="category-name">{{ item.typeTitle }}</strong>
+                <span>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row card-row">
+        <div class="col-sm-4">
+            <img src="{{ item.thumbnail }}" width="128px" height="128px"></img>
+        </div>
+        <div class="col-sm-8">
+            <div class="title" data-test="list-card-title">
+                <div id="ember1394" class="ember-view"> <a href="#" data-test="result-name">
+
+                        {{ item.itemTitle }}
+
+                    </a>
+                    <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                        <button type="button" class="btn btn-primary">Download</button>
+                        <div class="btn-group" role="group">
+                            <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Download converted...
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                                <li><a class="dropdown-item" href="#">{{ item.avail }}</a></li>
+                                <li><a class="dropdown-item" href="#">{{ item.avail }}</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="owner-source" data-test="owner-source">
+                    {{ item.uploadUser }}
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row card-row description-row hidden-xs" data-test="description">
+            <div class="col-xs-12">
+                <div class="description">{{ item.description }}</div>
+            </div>
+        </div>
+    </div>
+    <div class="divider hidden-xs"></div>
+
+    <div class="row card-row metadata-row ">
+        <div class="col-xs-12  col-sm-6">
+            <ul class="metadata-list">
+                <li class="metadata-item">
+                    <strong>Type</strong>:
+                    <span>
+
+                        {{ item.type }}
+                    </span>
+                    <div class="hub-tooltip" role="tooltip" id="tooltip_x76yxwp0mq" aria-hidden="true" x-placement="top"
+                        style="position: fixed; visibility: hidden; transform: translate3d(572px, 390px, 0px); top: 0px; left: 0px; will-change: transform;">
+                        <div class="tooltip__arrow" style="left: 0px;"></div>
+                        <div class="tooltip__inner" id="ember1397-render-target">
+                        </div>
+                    </div>
+                </li>
+                <li class="metadata-item">
+                    <strong>Last Updated</strong>:
+                    <span>
+
+                        {{ item.lastUpdateDate }}
+                    </span>
+                    <div class="hub-tooltip" role="tooltip" id="tooltip_8wzox1o9m6" aria-hidden="true" x-placement="top"
+                        style="position: fixed; visibility: hidden; transform: translate3d(623px, 409px, 0px); top: 0px; left: 0px; will-change: transform;">
+                        <div class="tooltip__arrow" style="left: 0px;"></div>
+                        <div class="tooltip__inner" id="ember1399-render-target"> Data Updated
+                        </div>
+                    </div>
+                </li>
+                <li class="metadata-item">
+                    <strong>Extent</strong>:
+                    <span>
+
+                        {{ item.xmin }}{{ item.xmax }}{{ item.ymin }}{{ item.ymax }}{{ item.zmin }}{{ item.zmax }}
+                    </span>
+                    <div class="hub-tooltip" role="tooltip" id="tooltip_8wzox1o9m6" aria-hidden="true" x-placement="top"
+                        style="position: fixed; visibility: hidden; transform: translate3d(623px, 409px, 0px); top: 0px; left: 0px; will-change: transform;">
+                        <div class="tooltip__arrow" style="left: 0px;"></div>
+                        <div class="tooltip__inner" id="ember1399-render-target"> Data Updated
+                        </div>
+                    </div>
+                </li>
+                <li class="metadata-item">
+                    <strong>Textured</strong>:
+                    <span>
+
+                        {{ item.isTextured }}
+                    </span>
+                    <div class="hub-tooltip" role="tooltip" id="tooltip_8wzox1o9m6" aria-hidden="true" x-placement="top"
+                        style="position: fixed; visibility: hidden; transform: translate3d(623px, 409px, 0px); top: 0px; left: 0px; will-change: transform;">
+                        <div class="tooltip__arrow" style="left: 0px;"></div>
+                        <div class="tooltip__inner" id="ember1399-render-target"> Data Updated
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="col-xs-12 col-sm-6 second-column">
+            <ul class="metadata-list metadata-list-2">
+                <li class="metadata-item">
+                    <strong>Size</strong>:
+                    <span>
+
+                        {{ item.fileSize }}
+                    </span>
+                    <div class="hub-tooltip" role="tooltip" id="tooltip_qest1ssl3q" aria-hidden="true" x-placement="top"
+                        style="position: fixed; visibility: hidden; transform: translate3d(974px, 390px, 0px); top: 0px; left: 0px; will-change: transform;">
+                        <div class="tooltip__arrow" style="left: 0px;"></div>
+                        <div class="tooltip__inner" id="ember1401-render-target">
+                        </div>
+                    </div>
+                </li>
+                <li class="metadata-item">
+                    <strong>Tags</strong>:
+                    <span>
+
+                        {{ item.tags }}
+                    </span>
+                    <div class="hub-tooltip" role="tooltip" id="tooltip_rzdmys0sfz" aria-hidden="true" x-placement="top"
+                        style="position: fixed; visibility: hidden; transform: translate3d(1161px, 409px, 0px); top: 0px; left: 0px; will-change: transform;">
+                        <div class="tooltip__arrow" style="left: 0px;"></div>
+                        <div class="tooltip__inner" id="ember1403-render-target">
+                        </div>
+                    </div>
+                </li>
+                <li class="metadata-item">
+                    <strong>Centroid</strong>:
+                    <span>
+
+                        {{ item.xcentroid }}{{ item.ycentroid }}{{ item.zcentroid }}
+                    </span>
+                    <div class="hub-tooltip" role="tooltip" id="tooltip_rzdmys0sfz" aria-hidden="true" x-placement="top"
+                        style="position: fixed; visibility: hidden; transform: translate3d(1161px, 409px, 0px); top: 0px; left: 0px; will-change: transform;">
+                        <div class="tooltip__arrow" style="left: 0px;"></div>
+                        <div class="tooltip__inner" id="ember1403-render-target">
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+View metadata in {{ HTML }} | {{ XML }} | {{ JSON }}
+{% endfor %}
