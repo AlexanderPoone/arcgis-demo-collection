@@ -13,6 +13,21 @@ For the detection to be useful, some work needs to be done beforehand. First, dr
 
 ![Fig. 3](img/define_polygons3.png) ![Fig. 4](img/define_polygons4.png)
 
+
+| Camera code     | Traffic lane | Mapping       |
+|-----------------|--------------|---------------|
+| H106F | 1 | Connaught Rd Central near Exchange Square |
+| H109F | 1 | Queen's Road Central near Garden Road |
+| H207F | 1 | Cross Harbour Tunnel Hong Kong Side |
+| H210F | 1 | Aberdeen Tunnel - Wan Chai Side |
+| H801F | 1 | Island Eastern Corridor near Ka Wah Center |
+| K107F | 1 | Cross Harbour Tunnel Kownloon Side |
+| K109F | 1 | Chatham Road near Prince Margaret Road |
+| K409F | 1 | Princess Margaret Road / Argyle Street |
+| K502F | 1 | Waterloo Road / Cornwall Street |
+| K614F | 1 | Lung Cheung Road / Clear Water Bay Road |
+
+
 For each recognition, the Python tool tests whether the centres of the bounding box is inside each polygon, and updates the Feature Layer according to the camera code detected and vehicle position (traffic lane).
 
 ### Future enhancements
