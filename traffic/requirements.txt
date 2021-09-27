@@ -1,0 +1,4 @@
+requests
+protobuf
+pymssql
+pyshp
