@@ -12,6 +12,7 @@ We are not responsible for any misinformation, delays, or loss of properties.
 * [Oriented Imagery](oic)
 * [Repository](repo)
 * [Traffic](traffic)
+* [Widgets](widget)
 
 ## Maintainer
 Alex Poon ([GitHub](https://github.com/SoftFeta))
