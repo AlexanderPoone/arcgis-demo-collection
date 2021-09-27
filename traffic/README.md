@@ -1,10 +1,10 @@
 # Traffic Demos
 
-## 1. Car count using the YOLOv3 library from `arcgis.learn`
+## 1. Car count using the YOLOv3 library from [`arcgis.learn`](https://developers.arcgis.com/python/api-reference/arcgis.learn.toc.html)
 
 [![Live Traffic View Using Object Detection & GeoEvent Server](https://img.youtube.com/vi/dG4d191XsqU/0.jpg)](https://www.youtube.com/watch?v=dG4d191XsqU "Live Traffic View Using Object Detection & GeoEvent Server")
 
-The Python tool leverages the open-source YOLOv3 convolutional neural network (CNN) library bundled in the `arcgis.learn` Python library. The neural network is designed for fast object detection.
+The Python tool leverages the open-source YOLOv3 convolutional neural network (CNN) library bundled in the [`arcgis.learn` Python library](https://developers.arcgis.com/python/api-reference/arcgis.learn.toc.html). The neural network is designed for fast object detection.
 
 ### Instructions
 For the detection to be useful, some work needs to be done beforehand. First, draw the polygons for each traffic lane, and the tool will turn them into pixel coordinates.
