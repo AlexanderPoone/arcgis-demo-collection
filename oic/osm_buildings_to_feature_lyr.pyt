@@ -28,24 +28,37 @@ class OSMBldsToFeatureLyr(object):
     def getParameterInfo(self):
         #Define parameter definitions
 
-        # Input table
-        table = arcpy.Parameter(
-            displayName="Input table",
-            name="table",
-            datatype="GPFeatureLayer",
+        # BBox xmin
+        xmin = arcpy.Parameter(
+            displayName="Extent xmin",
+            name="xmin",
+            datatype="GPDouble",
             parameterType="Required",
             direction="Input")
 
-        # Source Z Column
-        zcolumn = arcpy.Parameter(
-            displayName="Z Column",
-            name="zcolumn",
-            datatype="Field",
+        # Extent xmax
+        xmax = arcpy.Parameter(
+            displayName="Extent xmax",
+            name="xmax",
+            datatype="GPDouble",
             parameterType="Required",
             direction="Input")
 
-        zcolumn.filter.list = ['Short', 'Long', 'Float', 'Single', 'Double']
-        zcolumn.parameterDependencies = [table.name]
+        # Extent ymin
+        ymin = arcpy.Parameter(
+            displayName="Extent ymin",
+            name="ymin",
+            datatype="GPDouble",
+            parameterType="Required",
+            direction="Input")
+
+        # Extent ymax
+        ymax = arcpy.Parameter(
+            displayName="Extent ymax",
+            name="ymax",
+            datatype="GPDouble",
+            parameterType="Required",
+            direction="Input")
 
         # Output
         out_features = arcpy.Parameter(
@@ -55,7 +68,6 @@ class OSMBldsToFeatureLyr(object):
             parameterType="Required",
             direction="Output")
         
-        out_features.parameterDependencies = [table.name]
         out_features.schema.clone = True
 
         parameters = [table, zcolumn, out_features]
@@ -64,40 +76,41 @@ class OSMBldsToFeatureLyr(object):
 
 
     def execute(self, parameters, messages):
-        arcpy.FeatureTo3DByAttribute_3d(parameters[0].valueAsText, parameters[2].valueAsText, parameters[1].valueAsText)
         
-        arcpy.AddField_management(parameters[2].valueAsText, "Height", "DOUBLE", field_alias="Height")
-        
-        arr = []
-        with arcpy.da.SearchCursor(parameters[2].valueAsText, ["SHAPE@XY", parameters[1].valueAsText], spatial_reference=arcpy.SpatialReference(4326)) as cursor:
-            for row in cursor:
-                # Print x,y coordinates of each point feature
-                x, y = row[0]
+        query = f'''[out:json][timeout:999];(
+way["building"]({parameters[0].valueAsText},{parameters[1].valueAsText},{parameters[2].valueAsText},{parameters[3].valueAsText});
+relation["building"]["type"="multipolygon"]({parameters[0].valueAsText},{parameters[1].valueAsText},{parameters[2].valueAsText},{parameters[3].valueAsText});
+);out;>;out qt;'''
 
-                for a in range(10):
-                    try:
-                        url = urlopen(f'https://www.geodetic.gov.hk/transform/v2/?inSys=wgsgeog&lat={y}&long={x}&h={row[1]}')
+        urlopen('https://overpass-turbo.eu/')
 
-                        outjson = loads(url.read().decode(encoding='utf8'))
-                        
-                        arr.append((outjson['hkE'], outjson['hkN'], outjson['hkpd']))
-                        break
-                    except:
-                        print('Retry after 2 seconds...')
-                        sleep(2)
+        # Convert unstructured GeoJSON into structured data
 
-        arcpy.DefineProjection_management(parameters[2].valueAsText, arcpy.SpatialReference(2326, 5738))
+        with open('export.geojson', 'r', encoding='utf-8') as f:
+            obj = loads(f.read())
 
-        arr.reverse()
+        keys = set()
 
-        with arcpy.da.UpdateCursor(parameters[2].valueAsText, ["SHAPE@XYZ", "Height"]) as cursor:
-            for row in cursor:
+        for x in obj['features']:
+            for y in x['properties']:
+                keys.add(y)
 
-                updateMat = arr.pop()
+        for x in range(len(obj['features'])):
+            extrude = 6.0                           # Ugly shim: Default extrude height to 6 metres if data is not available
+            if 'height' in obj['features'][x]['properties']:
+                extrude = float(obj['features'][x]['properties']['height'])
+            elif 'maxheight' in obj['features'][x]['properties']:
+                extrude = float(obj['features'][x]['properties']['maxheight'])
+            elif 'building:levels' in obj['features'][x]['properties']:
+                extrude = float(obj['features'][x]['properties']['building:levels']) * 3
 
-                row[0] = updateMat
-                row[1] = updateMat[2]
+            for y in keys:
+                if y not in obj['features'][x]['properties']:
+                    obj['features'][x]['properties'][y] = ''
 
-                cursor.updateRow(row)
+            obj['features'][x]['properties']['height'] = extrude
 
-        arcpy.RecalculateFeatureClassExtent_management(parameters[2].valueAsText)
+        with open('export2.geojson', 'w', encoding='utf-8') as f:
+            f.write(dumps(obj))
+
+        arcpy.conversion.JSONToFeatures('export2.geojson', parameters[4].valueAsText)
