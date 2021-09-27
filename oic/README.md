@@ -8,7 +8,7 @@ The panoramic image rendered using the [Three.JS](https://threejs.org/) library 
 
 ### Instructions
 To use tools like Measurement and Line of Sight in Overlay Mode, you need to add a layer with 3D buildings to the Scene beforehand.
-For Hong Kong, you may find 3D buildings from governmental organisations (e.g. HKMS 2.0, GeodataStore). For Macau and cities in mainland China, you may find shared items on ArcGIS Online from other users, or [https://osmbuildings.org/](OSM-Buildings).
+For Hong Kong, you may find 3D buildings from governmental organisations (e.g. HKMS 2.0, GeodataStore). For Macau and cities in mainland China (e.g. Shanghai in the second demo below), you may find shared items on ArcGIS Online from other users, or [https://osmbuildings.org/](OSM-Buildings).
 A custom geoprocessing tool is made using [https://overpass-turbo.eu/](Overpass-Turbo) to convert OSM-Buildings into extruded features.
 
 ### Demos
