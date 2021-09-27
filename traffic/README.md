@@ -9,8 +9,8 @@ The Python tool leverages the open-source YOLOv3 convolutional neural network (C
 ### Instructions
 For the detection to be useful, some work needs to be done beforehand. First, draw the polygons for each traffic lane, and the tool will turn them into pixel coordinates.
 
-|![Fig. 1](img/define_polygons.png)  |![Fig. 2](img/define_polygons2.png) |
-|![Fig. 3](img/define_polygons3.png) |![Fig. 4](img/define_polygons4.png) |
+| ![Fig. 1](img/define_polygons.png)  | ![Fig. 2](img/define_polygons2.png) |
+| ![Fig. 3](img/define_polygons3.png) | ![Fig. 4](img/define_polygons4.png) |
 
 For each recognition, the Python tool tests whether the centres of the bounding box is inside each polygon, and updates the Feature Layer according to the camera code detected and vehicle position (traffic lane).
 
