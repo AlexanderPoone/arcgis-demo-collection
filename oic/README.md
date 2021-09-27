@@ -11,4 +11,9 @@ To use tools like Measurement and Line of Sight in Overlay Mode, you need to add
 For Hong Kong, you may find 3D buildings from governmental organisations (e.g. HKMS 2.0, GeodataStore). For Macau and cities in mainland China, you may find shared items on ArcGIS Online from other users, or [https://osmbuildings.org/](OSM-Buildings).
 A custom geoprocessing tool is made using [https://overpass-turbo.eu/](Overpass-Turbo) to convert OSM-Buildings into extruded features.
 
-* Future enhancements: Calculate Intersections, Historical Panel
+### Demos
+* [Kowloon Bay/Kai Tak, Hong Kong](https://dord.mynetgear.com/oic)
+* [Hongkou District, Shanghai](https://dord.mynetgear.com/oicsh)
+
+### Future enhancements
+Calculate Intersections, Historical Panel
