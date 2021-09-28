@@ -54,5 +54,6 @@ class KMLToExif(object):
 		ns = findall(r'\{.*?\}',tree.getroot().tag)[0]
 
 		for photo in tree.findall(f'.//{ns}PhotoOverlay'):
+			path = photo.find(f'{ns}Icon').getchildren()[0].text
 			_,_,_,heading,tilt,roll = [float(x.text) for x in x.find(findall(r'\{.*?\}',root.tag)[0]+'Camera').getchildren()]
 			x,y,z = [float(x) for x in photo.find(f'{ns}Point').getchildren()[0].text.split(',')    # KML always use (lng, lat)
