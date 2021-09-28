@@ -1,4 +1,4 @@
-# OSM Toolbox Guide
+# OSM-Buildings Toolbox Guide
 
 In ArcGIS Pro, create a new **Scene**. 
 
