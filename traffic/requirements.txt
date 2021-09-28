@@ -2,3 +2,4 @@ requests
 protobuf
 pymssql
 pyshp
+selenium-wire
