@@ -13,7 +13,7 @@ For Hong Kong, you may find 3D buildings from governmental organisations (e.g. H
 
 <!-- getHeading prev, next
  -->
-A custom geoprocessing tool is made using [https://overpass-turbo.eu/](Overpass-Turbo) to convert OSM-Buildings into extruded features. It is not possible to directly import GeoJSON from OSM-Buildings into ArcGIS Pro, because the GeoJSON format is quite unstructured. Without a fixed schema, some records probably have missing attributes. Therefore, you should use the ArcGIS Pro Toolbox (see figure below, [`osm_buildings_to_feature_lyr.pyt`](osm_buildings_to_feature_lyr.pyt)) instead. It can get attributes such as building names.
+A custom ArcGIS geoprocessing toolbox (see figure below, [`osm_buildings_to_feature_lyr.pyt`](osm_buildings_to_feature_lyr.pyt)) is made using the [Overpass API Interpreter](https://lz4.overpass-api.de/api/interpreter) to convert OSM-Buildings into extruded features. It is not possible to directly import GeoJSON from OSM-Buildings into ArcGIS Pro, because the GeoJSON format is quite unstructured. Without a fixed schema, some records probably have missing attributes. Therefore, you should use the toolbox instead. It can get attributes such as building names.
 
 ![Fig. 1](img/get_buildings_in_any_city.png)
 
