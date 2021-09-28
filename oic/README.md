@@ -18,7 +18,7 @@ A custom ArcGIS geoprocessing toolbox (see figure below, [`osm_buildings_to_feat
 ![Fig. 1](img/get_buildings_in_any_city.png)
 
 ### Caution!
-Unlike point clouds, the 3D buildings do not fit into the photo perfectly since they are low-poly polyhedra with smooth, flat surfaces. In reality, building exteriors (especially roofs) are bumpy.
+Unlike point clouds, the 3D buildings do not fit into the photo perfectly since they are low-poly polyhedra with smooth, flat surfaces. In reality, building exteriors (especially roofs) are bumpy. This explains why most 3D buildings appear shorter than those in the photo.
 
 ### Demos
 * [Kowloon Bay/Kai Tak, Hong Kong](https://dord.mynetgear.com/oic)
