@@ -1,3 +1,4 @@
 *.tif
 *.tiff
 *.zip
+dir_to_ignore/

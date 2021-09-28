@@ -3,14 +3,16 @@
 #    OSM-Buildings to Feature Layer
 #
 #    Author:        Alex Poon (Esri China (H.K.))
-#    Date:          Sep 27, 2020
-#    Last update:   Sep 27, 2020
+#    Date:          Sep 27, 2021
+#    Last update:   Sep 27, 2021
 #
 ##############################################
 import arcpy
 from json import loads, dumps
 from time import sleep
 from urllib.request import urlopen, Request
+from subprocess import check_output
+#import sys
 
 class Toolbox(object):
     def __init__(self):
@@ -35,6 +37,7 @@ class OSMBldsToFeatureLyr(object):
             datatype="GPDouble",
             parameterType="Required",
             direction="Input")
+        xmin.value="22.029637800701"
 
         # Extent xmax
         xmax = arcpy.Parameter(
@@ -43,6 +46,7 @@ class OSMBldsToFeatureLyr(object):
             datatype="GPDouble",
             parameterType="Required",
             direction="Input")
+        xmax.value="22.252877311245"
 
         # Extent ymin
         ymin = arcpy.Parameter(
@@ -51,6 +55,7 @@ class OSMBldsToFeatureLyr(object):
             datatype="GPDouble",
             parameterType="Required",
             direction="Input")
+        ymin.value="113.41117858887"
 
         # Extent ymax
         ymax = arcpy.Parameter(
@@ -59,6 +64,7 @@ class OSMBldsToFeatureLyr(object):
             datatype="GPDouble",
             parameterType="Required",
             direction="Input")
+        ymax.value="113.82316589355"
 
         # Output
         out_features = arcpy.Parameter(
@@ -68,7 +74,7 @@ class OSMBldsToFeatureLyr(object):
             parameterType="Required",
             direction="Output")
         
-        out_features.schema.clone = True
+        #out_features.schema.clone = True
 
         #"22.029637800701" w="113.41117858887" n="22.252877311245" e="113.82316589355"
         parameters = [xmin, xmax, ymin, ymax, out_features]
@@ -106,9 +112,21 @@ relation["building"]["type"="multipolygon"]({parameters[0].valueAsText},{paramet
 
         obj = loads(v.read().decode(encoding='utf-8'))
 
+        try:
+            sysPath = 'C:\\Program Files\\ArcGIS\\Pro\\bin\\Python\\envs\\arcgispro-py3'      #sys.path[4]
+            a=check_output([fr"{sysPath}\python.exe", fr"{sysPath}\Scripts\pip-script.py", "install", "osm2geojson"])
+        except:
+            pass
+
+        from osm2geojson import json2geojson
+
+        obj = json2geojson(obj)
+
         keys = set()
 
         for x in obj['features']:
+            x['properties']['tags']['id'] = x['properties']['id']
+            x['properties'] = x['properties']['tags']
             for y in x['properties']:
                 keys.add(y)
 
@@ -119,7 +137,7 @@ relation["building"]["type"="multipolygon"]({parameters[0].valueAsText},{paramet
             elif 'maxheight' in obj['features'][x]['properties']:
                 extrude = float(obj['features'][x]['properties']['maxheight'])
             elif 'building:levels' in obj['features'][x]['properties']:
-                extrude = float(obj['features'][x]['properties']['building:levels']) * 3
+                extrude = float(obj['features'][x]['properties']['building:levels'].split(';')[0]) * 3
 
             for y in keys:
                 if y not in obj['features'][x]['properties']:
