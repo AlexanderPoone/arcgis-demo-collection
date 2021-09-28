@@ -8,7 +8,10 @@
 #
 ##############################################
 import arcpy
+
+from re import findall
 from subprocess import check_output
+import xml.etree.ElementTree as ET
 
 class Toolbox(object):
     def __init__(self):
@@ -24,9 +27,30 @@ class KMLToExif(object):
         self.description = "Propagate EXIF metadata of image files from a KML file."
 
     def getParameterInfo(self):
+        # Input
+        in_kml = arcpy.Parameter(
+            displayName="Input KML File",
+            name="in_kml",
+            datatype="DEFile",
+            parameterType="Required",
+            direction="Input")
+        in_kml.filter.list = ['kml','xml']
+
+        parameters = [in_kml]
+        
+        return parameters
+
+
+    def execute(self, parameters, messages):
 		try:
 			a = check_output('conda install -y pil piexif pyproj')
 		except:
 			pass
 
 		from PIL import Image
+
+		##########################################
+		tree = ET.parse(parameters[0].valueAsText)
+
+		for photo in tree.findall('.//' + findall(r'\{.*?\}',tree.getroot().tag)[0] + 'PhotoOverlay'):
+			photo

@@ -34,7 +34,9 @@ Unlike point clouds, the 3D buildings do not fit into the photo perfectly since 
 ### Future enhancements
 Calculate Intersections, Historical Panel
 
-## Image segmentation
+## Image segmentation using the MaskRCNN library from [`arcgis.learn`](https://developers.arcgis.com/python/api-reference/arcgis.learn.toc.html)
+
+The Python tool leverages the open-source MaskRCNN convolutional neural network (CNN) library bundled in the [`arcgis.learn` Python library](https://developers.arcgis.com/python/api-reference/arcgis.learn.toc.html). The neural network is designed for image segmentation. The segmented boundaries are not neccessarily continuous, it can be partially occluded by something else.
 
 ### Future enhancements
 i18n, more models
