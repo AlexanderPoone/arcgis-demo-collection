@@ -63,3 +63,17 @@ In ArcGIS Pro, create a new **Scene**.
 ![Step 15](img/step15.png)
 
 16. After sharing succeeded, click **Manage the shared layer**. A browser window will open.
+
+![Step 16](img/step16.png)
+
+17. On the Scene Viewer page, click the button next to uploaded layer, then click **Layer Properties**.
+
+![Step 17](img/step17.png)
+
+18. Change the colour and transparency of the blocks.
+
+![Step 18](img/step18.png)
+
+19. Customise the layer as below:
+
+![Step 19](img/step19.png)
