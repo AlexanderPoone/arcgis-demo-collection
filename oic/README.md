@@ -22,7 +22,7 @@ The retrieved 3D models are not supposed to be used out-of-the-box. It is meant 
 After that, an Oriented Imagery Catalogue has to be created and uploaded online. First, download and install the [Oriented Imagery Management Tools for ArcGIS Pro](https://www.arcgis.com/home/item.html?id=36ee0bbedca64a5a8b68d7c69ab51728).
 
 ### 1. [OSM-Buildings Toolbox Guide](osm_toolbox_guide.md)
-### 2. [OIC Toolbox Guide](#)
+### 2. [OIC Toolbox Guide](oic_toolbox_guide.md)
 
 ### Caution!
 Unlike point clouds, the 3D buildings do not fit into the photo perfectly since they are low-poly polyhedra with smooth, flat surfaces. In reality, building exteriors (especially roofs) are bumpy. This explains why most 3D buildings appear shorter than those in the photo.
