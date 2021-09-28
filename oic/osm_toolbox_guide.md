@@ -77,3 +77,5 @@ In ArcGIS Pro, create a new **Scene**.
 19. Customise the layer as below:
 
 ![Step 19](img/step19.png)
+
+[Continue the guide](https://github.com/SoftFeta/arcgis-demo-collection/tree/master/oic)

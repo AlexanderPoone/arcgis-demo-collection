@@ -11,7 +11,7 @@ For the detection to be useful, some work needs to be done beforehand. First, ru
 
 ![Fig. 1](img/define_polygons.png)  ![Fig. 2](img/define_polygons2.png)
 
-![Fig. 3](img/define_polygons3.png) ![Fig. 4](img/define_polygons4.png)
+![Fig. 3](img/define_polygons3.png) ![Fig. 4](img/define_polygons4.png) ![Fig. 5](img/define_polygons5.png)
 
 
 | Camera code     | Traffic lane | Mapping       |
