@@ -17,24 +17,7 @@ A custom ArcGIS geoprocessing toolbox (see figure below, [`osm_buildings_to_feat
 
 ![Fig. 1](img/get_buildings_in_any_city.png)
 
-### Instructions
-
-1. ![Step 1](img/step1.png)
-
-2. ![Step 2](img/step2.png)
-
-3. ![Step 3](img/step3.png)
-
-4. ![Step 4](img/step4.png)
-
-5. ![Step 5](img/step5.png)
-
-6. ![Step 6](img/step6.png)
-
-7. ![Step 7](img/step7.png)
-
-8. ![Step 8](img/step8.png)
-
+### [Toolbox Guide](osm_toolbox_guide.md)
 
 ### Caution!
 Unlike point clouds, the 3D buildings do not fit into the photo perfectly since they are low-poly polyhedra with smooth, flat surfaces. In reality, building exteriors (especially roofs) are bumpy. This explains why most 3D buildings appear shorter than those in the photo.
