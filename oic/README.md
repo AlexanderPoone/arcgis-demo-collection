@@ -9,7 +9,7 @@ The panoramic image rendered using the [Three.JS](https://threejs.org/) library 
 ### Instructions
 To use tools like Measurement and Line of Sight in Overlay Mode, you need to add a layer with 3D buildings to the Scene beforehand.
 
-**For Hong Kong, you may find 3D buildings from governmental organisations (e.g. [HKMS 2.0](https://www.hkmapservice.gov.hk/OneStopSystem/home), [Geodata Store](https://geodata.gov.hk/).** Yet, for Macau and cities in mainland China (e.g. Shanghai in the second demo below), official data are not always available. You may find shared items on ArcGIS Online from other users, or obtain the data from [https://osmbuildings.org/](OSM-Buildings). Be cautious that the coverage of OSM-Buildings is limited, and the data may have large discrepancies. 
+**For Hong Kong, you may find 3D buildings from governmental organisations (e.g. [HKMS 2.0](https://www.hkmapservice.gov.hk/OneStopSystem/home), [Geodata Store](https://geodata.gov.hk/)).** Yet, for Macau and cities in mainland China (e.g. Shanghai in the second demo below), official data are not always available. You may find shared items on ArcGIS Online from other users, or obtain the data from [https://osmbuildings.org/](OSM-Buildings). Be cautious that the coverage of OSM-Buildings is limited, and the data may have large discrepancies. 
 
 <!-- getHeading prev, next
  -->
@@ -19,8 +19,7 @@ A custom ArcGIS geoprocessing toolbox (see figure below, [`osm_buildings_to_feat
 
 The retrieved 3D models are not supposed to be used out-of-the-box. It is meant to be a base mesh that has to be double-checked and altered.
 
-After that, an Oriented Imagery Catalogue has to be created and uploaded online. First, download and install the [Oriented Imagery Management Tools for ArcGIS Pro
-](https://www.arcgis.com/home/item.html?id=36ee0bbedca64a5a8b68d7c69ab51728).
+After that, an Oriented Imagery Catalogue has to be created and uploaded online. First, download and install the [Oriented Imagery Management Tools for ArcGIS Pro](https://www.arcgis.com/home/item.html?id=36ee0bbedca64a5a8b68d7c69ab51728).
 
 ### 1. [OSM-Buildings Toolbox Guide](osm_toolbox_guide.md)
 ### 2. [OIC Toolbox Guide](#)
