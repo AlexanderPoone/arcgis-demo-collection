@@ -10,7 +10,7 @@ In ArcGIS Pro, create a new **Scene**.
 
 ![Step 2](img/step2.png)
 
-3. In the Geoprocessing panel, search **osm**.
+3. In the Geoprocessing panel, search *osm*.
 
 ![Step 3](img/step3.png)
 
@@ -30,8 +30,36 @@ In ArcGIS Pro, create a new **Scene**.
 
 ![Step 7](img/step7.png)
 
-8. After the execution succeeded, in the **Share** tab, click **Web Scene**.
+8. After the execution succeeded, in the **Contents Tab**, right click on the output feature layer, then click on **Properties**.
 
 ![Step 8](img/step8.png)
 
-9. After sharing succeeded, click **Manage the shared layer**. A browser window will open.
+9. On the left, click on **Elevation**, and choose **On the ground** from the drop-down menu.
+
+![Step 9](img/step9.png)
+
+10. Left click on the output feature layer.
+
+![Step 10](img/step10.png)
+
+11. In the **Appearance** tab, click **Type** and select **Base Height**. For **Field**, choose **height** from the drop-down menu.
+
+![Step 11](img/step11.png)
+
+12. In the **Contents Tab**, right click on **Scene**, then click on **Properties**.
+
+![Step 12](img/step12.png)
+
+13. On the left, click on **Coordinates System**, search *3857*, and select **WGS 1984 Web Mercator (auxiliary sphere)**.
+
+![Step 13](img/step13.png)
+
+14. After the execution succeeded, in the **Share** tab, click **Web Scene**.
+
+![Step 14](img/step14.png)
+
+15. Make sure the scene contains no unwanted items. Fill in the details, and click **Share**.
+
+![Step 15](img/step15.png)
+
+16. After sharing succeeded, click **Manage the shared layer**. A browser window will open.
