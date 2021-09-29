@@ -64,10 +64,14 @@ class KMLToExif(object):
 		# mkdir
 		for photo in tree.findall(f'.//{ns}PhotoOverlay'):
 			path = photo.find(f'{ns}Icon').getchildren()[0].text
-			_,_,_,heading,tilt,roll = [float(x.text) for x in x.find(findall(r'\{.*?\}',root.tag)[0]+'Camera').getchildren()]
+			_,_,_,heading,tilt,roll = [float(x.text) for x in photo.find(f'{ns}Camera').getchildren()]
 			x,y,z = [float(x) for x in photo.find(f'{ns}Point').getchildren()[0].text.split(',')]    # KML always use (lng, lat)
 
-			im = Image.open(photo)
+			try:
+				im = Image.open(path)
+			except:
+				# Log goes here
+				pass
 
 			data[i] = {'Name': path, 'CamHeading': heading, 'CamPitch': tilt, 'CamRoll': roll, 'POINT_X': x, 'POINT_Y': y, 'POINT_Z': z}
 
