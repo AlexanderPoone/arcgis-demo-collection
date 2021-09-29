@@ -1,0 +1,65 @@
+<?xml version="1.0" ?>
+<Projects>
+	<AddImagesToOrientedImagery>
+		<StartTime>20201015T100823</StartTime>
+		<EndTime>20201015T100932</EndTime>
+		<TotalDuration>68</TotalDuration>
+		<VersionCheck>
+			<Message>
+				Checking for updates..
+				<Error>
+					<type>warning</type>
+					<text>Update Available. Please read C:\Image_Mgmt_Workflows\OrientedImagery\Scripts\CheckForUpdate.json</text>
+				</Error>
+			</Message>
+			<Duration>0</Duration>
+		</VersionCheck>
+		<Message>Input type: ImageList</Message>
+		<Message>Extracting parameters..</Message>
+		<Message>Extracting input parameters..</Message>
+		<Message>
+			Input file: C:\Users\Alex\Desktop\list.txt
+			<Error>
+				<type>warning</type>
+				<text>Could not extract coordinate info to add image: WingHong3.jpg</text>
+			</Error>
+			<Error>
+				<type>warning</type>
+				<text>Could not extract coordinate info to add image: WingHong4.jpg</text>
+			</Error>
+			<Error>
+				<type>warning</type>
+				<text>Could not extract coordinate info to add image: WingHong8.jpg</text>
+			</Error>
+			<Error>
+				<type>warning</type>
+				<text>Could not extract coordinate info to add image: WingHong7.jpg</text>
+			</Error>
+			<Error>
+				<type>warning</type>
+				<text>Could not extract coordinate info to add image: WingHong9.jpg</text>
+			</Error>
+			<Error>
+				<type>warning</type>
+				<text>Could not extract coordinate info to add image: WingHong1.jpg</text>
+			</Error>
+		</Message>
+		<Message>
+			Inserted row for: https://dord.mynetgear.com/WingHong0.jpg
+			<Error>
+				<type>warning</type>
+				<text>Could not extract coordinate info to add image: WingHong2.jpg</text>
+			</Error>
+			<Error>
+				<type>warning</type>
+				<text>Could not extract coordinate info to add image: WingHong5.jpg</text>
+			</Error>
+			<Error>
+				<type>warning</type>
+				<text>Could not extract coordinate info to add image: WingHong6.jpg</text>
+			</Error>
+		</Message>
+		<Message>Successfully added list of images.</Message>
+		<Message>Done</Message>
+	</AddImagesToOrientedImagery>
+</Projects>

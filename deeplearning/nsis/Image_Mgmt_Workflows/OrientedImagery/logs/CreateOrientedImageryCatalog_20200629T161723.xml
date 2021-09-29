@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<Projects>
+	<CreateOrientedImageryCatalog>
+		<StartTime>20200629T161722</StartTime>
+		<EndTime>20200629T161723</EndTime>
+		<TotalDuration>0</TotalDuration>
+		<VersionCheck>
+			<Message>Checking for updates..</Message>
+			<Duration>0</Duration>
+		</VersionCheck>
+		<Message>
+			Creating point and polygon feature classes..
+			<Error>
+				<type>critical</type>
+				<text>Error in create oriented imagery catalog. ERROR 000496: table is being edited
+Failed to execute (AddField).
+</text>
+			</Error>
+		</Message>
+		<Message>Done</Message>
+	</CreateOrientedImageryCatalog>
+</Projects>

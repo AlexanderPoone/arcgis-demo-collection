@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<Projects>
+	<AddImagesToOrientedImagery>
+		<StartTime>20200526T155811</StartTime>
+		<EndTime>20200526T155833</EndTime>
+		<TotalDuration>21</TotalDuration>
+		<VersionCheck>
+			<Message>Checking for updates..</Message>
+			<Duration>0</Duration>
+		</VersionCheck>
+		<Message>Input type: Images</Message>
+		<Message>Extracting parameters..</Message>
+		<Message>
+			Extracting input parameters..
+			<Error>
+				<type>warning</type>
+				<text>Could not extract coordinate info to add image: 190629_003202005.jpg</text>
+			</Error>
+		</Message>
+		<Message>Successfully added images.</Message>
+		<Message>Done</Message>
+	</AddImagesToOrientedImagery>
+</Projects>

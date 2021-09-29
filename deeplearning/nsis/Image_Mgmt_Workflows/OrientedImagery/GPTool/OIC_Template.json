@@ -1,0 +1,47 @@
+{
+	"type": "OIC",
+	"version": "2.1",
+	"properties": {
+		"Name": "",
+		"Description": "",
+		"Tags": "OIC",
+		"ServiceURL": "",
+		"OverviewURL": "",
+		"DefaultAttributes": {
+			"CamHeading": "",
+			"CamPitch": "",
+			"CamRoll": "",
+			"HFOV": "",
+			"VFOV": "",
+			"AvgHtAG": "",
+			"FarDist": "",
+			"NearDist": "",
+			"OIType": "",
+			"SortOrder": "",
+			"CamOffset": "",
+			"Accuracy": "",
+			"ImgPyramids": "",
+			"DepthImg": "",
+			"ExternalViewer": "",
+			"ImgRot": ""
+		},
+		"About": "",
+		"ImageField": "",
+		"ImagePrefix": "",
+		"VideoPrefix": "",
+		"DepthImagePrefix": "",
+		"SourceImagePrefix": "",
+		"MaxDistance": "",
+		"DEMPrefix": "",
+		"Credentials": {
+			"Username": "",
+			"Password": ""
+		},
+		"Variables": {},
+		"Filters": {},
+		"Copyright": {
+			"text": "",
+			"url": ""
+		}
+	}
+}

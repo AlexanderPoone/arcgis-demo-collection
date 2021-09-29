@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<Projects>
+	<AddImagesToOrientedImagery>
+		<StartTime>20200610T173448</StartTime>
+		<EndTime>20200610T173536</EndTime>
+		<TotalDuration>48</TotalDuration>
+		<VersionCheck>
+			<Message>Checking for updates..</Message>
+			<Duration>0</Duration>
+		</VersionCheck>
+		<Message>Input type: ImageList</Message>
+		<Message>Extracting parameters..</Message>
+		<Message>Extracting input parameters..</Message>
+		<Message>Input file: C:\Users\Alex\Desktop\jpglist.txt</Message>
+		<Message>Inserted row for: http://demo2.hkgisportal.com/Panorama/190628_063115817.jpg</Message>
+		<Message>Extracted Data for 2 of 13</Message>
+		<Message>Inserted row for: http://demo2.hkgisportal.com/Panorama/190628_063115320.jpg</Message>
+		<Message>Extracted Data for 3 of 13</Message>
+		<Message>Inserted row for: http://demo2.hkgisportal.com/Panorama/190628_063114942.jpg</Message>
+		<Message>Extracted Data for 4 of 13</Message>
+		<Message>Inserted row for: http://demo2.hkgisportal.com/Panorama/190628_063116069.jpg</Message>
+		<Message>Extracted Data for 5 of 13</Message>
+		<Message>
+			Inserted row for: http://demo2.hkgisportal.com/Panorama/190628_063114320.jpg
+			<Error>
+				<type>critical</type>
+				<text>Error in adding imagelist. A process in the process pool was terminated abruptly while the future was running or pending.</text>
+			</Error>
+			<Error>
+				<type>critical</type>
+				<text>Error in adding imagelist.A process in the process pool was terminated abruptly while the future was running or pending.</text>
+			</Error>
+		</Message>
+		<Message>Done</Message>
+	</AddImagesToOrientedImagery>
+</Projects>

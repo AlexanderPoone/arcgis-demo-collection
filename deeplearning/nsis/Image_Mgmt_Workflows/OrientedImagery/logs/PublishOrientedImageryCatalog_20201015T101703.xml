@@ -1,0 +1,26 @@
+<?xml version="1.0" ?>
+<Projects>
+	<PublishOrientedImageryCatalog>
+		<StartTime>20201015T101608</StartTime>
+		<EndTime>20201015T101703</EndTime>
+		<TotalDuration>54</TotalDuration>
+		<VersionCheck>
+			<Message>
+				Checking for updates..
+				<Error>
+					<type>warning</type>
+					<text>Update Available. Please read C:\Image_Mgmt_Workflows\OrientedImagery\Scripts\CheckForUpdate.json</text>
+				</Error>
+			</Message>
+			<Duration>0</Duration>
+		</VersionCheck>
+		<Message>Publishing Exposure Points.</Message>
+		<Message>Published Exposure Points.</Message>
+		<Message>Uploading Coverage Map..</Message>
+		<Message>Uploaded Coverage Map</Message>
+		<Message>Shared Coverage Map</Message>
+		<Message>Publishing Coverage Map..</Message>
+		<Message>Published the Coverage Map.</Message>
+		<Message>Done</Message>
+	</PublishOrientedImageryCatalog>
+</Projects>

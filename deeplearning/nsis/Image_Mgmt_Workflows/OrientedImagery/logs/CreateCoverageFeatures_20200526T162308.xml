@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<Projects>
+	<CreateCoverageFeatures>
+		<StartTime>20200526T162307</StartTime>
+		<EndTime>20200526T162308</EndTime>
+		<TotalDuration>0</TotalDuration>
+		<VersionCheck>
+			<Message>Checking for updates..</Message>
+			<Duration>0</Duration>
+		</VersionCheck>
+		<Message>Output feature class path:C:\Users\Alex\Documents\ArcGIS\Projects\MyProject10\MyProject10.gdb\Bubble360OIC_CoverageMap</Message>
+		<Message>Added row 1</Message>
+		<Message>Done</Message>
+	</CreateCoverageFeatures>
+</Projects>

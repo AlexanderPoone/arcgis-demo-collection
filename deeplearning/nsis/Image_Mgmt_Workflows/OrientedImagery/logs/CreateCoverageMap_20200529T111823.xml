@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<Projects>
+	<CreateCoverageMap>
+		<StartTime>20200529T111753</StartTime>
+		<EndTime>20200529T111823</EndTime>
+		<TotalDuration>30</TotalDuration>
+		<VersionCheck>
+			<Message>Checking for updates..</Message>
+			<Duration>0</Duration>
+		</VersionCheck>
+		<Message>Vector Tile Package created for KowloonBayPanoramicOIC_2D</Message>
+		<Message>Done</Message>
+	</CreateCoverageMap>
+</Projects>

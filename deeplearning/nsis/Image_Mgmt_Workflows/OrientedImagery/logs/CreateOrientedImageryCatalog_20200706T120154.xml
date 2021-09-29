@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<Projects>
+	<CreateOrientedImageryCatalog>
+		<StartTime>20200706T120146</StartTime>
+		<EndTime>20200706T120154</EndTime>
+		<TotalDuration>7</TotalDuration>
+		<VersionCheck>
+			<Message>
+				Checking for updates..
+				<Error>
+					<type>warning</type>
+					<text>Installed version is the latest version.</text>
+				</Error>
+			</Message>
+			<Duration>1</Duration>
+		</VersionCheck>
+		<Message>Creating point and polygon feature classes..</Message>
+		<Message>Updated Symbology</Message>
+		<Message>Adding layers to the group.</Message>
+		<Message>Done</Message>
+	</CreateOrientedImageryCatalog>
+</Projects>

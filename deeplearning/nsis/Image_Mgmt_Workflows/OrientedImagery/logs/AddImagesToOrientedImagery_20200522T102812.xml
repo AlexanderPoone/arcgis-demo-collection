@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<Projects>
+	<AddImagesToOrientedImagery>
+		<StartTime>20200522T102753</StartTime>
+		<EndTime>20200522T102812</EndTime>
+		<TotalDuration>19</TotalDuration>
+		<VersionCheck>
+			<Message>Checking for updates..</Message>
+			<Duration>0</Duration>
+		</VersionCheck>
+		<Message>Input type: Images</Message>
+		<Message>Extracting parameters..</Message>
+		<Message>Extracting input parameters..</Message>
+		<Message>Extracted Data for 1 of 1</Message>
+		<Message>Inserted row for: 'C:\Users\Alex\Desktop\Camera_0 - Copy\190629_003202005_Camera_0.jpg'</Message>
+		<Message>Successfully added images.</Message>
+		<Message>Done</Message>
+	</AddImagesToOrientedImagery>
+</Projects>

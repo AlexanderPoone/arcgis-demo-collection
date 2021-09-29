@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<Projects>
+	<AddImagesToOrientedImagery>
+		<StartTime>20200527T160938</StartTime>
+		<EndTime>20200527T161006</EndTime>
+		<TotalDuration>28</TotalDuration>
+		<VersionCheck>
+			<Message>Checking for updates..</Message>
+			<Duration>0</Duration>
+		</VersionCheck>
+		<Message>Input type: ImageList</Message>
+		<Message>Extracting parameters..</Message>
+		<Message>Extracting input parameters..</Message>
+		<Message>
+			Input file: C:\Users\Alex\Desktop\panoFileList.py
+			<Error>
+				<type>warning</type>
+				<text>b&quot;ERROR 4: from glob import glob: No such file or directory\r\ngdalinfo failed - unable to open 'from glob import glob'.\r\n&quot;</text>
+			</Error>
+			<Error>
+				<type>warning</type>
+				<text>b&quot;ERROR 4:     : No such file or directory\r\ngdalinfo failed - unable to open '    '.\r\n&quot;</text>
+			</Error>
+			<Error>
+				<type>warning</type>
+				<text>b&quot;ERROR 4: from os.path import expanduser: No such file or directory\r\ngdalinfo failed - unable to open 'from os.path import expanduser'.\r\n&quot;</text>
+			</Error>
+			<Error>
+				<type>warning</type>
+				<text>b&quot;ERROR 4: `with open(expanduser('~/panoList.txt'), 'w'):' does not exist in the file system,\r\nand is not recognized as a supported dataset name.\r\n\r\ngdalinfo failed - unable to open 'with open(expanduser('~/panoList.txt'), 'w'):'.\r\n&quot;</text>
+			</Error>
+		</Message>
+		<Message>Successfully added list of images.</Message>
+		<Message>Done</Message>
+	</AddImagesToOrientedImagery>
+</Projects>

@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<Projects>
+	<PublishOrientedImageryCatalog>
+		<StartTime>20200526T161608</StartTime>
+		<EndTime>20200526T161609</EndTime>
+		<TotalDuration>1</TotalDuration>
+		<VersionCheck>
+			<Message>Checking for updates..</Message>
+			<Duration>0</Duration>
+		</VersionCheck>
+		<Message>
+			<Error>
+				<type>critical</type>
+				<text>The Oriented Imagery Catalog BubbleOIC_Test already exists.</text>
+			</Error>
+		</Message>
+		<Message>Done</Message>
+	</PublishOrientedImageryCatalog>
+</Projects>

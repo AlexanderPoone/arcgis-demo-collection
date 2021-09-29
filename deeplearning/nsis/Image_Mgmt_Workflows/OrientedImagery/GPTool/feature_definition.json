@@ -1,0 +1,105 @@
+{
+  "layers" : [
+    {
+      "adminLayerInfo" : {
+        "tableName" : "", 
+        "geometryField" : {}, 
+        "xssTrustedFields" : ""
+      }, 
+      "id" : 0, 
+      "name" : "", 
+      "type" : "Feature Layer", 
+      "displayField" : "", 
+      "description" : "", 
+      "copyrightText" : "", 
+      "defaultVisibility" : true, 
+      "ownershipBasedAccessControlForFeatures" : {
+        "allowOthersToQuery" : false, 
+        "allowOthersToDelete" : false, 
+        "allowOthersToUpdate" : false
+      }, 
+      "editFieldsInfo" : {
+        
+      }, 
+      "editingInfo" : {
+        "lastEditDate" : 1455126059440
+      }, 
+      "relationships" : [], 
+      "isDataVersioned" : false, 
+      "supportsCalculate" : true, 
+      "supportsAttachmentsByUploadId" : true, 
+      "supportsRollbackOnFailureParameter" : true, 
+      "supportsStatistics" : true, 
+      "supportsAdvancedQueries" : true, 
+      "supportsValidateSql" : true, 
+      "supportsCoordinatesQuantization" : true, 
+      "supportsApplyEditsWithGlobalIds" : true, 
+      "advancedQueryCapabilities" : {
+        "supportsPagination" : true, 
+        "supportsQueryWithDistance" : true, 
+        "supportsReturningQueryExtent" : true, 
+        "supportsStatistics" : true, 
+        "supportsOrderBy" : true, 
+        "supportsDistinct" : true, 
+        "supportsQueryWithResultType" : true, 
+        "supportsSqlExpression" : true, 
+        "supportsReturningGeometryCentroid" : true
+      }, 
+      "useStandardizedQueries" : false, 
+      "geometryType" : "esriGeometryPoint", 
+      "minScale" : 2311163, 
+      "maxScale" : 1128, 
+      "extent" : {
+        "xmin" : -13090714.767112788, 
+        "ymin" : 3841739.0914657288, 
+        "xmax" : -12922032.654624918, 
+        "ymax" : 3962581.2727843975, 
+        "spatialReference" : {
+          "wkid" : 102100, 
+          "latestWkid" : 3857
+        }
+      }, 
+      "drawingInfo":{"renderer":{"type":"simple","symbol":{"color":[76,230,0,100],"size":10,"angle":0,"xoffset":0,"yoffset":0,"type":"esriSMS","style":"esriSMSCircle","outline":{"color":[76,230,0,100],"width":1,"type":"esriSLS","style":"esriSLSSolid"}}},"transparency":0,"labelingInfo":null}, 
+      "allowGeometryUpdates" : true, 
+      "hasAttachments" : false, 
+      "htmlPopupType" : "esriServerHTMLPopupTypeNone", 
+      "hasM" : false, 
+      "hasZ" : false, 
+      "objectIdField" : "FID", 
+      "typeIdField" : "", 
+      "fields" : [
+	  ], 
+      "indexes" : [
+	  ], 
+      "types" : [], 
+      "templates" : [
+        {
+          "name" : "New Feature", 
+          "description" : "", 
+          "drawingTool" : "esriFeatureEditToolPoint", 
+          "prototype" : {
+            "attributes" : {
+              "AREA" : null, 
+              "PERIMETER" : null, 
+              "MUSYM" : null, 
+              "MUKEY" : null, 
+              "DESCRIPTIO" : null, 
+              "CATEGORY" : null, 
+              "OBJECTID_1" : null, 
+              "SHP_ID_ARE" : null, 
+              "SHP_ID_LEN" : null
+            }
+          }
+        }
+      ], 
+      "supportedQueryFormats" : "JSON", 
+      "hasStaticData" : false, 
+      "maxRecordCount" : 1000, 
+      "standardMaxRecordCount" : 4000, 
+      "tileMaxRecordCount" : 4000, 
+      "maxRecordCountFactor" : 1, 
+      "capabilities" : "Create,Delete,Query,Update,Editing,Extract,Sync", 
+      "exceedsLimitFactor" : 1
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<Projects>
+	<PublishOrientedImageryCatalog>
+		<StartTime>20200717T143316</StartTime>
+		<EndTime>20200717T143420</EndTime>
+		<TotalDuration>64</TotalDuration>
+		<VersionCheck>
+			<Message>Checking for updates..</Message>
+			<Duration>0</Duration>
+		</VersionCheck>
+		<Message>Publishing Exposure Points.</Message>
+		<Message>Published Exposure Points.</Message>
+		<Message>Uploading Coverage Map..</Message>
+		<Message>Uploaded Coverage Map</Message>
+		<Message>Shared Coverage Map</Message>
+		<Message>Publishing Coverage Map..</Message>
+		<Message>Published the Coverage Map.</Message>
+		<Message>Updating Oriented Imagery Catalog</Message>
+		<Message>Done</Message>
+	</PublishOrientedImageryCatalog>
+</Projects>

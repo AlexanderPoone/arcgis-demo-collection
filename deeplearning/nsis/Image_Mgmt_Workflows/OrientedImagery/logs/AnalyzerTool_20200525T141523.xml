@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<Projects>
+	<AnalyzerTool>
+		<StartTime>20200525T141515</StartTime>
+		<EndTime>20200525T141523</EndTime>
+		<TotalDuration>8</TotalDuration>
+		<VersionCheck>
+			<Message>Checking for updates..</Message>
+			<Duration>0</Duration>
+		</VersionCheck>
+		<Message>No broken paths found.</Message>
+		<Message>No Local images found.</Message>
+		<Message>All mandatory fields have values.</Message>
+		<Message>No need to hide any field.</Message>
+		<Message>Coverage features found.</Message>
+		<Message>Coverage vector tile package found.</Message>
+		<Message>Done</Message>
+	</AnalyzerTool>
+</Projects>

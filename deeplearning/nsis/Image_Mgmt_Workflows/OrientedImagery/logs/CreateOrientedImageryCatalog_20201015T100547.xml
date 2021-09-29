@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<Projects>
+	<CreateOrientedImageryCatalog>
+		<StartTime>20201015T100541</StartTime>
+		<EndTime>20201015T100547</EndTime>
+		<TotalDuration>5</TotalDuration>
+		<VersionCheck>
+			<Message>
+				Checking for updates..
+				<Error>
+					<type>warning</type>
+					<text>Update Available. Please read C:\Image_Mgmt_Workflows\OrientedImagery\Scripts\CheckForUpdate.json</text>
+				</Error>
+			</Message>
+			<Duration>1</Duration>
+		</VersionCheck>
+		<Message>Creating point and polygon feature classes..</Message>
+		<Message>Updated Symbology</Message>
+		<Message>Adding layers to the group.</Message>
+		<Message>Done</Message>
+	</CreateOrientedImageryCatalog>
+</Projects>

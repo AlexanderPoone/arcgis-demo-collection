@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<Projects>
+	<CreateCoverageMap>
+		<StartTime>20201110T171045</StartTime>
+		<EndTime>20201110T171046</EndTime>
+		<TotalDuration>1</TotalDuration>
+		<VersionCheck>
+			<Message>
+				Checking for updates..
+				<Error>
+					<type>warning</type>
+					<text>Update Available. Please read C:\Image_Mgmt_Workflows\OrientedImagery\Scripts\CheckForUpdate.json</text>
+				</Error>
+			</Message>
+			<Duration>0</Duration>
+		</VersionCheck>
+		<Message>Vector Tile Package created for HighwaysTestSet</Message>
+		<Message>Done</Message>
+	</CreateCoverageMap>
+</Projects>

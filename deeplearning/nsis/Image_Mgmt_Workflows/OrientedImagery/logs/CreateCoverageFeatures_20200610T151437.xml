@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<Projects>
+	<CreateCoverageFeatures>
+		<StartTime>20200610T151433</StartTime>
+		<EndTime>20200610T151437</EndTime>
+		<TotalDuration>3</TotalDuration>
+		<VersionCheck>
+			<Message>Checking for updates..</Message>
+			<Duration>0</Duration>
+		</VersionCheck>
+		<Message>Output feature class path:C:\Users\Alex\Documents\ArcGIS\Projects\MyProject17\MyProject17.gdb\FirstPhotoWithDepthMap_CoverageMap</Message>
+		<Message>Added row 1</Message>
+		<Message>Added row 2</Message>
+		<Message>Done</Message>
+	</CreateCoverageFeatures>
+</Projects>

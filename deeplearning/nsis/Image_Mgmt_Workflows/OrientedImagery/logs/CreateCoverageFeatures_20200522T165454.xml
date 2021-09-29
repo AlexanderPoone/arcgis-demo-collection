@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<Projects>
+	<CreateCoverageFeatures>
+		<StartTime>20200522T165454</StartTime>
+		<EndTime>20200522T165454</EndTime>
+		<TotalDuration>0</TotalDuration>
+		<VersionCheck>
+			<Message>Checking for updates..</Message>
+			<Duration>0</Duration>
+		</VersionCheck>
+		<Message>
+			<Error>
+				<type>critical</type>
+				<text>Error in CreateCoverageFeatures:local variable 'outputFeatureClass' referenced before assignment</text>
+			</Error>
+		</Message>
+		<Message>Done</Message>
+	</CreateCoverageFeatures>
+</Projects>

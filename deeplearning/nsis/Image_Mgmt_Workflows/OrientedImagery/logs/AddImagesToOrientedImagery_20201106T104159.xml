@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<Projects>
+	<AddImagesToOrientedImagery>
+		<StartTime>20201106T104104</StartTime>
+		<EndTime>20201106T104159</EndTime>
+		<TotalDuration>54</TotalDuration>
+		<VersionCheck>
+			<Message>
+				Checking for updates..
+				<Error>
+					<type>warning</type>
+					<text>Update Available. Please read C:\Image_Mgmt_Workflows\OrientedImagery\Scripts\CheckForUpdate.json</text>
+				</Error>
+			</Message>
+			<Duration>0</Duration>
+		</VersionCheck>
+		<Message>Input type: ImageList</Message>
+		<Message>Extracting parameters..</Message>
+		<Message>Extracting input parameters..</Message>
+		<Message>Input file: C:\Users\Alex\Desktop\added.txt</Message>
+		<Message>Successfully added list of images.</Message>
+		<Message>Done</Message>
+	</AddImagesToOrientedImagery>
+</Projects>

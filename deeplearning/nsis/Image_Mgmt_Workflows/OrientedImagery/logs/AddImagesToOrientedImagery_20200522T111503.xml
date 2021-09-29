@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<Projects>
+	<AddImagesToOrientedImagery>
+		<StartTime>20200522T111445</StartTime>
+		<EndTime>20200522T111503</EndTime>
+		<TotalDuration>17</TotalDuration>
+		<VersionCheck>
+			<Message>Checking for updates..</Message>
+			<Duration>0</Duration>
+		</VersionCheck>
+		<Message>Input type: Images</Message>
+		<Message>Extracting parameters..</Message>
+		<Message>
+			Extracting input parameters..
+			<Error>
+				<type>warning</type>
+				<text>b&quot;ERROR 11: HTTP response code: 400\r\ngdalinfo failed - unable to open '/vsicurl/http://cors-anywhere.herokuapp.com/http://demo2.hkgisportal.com/camera_0/190629_003202005_Camera_0.jpg'.\r\n&quot;</text>
+			</Error>
+		</Message>
+		<Message>Successfully added images.</Message>
+		<Message>Done</Message>
+	</AddImagesToOrientedImagery>
+</Projects>

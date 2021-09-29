@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<Projects>
+	<AddImagesToOrientedImagery>
+		<StartTime>20201103T095850</StartTime>
+		<EndTime>20201103T095955</EndTime>
+		<TotalDuration>65</TotalDuration>
+		<VersionCheck>
+			<Message>
+				Checking for updates..
+				<Error>
+					<type>warning</type>
+					<text>Update Available. Please read C:\Image_Mgmt_Workflows\OrientedImagery\Scripts\CheckForUpdate.json</text>
+				</Error>
+			</Message>
+			<Duration>0</Duration>
+		</VersionCheck>
+		<Message>Input type: ImageList</Message>
+		<Message>Extracting parameters..</Message>
+		<Message>Extracting input parameters..</Message>
+		<Message>Input file: C:\Users\Alex\Desktop\winghong.txt</Message>
+		<Message>Inserted row for: https://dord.mynetgear.com/WingHong3.jpg</Message>
+		<Message>Extracted Data for 2 of 10</Message>
+		<Message>Inserted row for: https://dord.mynetgear.com/WingHong9.jpg</Message>
+		<Message>Extracted Data for 3 of 10</Message>
+		<Message>Inserted row for: https://dord.mynetgear.com/WingHong6.jpg</Message>
+		<Message>Extracted Data for 4 of 10</Message>
+		<Message>Inserted row for: https://dord.mynetgear.com/WingHong1.jpg</Message>
+		<Message>Extracted Data for 5 of 10</Message>
+		<Message>Inserted row for: https://dord.mynetgear.com/WingHong2.jpg</Message>
+		<Message>Extracted Data for 6 of 10</Message>
+		<Message>Inserted row for: https://dord.mynetgear.com/WingHong0.jpg</Message>
+		<Message>Extracted Data for 7 of 10</Message>
+		<Message>Inserted row for: https://dord.mynetgear.com/WingHong5.jpg</Message>
+		<Message>Extracted Data for 8 of 10</Message>
+		<Message>Inserted row for: https://dord.mynetgear.com/WingHong7.jpg</Message>
+		<Message>Extracted Data for 9 of 10</Message>
+		<Message>Inserted row for: https://dord.mynetgear.com/WingHong8.jpg</Message>
+		<Message>Extracted Data for 10 of 10</Message>
+		<Message>Inserted row for: https://dord.mynetgear.com/WingHong4.jpg</Message>
+		<Message>Successfully added list of images.</Message>
+		<Message>Done</Message>
+	</AddImagesToOrientedImagery>
+</Projects>

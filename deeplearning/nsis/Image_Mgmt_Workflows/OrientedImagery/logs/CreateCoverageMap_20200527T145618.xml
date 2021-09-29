@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<Projects>
+	<CreateCoverageMap>
+		<StartTime>20200527T145553</StartTime>
+		<EndTime>20200527T145618</EndTime>
+		<TotalDuration>24</TotalDuration>
+		<VersionCheck>
+			<Message>Checking for updates..</Message>
+			<Duration>0</Duration>
+		</VersionCheck>
+		<Message>Vector Tile Package created for BubblePanoramaOICKowloonBay</Message>
+		<Message>Done</Message>
+	</CreateCoverageMap>
+</Projects>

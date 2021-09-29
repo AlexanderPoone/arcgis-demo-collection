@@ -1,0 +1,10 @@
+{
+    "UpdateLocation": "https://www.arcgis.com/home/item.html?id=36ee0bbedca64a5a8b68d7c69ab51728",
+    "OnNewVersion": "Warn",
+    "CheckFile": "https://imageryworkflowsversion.geocloud.com/imv/OrientedImagery.json",
+    "VersionMessage": "1. Better Logging support. 2. Better handling for spaces in input data file names. 3. Bug fix in creation of coverage features. 4. Various other bug fixes.",
+    "LastChecked": "2020-11-13",
+    "CheckForUpdate": "Daily",
+    "CurrentVersion": "2.4",
+    "NewVersion": "2.5"
+}

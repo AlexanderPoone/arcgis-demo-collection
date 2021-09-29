@@ -1,0 +1,10 @@
+How to Create an Oriented Imagery Catalog (OIC)
+Copyright © 2019 Esri
+All rights reserved.
+
+
+This tutorial has been moved to an online version to keep it current. 
+Copy the link following link in browser of your choice to access it. 
+
+https://doc.arcgis.com/en/imagery/workflows/tutorials/creating-an-oriented-imagery-catalog.htm. 
+

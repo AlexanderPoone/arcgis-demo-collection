@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<Projects>
+	<PublishOrientedImageryCatalog>
+		<StartTime>20200528T173524</StartTime>
+		<EndTime>20200528T173546</EndTime>
+		<TotalDuration>21</TotalDuration>
+		<VersionCheck>
+			<Message>Checking for updates..</Message>
+			<Duration>0</Duration>
+		</VersionCheck>
+		<Message>
+			<Error>
+				<type>critical</type>
+				<text>'NoneType' object has no attribute 'listLayers'</text>
+			</Error>
+		</Message>
+		<Message>Done</Message>
+	</PublishOrientedImageryCatalog>
+</Projects>

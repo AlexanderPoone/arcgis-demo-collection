@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<Projects>
+	<AddImagesToOrientedImagery>
+		<StartTime>20201103T094935</StartTime>
+		<EndTime>20201103T094935</EndTime>
+		<TotalDuration>0</TotalDuration>
+		<VersionCheck>
+			<Message>
+				Checking for updates..
+				<Error>
+					<type>warning</type>
+					<text>Update Available. Please read C:\Image_Mgmt_Workflows\OrientedImagery\Scripts\CheckForUpdate.json</text>
+				</Error>
+			</Message>
+			<Duration>0</Duration>
+		</VersionCheck>
+		<Message>
+			<Error>
+				<type>critical</type>
+				<text>Error in adding images to oriented imagery catalog write() takes exactly one argument (7 given)</text>
+			</Error>
+		</Message>
+		<Message>Done</Message>
+	</AddImagesToOrientedImagery>
+</Projects>

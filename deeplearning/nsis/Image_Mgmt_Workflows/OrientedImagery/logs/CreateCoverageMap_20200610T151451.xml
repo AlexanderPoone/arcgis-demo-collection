@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<Projects>
+	<CreateCoverageMap>
+		<StartTime>20200610T151444</StartTime>
+		<EndTime>20200610T151451</EndTime>
+		<TotalDuration>6</TotalDuration>
+		<VersionCheck>
+			<Message>Checking for updates..</Message>
+			<Duration>0</Duration>
+		</VersionCheck>
+		<Message>Vector Tile Package created for FirstPhotoWithDepthMap</Message>
+		<Message>Done</Message>
+	</CreateCoverageMap>
+</Projects>

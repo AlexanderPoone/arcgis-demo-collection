@@ -1,0 +1,28 @@
+﻿Copyrights and Trademarks
+Esri Proprietary Rights Acknowledgment
+Copyright © 2020 Esri China (Hong Kong). 
+All rights reserved. 
+
+The information contained in this work is the exclusive property of Environmental Systems Research Institute, Inc. (Esri), and any respective copyright owners.
+
+Esri grants the recipient of the Esri information contained within the esri.com Web site the right to freely reproduce, redistribute, rebroadcast, and/or retransmit this information for personal, noncommercial purposes, including teaching, classroom use, scholarship, and/or research. All copies, whether in whole or in part, shall include the appropriate Esri copyright notice.
+
+No part of this work may be reproduced or transmitted for commercial purposes, in any form or by any means, electronic or mechanical, including photocopying and recording, or by any information storage or retrieval system, except as expressly permitted in writing by Esri.
+
+Questions or requests regarding permissions may be sent by e-mail.
+Digital Millennium Copyright Act Policy
+The information contained in the home page is subject to change without notice.
+
+Disclaimer
+The home page has been produced for informational purposes as a service to Esri end users and the geographic information system (GIS) community. Any listing and/or posting of third-party promotional information and/or materials, including, but not limited to, any subpage(s), copy, software, scripts, and/or data, should not be construed as an endorsement by Esri. Any further information and/or support for all third-party information and/or materials listed and/or posted herein are provided directly by the respective third party. Because the Internet is not a secure network, Esri recommends that any materials downloaded from the home page be checked for computer viruses prior to use so as to avoid any potential damage to your system, software, and/or data.
+Warranty and Limitation of Liability
+THE INFORMATION AND/OR MATERIALS CONTAINED HEREIN ARE PROVIDED "AS IS," WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT.
+
+Esri shall not be liable for direct, indirect, special, incidental, or consequential damages related to your decision to use any of the information and/or materials listed and/or posted on this home page, even if Esri is advised of the possibility of such damage.
+
+U.S. Government Commercial Item Rights
+Any Commercial Item software, online services, documentation, and/or data delivered hereunder is subject to the terms of the License Agreement. The commercial license rights in the License Agreement strictly govern Licensee's use, reproduction, or disclosure of the software, online services, data, and documentation to the extent the commercial license terms and conditions are consistent with federal law. Rights, access, and usage shall be consistent with FAR §§12.211/12.212 or DFARS §227.7202 as applicable. Unpublished rights reserved under the copyright laws of the US. Open source software is provided under various open source licenses described in the Third- Party OSS/FOSS Software Acknowledgement documents. Contractor/Manufacturer is Esri, 380 New York Street, Redlands, CA 92373-8100 USA.
+Esri Trademarks
+@esri.com, 3D Analyst, ACORN, Address Coder, ADF, AML, ArcAtlas, ArcCAD, ArcCatalog, ArcCOGO, ArcData, ArcDoc, ArcEdit, ArcEditor, ArcEurope, ArcExplorer, ArcExpress, ArcGIS, arcgis.com, ArcGlobe, ArcGrid, ArcIMS, ARC/INFO, ArcInfo, ArcInfo Librarian, ArcLessons, ArcLocation, ArcLogistics, ArcMap, ArcNetwork, ArcNews, ArcObjects, ArcOpen, ArcPad, ArcPlot, ArcPress, ArcPy, ArcQuest, ArcReader, ArcScan, ArcScene, ArcSchool, ArcScripts, ArcSDE, ArcSdl, ArcSketch, ArcStorm, ArcSurvey, ArcTIN, ArcToolbox, ArcTools, ArcUSA, ArcUser, ArcView, ArcVoyager, ArcWatch, ArcWeb, ArcWorld, ArcXML, Atlas GIS, AtlasWare, Avenue, BAO, Business Analyst, Business Analyst Online, BusinessMAP, CityEngine, Community, Community Analyst, CommunityInfo, Community Maps, Companion, Database Integrator, DBI Kit, Drone2Map, EDN, Esri, esri.com, Esri—Team GIS, Esri—The GIS Company, Esri—The GIS People, Esri—The GIS Software Leader, FormEdit, GeoCollector, GeoEnrichment, GeoEvent, Geographic Design System, Geography Matters, Geography Network, geographynetwork.com, Geoloqi, GeoPlanner, Geoportal, Geotrigger, GIS by Esri, gis.com, GISData Server, GIS Day, gisday.com, GIS for Everyone, Indoors, Insights, JTX, MapIt, Maplex, MapObjects, MapStudio, ModelBuilder, MOLE, MPS—Atlas, Ortho Maker, PLTS, Rent-a-Tech, SDE, SML, Sourcebook•America, SpatiaLABS, Spatial Analyst, Spatial Database Engine, Story Map Basic, Story Map Cascade, Story Map Crowdsource, Story Map Journal, Story Map Shortlist, Story Map Spyglass, Story Map Swipe, Story Map Series, Story Map Tour, StreetMap, Tapestry, the ARC/INFO logo, the ArcGIS Explorer logo, the ArcGIS logo, the ArcPad logo, the Esri globe logo, the Esri Press logo, The Geographic Advantage, The Geographic Approach, the GIS Day logo, the MapIt logo, The Science of Where, The World's Leading Desktop GIS, Water Writes, and Your Personal Geographic Information System are trademarks, service marks, or registered marks of Esri in the United States, the European Community, or certain other jurisdictions.
+
+Other companies and products mentioned herein may be trademarks, service marks, or registered marks of their respective mark owners.

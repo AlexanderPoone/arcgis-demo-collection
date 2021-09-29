@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<Projects>
+	<AnalyzerTool>
+		<StartTime>20200529T114512</StartTime>
+		<EndTime>20200529T114512</EndTime>
+		<TotalDuration>0</TotalDuration>
+		<VersionCheck>
+			<Message>Checking for updates..</Message>
+			<Duration>0</Duration>
+		</VersionCheck>
+		<Message>No Local images found.</Message>
+		<Message>All mandatory fields have values.</Message>
+		<Message>
+			No need to hide any field.
+			<Error>
+				<type>warning</type>
+				<text>Coverage features not found.
+ Please run CreateCoverageFeatures GP Tool</text>
+			</Error>
+		</Message>
+		<Message>Done</Message>
+	</AnalyzerTool>
+</Projects>

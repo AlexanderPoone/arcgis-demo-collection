@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<Projects>
+	<AnalyzerTool>
+		<StartTime>20200525T104803</StartTime>
+		<EndTime>20200525T104804</EndTime>
+		<TotalDuration>0</TotalDuration>
+		<VersionCheck>
+			<Message>Checking for updates..</Message>
+			<Duration>0</Duration>
+		</VersionCheck>
+		<Message>No Local images found.</Message>
+		<Message>
+			All mandatory fields have values.
+			<Error>
+				<type>warning</type>
+				<text>The following field(s) are empty in the feature class, and have values defined in the OIC properties file.
+CamPitch
+CamRoll
+AvgHtAG
+FarDist
+NearDist</text>
+			</Error>
+			<Error>
+				<type>warning</type>
+				<text>Coverage features not found.
+ Please run CreateCoverageFeatures GP Tool</text>
+			</Error>
+		</Message>
+		<Message>Done</Message>
+	</AnalyzerTool>
+</Projects>

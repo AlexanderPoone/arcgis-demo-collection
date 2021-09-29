@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<Projects>
+	<CreateCoverageMap>
+		<StartTime>20200528T174739</StartTime>
+		<EndTime>20200528T174849</EndTime>
+		<TotalDuration>70</TotalDuration>
+		<VersionCheck>
+			<Message>Checking for updates..</Message>
+			<Duration>0</Duration>
+		</VersionCheck>
+		<Message>Done</Message>
+	</CreateCoverageMap>
+</Projects>

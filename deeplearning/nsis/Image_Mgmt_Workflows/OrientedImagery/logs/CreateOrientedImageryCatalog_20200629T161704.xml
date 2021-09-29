@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<Projects>
+	<CreateOrientedImageryCatalog>
+		<StartTime>20200629T161703</StartTime>
+		<EndTime>20200629T161704</EndTime>
+		<TotalDuration>1</TotalDuration>
+		<VersionCheck>
+			<Message>
+				Checking for updates..
+				<Error>
+					<type>warning</type>
+					<text>Installed version is the latest version.</text>
+				</Error>
+			</Message>
+			<Duration>1</Duration>
+		</VersionCheck>
+		<Message>
+			Creating point and polygon feature classes..
+			<Error>
+				<type>critical</type>
+				<text>Error in create oriented imagery catalog. ERROR 000600: Cannot delete C:\Users\Alex\Documents\ArcGIS\Projects\MyProject10\MyProject10.gdb\MyOIC_ExposurePoints.  It is being edited by the application.
+Failed to execute (CreateFeatureclass).
+</text>
+			</Error>
+		</Message>
+		<Message>Done</Message>
+	</CreateOrientedImageryCatalog>
+</Projects>

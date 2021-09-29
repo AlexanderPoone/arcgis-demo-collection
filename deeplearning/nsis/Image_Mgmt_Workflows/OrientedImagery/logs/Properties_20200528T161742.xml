@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<Projects>
+	<Properties>
+		<StartTime>20200528T161742</StartTime>
+		<EndTime>20200528T161742</EndTime>
+		<TotalDuration>0</TotalDuration>
+		<VersionCheck>
+			<Message>Checking for updates..</Message>
+			<Duration>0</Duration>
+		</VersionCheck>
+		<Message>Parameters: [['Name', 'KowloonBayPanoramicOIC'], ['Description', 'Panoramic view'], ['Tags', 'OrientedImagery,KowloonBay'], ['ServiceURL', 'https://services5.arcgis.com/BFucnLaN4NszOvuE/arcgis/rest/services/KowloonBayPanoramicOIC_ExposurePoints/FeatureServer/1'], ['OverviewURL', 'https://tiles.arcgis.com/tiles/BFucnLaN4NszOvuE/arcgis/rest/services/KowloonBayPanoramicOIC_CoverageMap/VectorTileServer'], ['DefaultAttributes:CamHeading', '0'], ['DefaultAttributes:CamPitch', '90'], ['DefaultAttributes:CamRoll', '0'], ['DefaultAttributes:HFOV', '360'], ['DefaultAttributes:VFOV', '180'], ['DefaultAttributes:AvgHtAG', '3'], ['DefaultAttributes:FarDist', '200'], ['DefaultAttributes:NearDist', '0'], ['DefaultAttributes:OIType', 'B'], ['DefaultAttributes:SortOrder', ''], ['DefaultAttributes:CamOffset', ''], ['DefaultAttributes:Accuracy', ''], ['DefaultAttributes:ImgPyramids', ''], ['DefaultAttributes:DepthImg', ''], ['DefaultAttributes:ExternalViewer', ''], ['DefaultAttributes:ImgRot', ''], ['DefaultAttributes:ImageryType', 'Terrestrial 360 Camera'], ['About', ''], ['ImageField', ''], ['ImagePrefix', ''], ['VideoPrefix', ''], ['DepthImagePrefix', ''], ['SourceImagePrefix', ''], ['MaxDistance', '10000'], ['DEMPrefix', 'I||https://elevation.arcgis.com/arcgis/rest/services/WorldElevation/Terrain/ImageServer|None'], ['Credentials:Username', ''], ['Credentials:Password', ''], ['Copyright:text', 'Esri China (H.K.)'], ['Copyright:url', ''], ['PointsSource', 'C:\\Users\\Alex\\Documents\\ArcGIS\\Projects\\MyProject10\\MyProject10.gdb\\KowloonBayPanoramicOIC_ExposurePoints'], ['CoverageSource', 'C:\\Users\\Alex\\Documents\\ArcGIS\\Projects\\MyProject10\\MyProject10.gdb\\KowloonBayPanoramicOIC_CoverageMap']]</Message>
+		<Message>Done</Message>
+	</Properties>
+</Projects>

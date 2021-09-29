@@ -1,0 +1,6 @@
+{
+	"ApplicationName": "Oriented Imagery",
+	"Version": "2.3",
+	"Install": "https://www.arcgis.com/home/item.html?id=36ee0bbedca64a5a8b68d7c69ab51728",
+	"Message": "1. Frame Table bug fixes. 2. Publishing bug fixes. 3. Image Service bug fixes. 4. Bug fixes to CalcHeading, CreateCoverageFeatures and others."
+}

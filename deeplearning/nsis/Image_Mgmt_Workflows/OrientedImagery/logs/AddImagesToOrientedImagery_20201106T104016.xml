@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<Projects>
+	<AddImagesToOrientedImagery>
+		<StartTime>20201106T103957</StartTime>
+		<EndTime>20201106T104016</EndTime>
+		<TotalDuration>19</TotalDuration>
+		<VersionCheck>
+			<Message>
+				Checking for updates..
+				<Error>
+					<type>warning</type>
+					<text>Update Available. Please read C:\Image_Mgmt_Workflows\OrientedImagery\Scripts\CheckForUpdate.json</text>
+				</Error>
+			</Message>
+			<Duration>1</Duration>
+		</VersionCheck>
+		<Message>Input type: Images</Message>
+		<Message>Extracting parameters..</Message>
+		<Message>
+			Extracting input parameters..
+			<Error>
+				<type>warning</type>
+				<text>b&quot;ERROR 4: `C:\\Users\\Alex\\Desktop\\added.txt' not recognized as a supported file format.\r\n\r\ngdalinfo failed - unable to open 'C:\\Users\\Alex\\Desktop\\added.txt'.\r\n&quot;</text>
+			</Error>
+		</Message>
+		<Message>Successfully added images.</Message>
+		<Message>Done</Message>
+	</AddImagesToOrientedImagery>
+</Projects>

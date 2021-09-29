@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<Projects>
+	<AddImagesToOrientedImagery>
+		<StartTime>20200610T150922</StartTime>
+		<EndTime>20200610T150955</EndTime>
+		<TotalDuration>32</TotalDuration>
+		<VersionCheck>
+			<Message>Checking for updates..</Message>
+			<Duration>0</Duration>
+		</VersionCheck>
+		<Message>Input type: ImageList</Message>
+		<Message>Extracting parameters..</Message>
+		<Message>Extracting input parameters..</Message>
+		<Message>Input file: C:\Users\Alex\Desktop\jpglist.txt</Message>
+		<Message>
+			Extracted Data for 1 of 1
+			<Error>
+				<type>critical</type>
+				<text>Error in adding imagelist. Cannot find field 'AvgHtAG'</text>
+			</Error>
+			<Error>
+				<type>critical</type>
+				<text>Error in adding imagelist.Cannot find field 'AvgHtAG'</text>
+			</Error>
+			<Error>
+				<type>critical</type>
+				<text>Call OIC Types:local variable 'addedFields' referenced before assignment</text>
+			</Error>
+		</Message>
+		<Message>Done</Message>
+	</AddImagesToOrientedImagery>
+</Projects>

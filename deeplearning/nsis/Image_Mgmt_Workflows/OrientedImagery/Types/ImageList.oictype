@@ -1,0 +1,8 @@
+{
+	"Input": {
+		"Name": "Input Images",
+		"Type": "File"
+	},
+	"Parameters": {
+	}
+}

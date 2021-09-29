@@ -7,8 +7,8 @@
 ;--------------------------------
 ;Include Modern UI
 
-  !include "MUI2.nsh"
-!define MUI_ICON "C:\Users\Alex\Desktop\favicon.ico"
+!include "MUI2.nsh"
+!define MUI_ICON "favicon.ico"
 
 BrandingText "Esri China (Hong Kong)"
 ;--------------------------------
@@ -25,7 +25,7 @@ BrandingText "Esri China (Hong Kong)"
   InstallDir "$PROGRAMFILES64\Preprocessing Utility for Oriented Images"
   
   ;Get installation folder from registry if available
-  ;InstallDirRegKey HKCU "Software\Modern UI Test" ""
+  ;InstallDirRegKey HKCU "Software\PtoolClient" ""
 
   ;Request application privileges for Windows Vista
   RequestExecutionLevel admin
@@ -43,7 +43,7 @@ BrandingText "Esri China (Hong Kong)"
 
   ;Remember the installer language
   ;!define MUI_LANGDLL_REGISTRY_ROOT "HKCU" 
-  ;!define MUI_LANGDLL_REGISTRY_KEY "Software\Modern UI Test" 
+  ;!define MUI_LANGDLL_REGISTRY_KEY "Software\PtoolClient" 
   ;!define MUI_LANGDLL_REGISTRY_VALUENAME "Installer Language"
 
 ;--------------------------------
@@ -70,8 +70,8 @@ BrandingText "Esri China (Hong Kong)"
   !insertmacro MUI_LANGUAGE "English" ; The first language is the default language
   !insertmacro MUI_LANGUAGE "TradChinese"
 
-LicenseLangString localizedLicenseFile ${LANG_ENGLISH} "${NSISDIR}\Examples\license_en.txt"
-LicenseLangString localizedLicenseFile ${LANG_TRADCHINESE} "${NSISDIR}\Examples\license_zh_HK.txt"
+LicenseLangString localizedLicenseFile ${LANG_ENGLISH} "$license_en.txt"
+LicenseLangString localizedLicenseFile ${LANG_TRADCHINESE} "$license_zh_HK.txt"
 ;--------------------------------
 ;Reserve Files
   
@@ -107,18 +107,18 @@ SectionGroup /e !$(ClientName) ClientPackage
     SetOutPath "$INSTDIR\Mask_RCNN-tensorflowone_sewer"
     File /r "C:\Users\Alex\Desktop\Mask_RCNN-tensorflowone_sewer\"
     SetOutPath "$INSTDIR"
-    File "C:\Users\Alex\Desktop\favicon.ico"
+    File "favicon.ico"
     File "C:\Users\Alex\Desktop\publish\diag2.pyw"
-    File "C:\Users\Alex\Desktop\preprocess_rc.py"
-    File "C:\Users\Alex\Desktop\geckodriver.exe"
-    File "C:\Users\Alex\Desktop\requirements.txt"
-    File "C:\Users\Alex\Desktop\environment.yml"
+    File "preprocess_rc.py"
+    File "geckodriver.exe"
+    File "requirements.txt"
+    File "environment.yml"
     SetOutPath "C:\temp.gdb"
-    File /r "C:\temp.gdb\"
+    File /r "temp.gdb\"
     SetOutPath "C:\Template"
-    File /r "C:\Template\"
+    File /r "Template\"
     SetOutPath "C:\Image_Mgmt_Workflows"
-    File /r "C:\Image_Mgmt_Workflows\"
+    File /r "Image_Mgmt_Workflows\"
     SetOutPath "C:\yolov5"
     File /r "C:\Users\Alex\Desktop\yolov5\"
 
@@ -129,7 +129,7 @@ SectionGroup /e !$(ClientName) ClientPackage
     ;pano
     SetOutPath "$INSTDIR"
     File /r "C:\Users\Alex\Desktop\krpano-1.19-pr14\"
-    File /r "C:\Users\Alex\Documents\Firefox64\"
+    File /r "Firefox64\"
     
     ;EnVar::SetHKLM
     EnVar::AddValue "Path" "$INSTDIR"
@@ -197,7 +197,7 @@ Section "Uninstall"
 
   RMDir "$INSTDIR"
 
-  ;DeleteRegKey /ifempty HKCU "Software\Modern UI Test"
+  ;DeleteRegKey /ifempty HKCU "Software\PtoolClient"
 
 SectionEnd
 

@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<Projects>
+	<PublishOrientedImageryCatalog>
+		<StartTime>20200829T091016</StartTime>
+		<EndTime>20200829T091021</EndTime>
+		<TotalDuration>5</TotalDuration>
+		<VersionCheck>
+			<Message>
+				Checking for updates..
+				<Error>
+					<type>warning</type>
+					<text>Installed version is the latest version.</text>
+				</Error>
+			</Message>
+			<Duration>1</Duration>
+		</VersionCheck>
+		<Message>Updating Oriented Imagery Catalog</Message>
+		<Message>Done</Message>
+	</PublishOrientedImageryCatalog>
+</Projects>

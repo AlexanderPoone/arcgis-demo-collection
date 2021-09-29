@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<Projects>
+	<AddImagesToOrientedImagery>
+		<StartTime>20200610T155629</StartTime>
+		<EndTime>20200610T155718</EndTime>
+		<TotalDuration>48</TotalDuration>
+		<VersionCheck>
+			<Message>Checking for updates..</Message>
+			<Duration>0</Duration>
+		</VersionCheck>
+		<Message>Input type: ImageList</Message>
+		<Message>Extracting parameters..</Message>
+		<Message>Extracting input parameters..</Message>
+		<Message>Input file: C:\Users\Alex\Desktop\jpglist.txt</Message>
+		<Message>Inserted row for: http://demo2.hkgisportal.com/Panorama/190628_063113192.jpg</Message>
+		<Message>Extracted Data for 2 of 8</Message>
+		<Message>Inserted row for: http://demo2.hkgisportal.com/Panorama/190628_063113940.jpg</Message>
+		<Message>Extracted Data for 3 of 8</Message>
+		<Message>Inserted row for: http://demo2.hkgisportal.com/Panorama/190628_063113570.jpg</Message>
+		<Message>Extracted Data for 4 of 8</Message>
+		<Message>Inserted row for: http://demo2.hkgisportal.com/Panorama/190628_063113444.jpg</Message>
+		<Message>Extracted Data for 5 of 8</Message>
+		<Message>Inserted row for: http://demo2.hkgisportal.com/Panorama/190628_063113696.jpg</Message>
+		<Message>Extracted Data for 6 of 8</Message>
+		<Message>Inserted row for: http://demo2.hkgisportal.com/Panorama/190628_063114194.jpg</Message>
+		<Message>Extracted Data for 7 of 8</Message>
+		<Message>Inserted row for: http://demo2.hkgisportal.com/Panorama/190628_063114067.jpg</Message>
+		<Message>Extracted Data for 8 of 8</Message>
+		<Message>Inserted row for: http://demo2.hkgisportal.com/Panorama/190628_063113814.jpg</Message>
+		<Message>Successfully added list of images.</Message>
+		<Message>Done</Message>
+	</AddImagesToOrientedImagery>
+</Projects>

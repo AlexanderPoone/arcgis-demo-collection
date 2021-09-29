@@ -1,0 +1,57 @@
+<?xml version="1.0" ?>
+<Projects>
+	<AddImagesToOrientedImagery>
+		<StartTime>20200708T155941</StartTime>
+		<EndTime>20200708T160056</EndTime>
+		<TotalDuration>74</TotalDuration>
+		<VersionCheck>
+			<Message>Checking for updates..</Message>
+			<Duration>0</Duration>
+		</VersionCheck>
+		<Message>Input type: ImageList</Message>
+		<Message>Extracting parameters..</Message>
+		<Message>Extracting input parameters..</Message>
+		<Message>Input file: C:\Users\Alex\Desktop\jpglist2.txt</Message>
+		<Message>Inserted row for: http://demo2.hkgisportal.com/Panorama/190628_063100928.jpg</Message>
+		<Message>Inserted row for: http://demo2.hkgisportal.com/Panorama/190628_063059431.jpg</Message>
+		<Message>Inserted row for: http://demo2.hkgisportal.com/Panorama/190628_063100686.jpg</Message>
+		<Message>Extracted Data for 4 of 30</Message>
+		<Message>Inserted row for: http://demo2.hkgisportal.com/Panorama/190628_063101559.jpg</Message>
+		<Message>Inserted row for: http://demo2.hkgisportal.com/Panorama/190628_063058304.jpg</Message>
+		<Message>Inserted row for: http://demo2.hkgisportal.com/Panorama/190628_063101803.jpg</Message>
+		<Message>Extracted Data for 7 of 30</Message>
+		<Message>Inserted row for: http://demo2.hkgisportal.com/Panorama/190628_063101685.jpg</Message>
+		<Message>Inserted row for: http://demo2.hkgisportal.com/Panorama/190628_063101307.jpg</Message>
+		<Message>Inserted row for: http://demo2.hkgisportal.com/Panorama/190628_063058178.jpg</Message>
+		<Message>Extracted Data for 10 of 30</Message>
+		<Message>Inserted row for: http://demo2.hkgisportal.com/Panorama/190628_063059684.jpg</Message>
+		<Message>Inserted row for: http://demo2.hkgisportal.com/Panorama/190628_063059801.jpg</Message>
+		<Message>Inserted row for: http://demo2.hkgisportal.com/Panorama/190628_063058052.jpg</Message>
+		<Message>Extracted Data for 13 of 30</Message>
+		<Message>Inserted row for: http://demo2.hkgisportal.com/Panorama/190628_063058430.jpg</Message>
+		<Message>Inserted row for: http://demo2.hkgisportal.com/Panorama/190628_063059053.jpg</Message>
+		<Message>Inserted row for: http://demo2.hkgisportal.com/Panorama/190628_063100179.jpg</Message>
+		<Message>Extracted Data for 16 of 30</Message>
+		<Message>Inserted row for: http://demo2.hkgisportal.com/Panorama/190628_063100560.jpg</Message>
+		<Message>Inserted row for: http://demo2.hkgisportal.com/Panorama/190628_063059179.jpg</Message>
+		<Message>Inserted row for: http://demo2.hkgisportal.com/Panorama/190628_063059927.jpg</Message>
+		<Message>Extracted Data for 19 of 30</Message>
+		<Message>Inserted row for: http://demo2.hkgisportal.com/Panorama/190628_063058801.jpg</Message>
+		<Message>Inserted row for: http://demo2.hkgisportal.com/Panorama/190628_063100305.jpg</Message>
+		<Message>Inserted row for: http://demo2.hkgisportal.com/Panorama/190628_063101433.jpg</Message>
+		<Message>Extracted Data for 22 of 30</Message>
+		<Message>Inserted row for: http://demo2.hkgisportal.com/Panorama/190628_063059305.jpg</Message>
+		<Message>Inserted row for: http://demo2.hkgisportal.com/Panorama/190628_063058556.jpg</Message>
+		<Message>Inserted row for: http://demo2.hkgisportal.com/Panorama/190628_063058927.jpg</Message>
+		<Message>Extracted Data for 25 of 30</Message>
+		<Message>Inserted row for: http://demo2.hkgisportal.com/Panorama/190628_063100802.jpg</Message>
+		<Message>Inserted row for: http://demo2.hkgisportal.com/Panorama/190628_063101180.jpg</Message>
+		<Message>Inserted row for: http://demo2.hkgisportal.com/Panorama/190628_063101054.jpg</Message>
+		<Message>Extracted Data for 28 of 30</Message>
+		<Message>Inserted row for: http://demo2.hkgisportal.com/Panorama/190628_063100053.jpg</Message>
+		<Message>Inserted row for: http://demo2.hkgisportal.com/Panorama/190628_063100433.jpg</Message>
+		<Message>Inserted row for: http://demo2.hkgisportal.com/Panorama/190628_063059558.jpg</Message>
+		<Message>Successfully added list of images.</Message>
+		<Message>Done</Message>
+	</AddImagesToOrientedImagery>
+</Projects>

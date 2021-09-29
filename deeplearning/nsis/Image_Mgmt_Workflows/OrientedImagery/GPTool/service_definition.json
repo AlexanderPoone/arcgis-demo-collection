@@ -1,0 +1,54 @@
+{
+	"name": "EmptyServiceName",
+	"currentVersion": 10.51,
+	"copyrightText": "",
+	"enableZDefaults": false,
+	"serviceDescription": "",
+	"description": "",
+	"maxRecordCount": 1000,
+	"supportedQueryFormats": "JSON, geoJSON",
+	"capabilities": "Query,Update,Editing,Sync",
+	"hasVersionedData": false,
+	"allowGeometryUpdates": true,
+	"units": "esriMeters",
+	"syncEnabled": true,
+	"editorTrackingInfo": {
+		"enableEditorTracking": false,
+		"enableOwnershipAccessControl": false,
+		"allowOthersToUpdate": true,
+		"allowOthersToDelete": false,
+		"allowOthersToQuery": true
+	},
+	"supportsDisconnectedEditing": false,
+	"xssPreventionInfo": {
+		"xssPreventionEnabled": true,
+		"xssPreventionRule": "InputOnly",
+		"xssInputRule": "rejectInvalid"
+	},
+	"syncCapabilities": {
+		"supportsRegisteringExistingData": true,
+		"supportsSyncDirectionControl": true,
+		"supportsPerLayerSync": true,
+		"supportsPerReplicaSync": false,
+		"supportsRollbackOnFailure": false,
+		"supportsAsync": true,
+		"supportsSyncModelNone": true,
+		"supportsAttachmentsSyncDirection": true
+	},
+	"supportsApplyEditsWithGlobalIds": true,
+	"tables": [],
+	"initialExtent": {
+		"xmin": -13630340.9935,
+		"ymin": 4519124.853286279,
+		"xmax": -13615003.977,
+		"ymax": 4532627.391199999,
+		"spatialReference": {
+			"wkid": 102100,
+			"latestWkid": 3857
+		}
+	},
+	"spatialReference": {
+		"wkid": 102100,
+		"latestWkid": 3857
+	}
+}

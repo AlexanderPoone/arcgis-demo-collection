@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<Projects>
+	<CreateCoverageFeatures>
+		<StartTime>20200529T111308</StartTime>
+		<EndTime>20200529T111308</EndTime>
+		<TotalDuration>0</TotalDuration>
+		<VersionCheck>
+			<Message>Checking for updates..</Message>
+			<Duration>0</Duration>
+		</VersionCheck>
+		<Message>
+			<Error>
+				<type>critical</type>
+				<text>Error in CreateCoverageFeatures:ERROR 000496: table is being edited
+Failed to execute (AddField).
+</text>
+			</Error>
+		</Message>
+		<Message>Done</Message>
+	</CreateCoverageFeatures>
+</Projects>

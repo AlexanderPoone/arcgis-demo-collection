@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<Projects>
+	<AddImagesToOrientedImagery>
+		<StartTime>20200610T151026</StartTime>
+		<EndTime>20200610T151043</EndTime>
+		<TotalDuration>16</TotalDuration>
+		<VersionCheck>
+			<Message>Checking for updates..</Message>
+			<Duration>0</Duration>
+		</VersionCheck>
+		<Message>Input type: ImageList</Message>
+		<Message>Extracting parameters..</Message>
+		<Message>Extracting input parameters..</Message>
+		<Message>Input file: C:\Users\Alex\Desktop\jpglist.txt</Message>
+		<Message>Extracted Data for 1 of 1</Message>
+		<Message>Inserted row for: http://dord.mynetgear.com/190628_063113444.jpg</Message>
+		<Message>Successfully added list of images.</Message>
+		<Message>Done</Message>
+	</AddImagesToOrientedImagery>
+</Projects>

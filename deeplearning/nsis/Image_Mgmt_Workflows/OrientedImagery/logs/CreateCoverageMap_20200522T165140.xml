@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<Projects>
+	<CreateCoverageMap>
+		<StartTime>20200522T165140</StartTime>
+		<EndTime>20200522T165140</EndTime>
+		<TotalDuration>0</TotalDuration>
+		<VersionCheck>
+			<Message>Checking for updates..</Message>
+			<Duration>0</Duration>
+		</VersionCheck>
+		<Message>
+			<Error>
+				<type>warning</type>
+				<text>No records found in the Coverage Map Layer. The Coverage Map will be blank. To rectify run Create Coverage Features first and re-run this tool.</text>
+			</Error>
+		</Message>
+		<Message>Done</Message>
+	</CreateCoverageMap>
+</Projects>

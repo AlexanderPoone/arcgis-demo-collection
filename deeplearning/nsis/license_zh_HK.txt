@@ -1,0 +1,31 @@
+﻿著作權和商標
+Esri 所有權認可
+Copyright © 2020 Esri China (Hong Kong). 
+保留所有權利。 
+
+本出版品包含的資訊為 Esri China (Hong Kong).
+及其任何相對著作權擁有者之專屬財產。
+
+Esri 授權給 esri.com 網站所包含的 Esri 資訊接收者，該接收者可基於個人、非商業用途（包括教學、課堂使用、獎學金和/或研究）以任意重製、重新分配、重新廣播和/或重新傳輸此資訊。所有副本（無論是部分還是全部）均應包括適當的 Esri 著作權聲明。
+
+除非經過 Esri 明確的書面認可，否則不得以任何形式或任何電子或機械方式（包括影印和錄製），或藉助任何資訊儲存體或擷取系統，基於商業用途以重製或傳輸本出版品的任何內容。
+
+可透過電子郵件傳送權限的相關問題或請求。
+數位千年著作權法政策
+首頁包含的資訊如有更改，恕不另行通知。
+
+免責聲明
+已產生首頁作為參考用途，以服務 Esri 一般使用者和地理資訊系統 (GIS) 社群。不應將第三方的促銷資訊和/或資料的任何清單和/或貼文視為 Esri 所贊助，包括但不限於任何子頁面、副本、軟體、程式碼和/或資料。此處列出和/或發佈的所有第三方資訊和/或材料的任何進一步資訊和/或支援，均由相應的第三方直接提供。由於網際網路並非安全網路，因此 Esri 建議您在使用從首頁下載的所有材料之前必須先檢查是否感染電腦病毒，避免對您的系統、軟體和/或資料造成任何潛在損害。
+
+保固和有限責任
+此處包含的資訊和/或材料依「原狀」提供，並且未進行任何明示或暗示保證，包括但不限於適售性、適合特定用途或非侵權之隱含保證。
+
+Esri 對您決定使用此首頁所列出和/或發佈的任何資訊和/或材料的相關事宜，皆不承擔直接、間接、特殊、偶發或後續損失之責任，即使 Esri 事先被告知此類損害之可能性亦然。
+
+政府商業項目權利
+此處提供的任何商業項目軟體、線上服務、文件和/或資料皆受授權合約條款約束。將在不抵觸聯邦法律的商業授權條款和條件的情況下，依據授權合約的商業授權權利以嚴格約束被授權人對軟體、線上服務、資料和文件的使用、重製或披露。在適合情況下，權利、存取和使用情況必須遵守 FAR §§12.211/12.212 或 DFARS §227.7202 之規定。將根據美國著作權法保留取消發佈權利。將根據第三方 OSS/FOSS 軟體認可文件所說明的各種開放原始碼授權來提供開放原始碼軟體。
+
+Esri 商標
+@esri.com、3D Analyst、ACORN、Address Coder、ADF、AML、ArcAtlas、ArcCAD、ArcCatalog、ArcCOGO、ArcData、ArcDoc、ArcEdit、ArcEditor、ArcEurope、ArcExplorer、ArcExpress、ArcGIS、arcgis.com、ArcGlobe、ArcGrid、ArcIMS、ARC/INFO、ArcInfo、ArcInfo Librarian、ArcLessons、ArcLocation、ArcLogistics、ArcMap、ArcNetwork、ArcNews、ArcObjects、ArcOpen、ArcPad、ArcPlot、ArcPress、ArcPy、ArcQuest、ArcReader、ArcScan、ArcScene、ArcSchool、ArcScripts、ArcSDE、ArcSdl、ArcSketch、ArcStorm、ArcSurvey、ArcTIN、ArcToolbox、ArcTools、ArcUSA、ArcUser、ArcView、ArcVoyager、ArcWatch、ArcWeb、ArcWorld、ArcXML、Atlas GIS、AtlasWare、Avenue、BAO、Business Analyst、Business Analyst Online、BusinessMAP、CityEngine、Community、Community Analyst、CommunityInfo、Community Maps、Companion、Database Integrator、DBI Kit、Drone2Map、EDN、Esri、esri.com、Esri—Team GIS、Esri—The GIS Company、Esri—The GIS People、Esri—The GIS Software Leader、FormEdit、GeoCollector、GeoEnrichment、GeoEvent、Geographic Design System、Geography Matters、Geography Network、geographynetwork.com、Geoloqi、GeoPlanner、Geoportal、Geotrigger、GIS by Esri、gis.com、GISData Server、GIS Day、gisday.com、GIS for Everyone、Indoors、Insights、JTX、MapIt、Maplex、MapObjects、MapStudio、ModelBuilder、MOLE、MPS—Atlas、Ortho Maker、PLTS、Rent-a-Tech、SDE、SML、Sourcebook•America、SpatiaLABS、Spatial Analyst、Spatial Database Engine、Story Map Basic、Story Map Cascade、Story Map Crowdsource、Story Map Journal、Story Map Shortlist、Story Map Spyglass、Story Map Swipe、Story Map Series、Story Map Tour、StreetMap、Tapestry、ARC/INFO 標誌、ArcGIS Explorer 標誌、ArcGIS 標誌、ArcPad 標誌、Esri globe 標誌、Esri Press 標誌、Geographic Advantage、Geographic Approach、GIS Day 標誌、MapIt 標誌、Science of Where、World's Leading Desktop GIS、Water Writes 和您的個人地理資訊系統，為 Esri 在美國、歐盟或其他特定轄區之商標、服務標誌或註冊商標。
+
+本出版品提及的其他公司和產品，可能是其各自標誌擁有者的商標、服務標誌或註冊標誌。

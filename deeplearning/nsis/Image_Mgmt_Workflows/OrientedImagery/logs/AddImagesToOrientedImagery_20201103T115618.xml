@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<Projects>
+	<AddImagesToOrientedImagery>
+		<StartTime>20201103T115618</StartTime>
+		<EndTime>20201103T115618</EndTime>
+		<TotalDuration>0</TotalDuration>
+		<VersionCheck>
+			<Message>
+				Checking for updates..
+				<Error>
+					<type>warning</type>
+					<text>Update Available. Please read C:\Image_Mgmt_Workflows\OrientedImagery\Scripts\CheckForUpdate.json</text>
+				</Error>
+			</Message>
+			<Duration>0</Duration>
+		</VersionCheck>
+		<Message>
+			<Error>
+				<type>critical</type>
+				<text>Error in adding images to oriented imagery catalog [Errno 2] No such file or directory: 'C:/Users/Alex/Desktop/testtest3.txt'</text>
+			</Error>
+		</Message>
+		<Message>Done</Message>
+	</AddImagesToOrientedImagery>
+</Projects>

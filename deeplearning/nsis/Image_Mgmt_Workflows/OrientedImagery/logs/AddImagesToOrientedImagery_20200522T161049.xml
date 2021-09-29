@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<Projects>
+	<AddImagesToOrientedImagery>
+		<StartTime>20200522T161032</StartTime>
+		<EndTime>20200522T161049</EndTime>
+		<TotalDuration>16</TotalDuration>
+		<VersionCheck>
+			<Message>Checking for updates..</Message>
+			<Duration>0</Duration>
+		</VersionCheck>
+		<Message>Input type: Images</Message>
+		<Message>Extracting parameters..</Message>
+		<Message>Extracting input parameters..</Message>
+		<Message>Extracted Data for 1 of 1</Message>
+		<Message>Inserted row for: http://dord.mynetgear.com/190629_003204882_Camera_0.jpg</Message>
+		<Message>Successfully added images.</Message>
+		<Message>Done</Message>
+	</AddImagesToOrientedImagery>
+</Projects>

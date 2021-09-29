@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<Projects>
+	<AddImagesToOrientedImagery>
+		<StartTime>20200522T100015</StartTime>
+		<EndTime>20200522T100033</EndTime>
+		<TotalDuration>17</TotalDuration>
+		<VersionCheck>
+			<Message>Checking for updates..</Message>
+			<Duration>0</Duration>
+		</VersionCheck>
+		<Message>Input type: Images</Message>
+		<Message>Extracting parameters..</Message>
+		<Message>
+			Extracting input parameters..
+			<Error>
+				<type>warning</type>
+				<text>b&quot;ERROR 4: `C:\\Users\\Alex\\Desktop\\jpglist.txt' not recognized as a supported file format.\r\n\r\ngdalinfo failed - unable to open 'C:\\Users\\Alex\\Desktop\\jpglist.txt'.\r\n&quot;</text>
+			</Error>
+		</Message>
+		<Message>Successfully added images.</Message>
+		<Message>Done</Message>
+	</AddImagesToOrientedImagery>
+</Projects>

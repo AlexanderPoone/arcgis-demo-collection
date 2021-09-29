@@ -1,0 +1,44 @@
+inputOIC
+C:\Users\Alex\Documents\ArcGIS\Projects\MyProject27\TEST.OIC
+C:\Users\Alex\Documents\ArcGIS\Projects\MyProject27\TEST.OICinputType
+ImageList
+ImageListinputFile
+C:\Users\Alex\Desktop\winghong.txt
+C:\Users\Alex\Desktop\winghong.txtinputFolder
+None
+NonefileFilter
+None
+Nonedem
+None
+NonerenderingRule
+None
+NonecustomParameters
+None
+NoneimageryType
+Terrestrial 360 Camera
+Terrestrial 360 CameraOIType
+Bubble
+BubbleCamHeading
+0
+0CamPitch
+90
+90CamRoll
+0
+0HFOV
+360
+360VFOV
+180
+180AvgHtAG
+2.5
+2.5NearDist
+0
+0FarDist
+30
+30MaxDistance
+50
+50ImgRot
+None
+NoneaddImages{'inputOIC': <geoprocessing parameter object object at 0x0000027244176CF0>, 'inputType': <geoprocessing parameter object object at 0x00000272441788B0>, 'inputFile': <geoprocessing parameter object object at 0x0000027244178CB0>, 'inputFolder': <geoprocessing parameter object object at 0x00000272441789B0>, 'fileFilter': <geoprocessing parameter object object at 0x00000272441789F0>, 'dem': <geoprocessing parameter object object at 0x0000027244179470>, 'renderingRule': <geoprocessing parameter object object at 0x00000272441790F0>, 'customParameters': <geoprocessing parameter object object at 0x00000272441792F0>, 'imageryType': <geoprocessing parameter object object at 0x0000027244179730>, 'OIType': <geoprocessing parameter object object at 0x0000027244179930>, 'CamHeading': <geoprocessing parameter object object at 0x00000272441798F0>, 'CamPitch': <geoprocessing parameter object object at 0x000002724417B6F0>, 'CamRoll': <geoprocessing parameter object object at 0x000002724417B6B0>, 'HFOV': <geoprocessing parameter object object at 0x000002724417B9F0>, 'VFOV': <geoprocessing parameter object object at 0x000002724417B7B0>, 'AvgHtAG': <geoprocessing parameter object object at 0x000002724417B130>, 'NearDist': <geoprocessing parameter object object at 0x000002724417BA70>, 'FarDist': <geoprocessing parameter object object at 0x000002724417B370>, 'MaxDistance': <geoprocessing parameter object object at 0x000002724417B470>, 'ImgRot': <geoprocessing parameter object object at 0x000002724417B270>}
+{'ImageryType': 'Terrestrial 360 Camera', 'OIType': 'Bubble', 'CamHeading': '0', 'CamPitch': '90', 'CamRoll': '0', 'HFOV': '360', 'VFOV': '180', 'AvgHtAG': '2.5', 'NearDist': '0', 'FarDist': '30', 'MaxDistance': '50', 'ImgRot': None}
+<logger.Logger object at 0x0000027244181C18>
+True

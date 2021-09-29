@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<Projects>
+	<AddImagesToOrientedImagery>
+		<StartTime>20200720T170154</StartTime>
+		<EndTime>20200720T170226</EndTime>
+		<TotalDuration>32</TotalDuration>
+		<VersionCheck>
+			<Message>Checking for updates..</Message>
+			<Duration>0</Duration>
+		</VersionCheck>
+		<Message>Input type: Images</Message>
+		<Message>Extracting parameters..</Message>
+		<Message>
+			Extracting input parameters..
+			<Error>
+				<type>warning</type>
+				<text>b&quot;ERROR 4: `/vsicurl/http://dord.mynetgear.com/KowloonBayPanoramicOIC_VAFW7.mp4' not recognized as a supported file format.\r\n\r\ngdalinfo failed - unable to open '/vsicurl/http://dord.mynetgear.com/KowloonBayPanoramicOIC_VAFW7.mp4'.\r\n&quot;</text>
+			</Error>
+		</Message>
+		<Message>Successfully added images.</Message>
+		<Message>Done</Message>
+	</AddImagesToOrientedImagery>
+</Projects>

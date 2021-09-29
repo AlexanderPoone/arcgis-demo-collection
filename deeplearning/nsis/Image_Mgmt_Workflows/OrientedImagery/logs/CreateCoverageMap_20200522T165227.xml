@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<Projects>
+	<CreateCoverageMap>
+		<StartTime>20200522T165226</StartTime>
+		<EndTime>20200522T165227</EndTime>
+		<TotalDuration>1</TotalDuration>
+		<VersionCheck>
+			<Message>Checking for updates..</Message>
+			<Duration>0</Duration>
+		</VersionCheck>
+		<Message>Vector Tile Package created for oic_noorient</Message>
+		<Message>Done</Message>
+	</CreateCoverageMap>
+</Projects>

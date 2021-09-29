@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<Projects>
+	<CreateCoverageFeatures>
+		<StartTime>20200529T114527</StartTime>
+		<EndTime>20200529T114528</EndTime>
+		<TotalDuration>1</TotalDuration>
+		<VersionCheck>
+			<Message>Checking for updates..</Message>
+			<Duration>0</Duration>
+		</VersionCheck>
+		<Message>Output feature class path:C:\Users\Alex\Documents\ArcGIS\Projects\MyProject10\MyProject10.gdb\OICwDepthMap_CoverageMap</Message>
+		<Message>Added row 1</Message>
+		<Message>Done</Message>
+	</CreateCoverageFeatures>
+</Projects>
