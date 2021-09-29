@@ -10,7 +10,7 @@ The geoprocessing tool **Polygon Neighbours** is used to find neighbouring units
 
 ## Sensor Readings
 
-To change the readings of sensors (for demonstration only), run `python [**outside_controller.py**](outside_controller.py)`. No remote desktop is needed.
+To change the readings of sensors (for demonstration only), run `python `[**outside_controller.py**](outside_controller.py). No remote desktop is needed.
 
 ### Future Enhancements
 Some data wrangling is needed. Hopefully we may release a ModelBuilder to automate data preprocessing.
