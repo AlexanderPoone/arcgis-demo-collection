@@ -45,4 +45,5 @@ class PropagatePitchRoll(object):
 
 	def execute(self, parameters, messages):
 		resultTbl = arcpy.conversion.ExcelToTable(parameters[0].valueAsText)
+		arcpy.management.CalculateField(resultTbl, 'joinField', '$Name$.split("/")')
 		arcpy.management.Merge([resultTbl, parameters[1].valueAsText])
