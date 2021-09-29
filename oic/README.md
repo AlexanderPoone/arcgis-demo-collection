@@ -15,7 +15,7 @@ To use tools like Measurement and Line of Sight in Overlay Mode, you need to add
  -->
 A custom ArcGIS geoprocessing toolbox (see figure below, [`osm_buildings_to_feature_lyr.pyt`](osm_buildings_to_feature_lyr.pyt)) is made using the [Overpass API Interpreter](https://lz4.overpass-api.de/api/interpreter) to convert OSM-Buildings into extruded features. It is not possible to directly import GeoJSON from OSM-Buildings into ArcGIS Pro, because the GeoJSON format is quite unstructured. Without a fixed schema, some records probably have missing attributes. Therefore, you should use the toolbox instead. It can get attributes such as building names.
 
-![Fig. 1](img/get_buildings_in_any_city.png)
+![Fig. 1](img/osm_toolbox/get_buildings_in_any_city.png)
 
 The retrieved 3D models are not supposed to be used out-of-the-box. It is meant to be a base mesh that has to be double-checked and altered.
 
