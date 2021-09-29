@@ -19,7 +19,7 @@ In ArcGIS Pro, create a new **Scene** if you have not done it.
 
 ![Step 2](img/oic_toolbox/step2.png)
 
-3. In the Geoprocessing panel, search *exif*.
+3. In the Geoprocessing panel, search *exif* and open the tool.
 
 ![Step 3](img/oic_toolbox/step3.png)
 
@@ -59,9 +59,15 @@ In ArcGIS Pro, create a new **Scene** if you have not done it.
 
 ![Step 12](img/oic_toolbox/step12.png)
 
-13. Choose the **jointable.xlsx** created from Step 4. It should be in the same folder of your KML file.
+13. In the Geoprocessing panel, search *propagate* and open the tool.
 
 ![Step 13](img/oic_toolbox/step13.png)
+
+14. Choose the **jointable.xlsx** created from Step 4. It should be in the same folder of your KML file.
+
+![Step 14](img/oic_toolbox/step14.png)
+
+15.
 
 ## Riegl Start
 ...
