@@ -24,6 +24,13 @@ class PropagatePitchRoll(object):
 
 	def getParameterInfo(self):
 		# Input
+		in_oic = arcpy.Parameter(
+			displayName="Input Oriented Imagery Catalog",
+			name="in_oic",
+			datatype=["DEFile", "GPGroupLayer"],
+			parameterType="Required",
+			direction="Input")		# Input
+
 		in_xlsx = arcpy.Parameter(
 			displayName="jointable.xlsx",
 			name="in_xlsx",
@@ -32,10 +39,10 @@ class PropagatePitchRoll(object):
 			direction="Input")
 		in_xlsx.filter.list = ['xlsx']
 
-		parameters = [in_xlsx]
+		parameters = [in_oic, in_xlsx]
 		
 		return parameters
 
 	def execute(self, parameters, messages):
-		arcpy.conversion.ExcelToTable
-		arcpy.management.Merge
+		resultTbl = arcpy.conversion.ExcelToTable(parameters[0].valueAsText)
+		arcpy.management.Merge([resultTbl, parameters[1].valueAsText])
