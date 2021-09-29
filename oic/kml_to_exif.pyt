@@ -78,6 +78,6 @@ class KMLToExif(object):
 			i += 1
 
 		df = DataFrame.from_dict(data, orient='index')
-		df.to_excel('jointable.xlsx')
+		df.to_excel('jointable.xlsx', index=False)
 
 		return True
