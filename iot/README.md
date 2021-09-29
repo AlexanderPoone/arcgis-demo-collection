@@ -8,5 +8,9 @@ This is a clone of the [Coolmaps NYC Work Orders](https://coolmaps.esri.com/NYC/
 
 The geoprocessing tool **Polygon Neighbours** is used to find neighbouring units of selected flats.
 
+## Sensor Readings
+
+To change the readings of sensors (for demonstration only), run `python [**outside_controller.py**](outside_controller.py)`. No remote desktop is needed.
+
 ### Future Enhancements
 Some data wrangling is needed. Hopefully we may release a ModelBuilder to automate data preprocessing.
