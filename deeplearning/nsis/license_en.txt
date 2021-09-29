@@ -1,6 +1,6 @@
 ﻿Copyrights and Trademarks
 Esri Proprietary Rights Acknowledgment
-Copyright © 2020 Esri China (Hong Kong). 
+Copyright © 2021 Esri China (Hong Kong). 
 All rights reserved. 
 
 The information contained in this work is the exclusive property of Environmental Systems Research Institute, Inc. (Esri), and any respective copyright owners.

@@ -2,4 +2,4 @@
 *.tiff
 *.zip
 *.pyt.xml
-dir_to_ignore/
+_internal/
