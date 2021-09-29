@@ -14,6 +14,7 @@ from os.path import dirname
 from re import findall
 from subprocess import check_output
 import xml.etree.ElementTree as ET
+import warnings
 
 class Toolbox(object):
 	def __init__(self):
@@ -42,21 +43,34 @@ class KMLToExif(object):
 		
 		return parameters
 
+	def decdeg2dms(self, dd):
+		mnt,sec = divmod(dd*3600,60)
+		deg,mnt = divmod(mnt,60)
+		return deg,mnt,sec
 
 	def execute(self, parameters, messages):
+		warnings.filterwarnings("ignore", category=DeprecationWarning) 
+
 		try:
-			a = check_output('conda install -y openpyxl pandas pil piexif')
+			a = check_output('conda install -y openpyxl pandas pil')
+		except:
+			pass
+		try:
+			sysPath = 'C:\\Program Files\\ArcGIS\\Pro\\bin\\Python\\envs\\arcgispro-py3'		  #sys.path[4]
+			a=check_output([fr"{sysPath}\python.exe", fr"{sysPath}\Scripts\pip-script.py", "install", "piexif"])
+			#a = check_output('conda install -y -c conda-forge piexif')
 		except:
 			pass
 
 		from pandas import DataFrame
+		from piexif import load, dump
 		from PIL import Image
 
 		##########################################
 		tree = ET.parse(parameters[0].valueAsText)
 
 		chdir(dirname(parameters[0].valueAsText))
-
+		arcpy.AddMessage(dirname(parameters[0].valueAsText))
 		ns = findall(r'\{.*?\}',tree.getroot().tag)[0]
 
 		data = {}
@@ -65,13 +79,37 @@ class KMLToExif(object):
 		for photo in tree.findall(f'.//{ns}PhotoOverlay'):
 			path = photo.find(f'{ns}Icon').getchildren()[0].text
 			_,_,_,heading,tilt,roll = [float(x.text) for x in photo.find(f'{ns}Camera').getchildren()]
-			x,y,z = [float(x) for x in photo.find(f'{ns}Point').getchildren()[0].text.split(',')]    # KML always use (lng, lat)
+			x,y,z = [float(x) for x in photo.find(f'{ns}Point').getchildren()[0].text.split(',')]	# KML always use (lng, lat)
 
 			try:
+				arcpy.AddMessage(path)
+
 				im = Image.open(path)
-			except:
+				try:
+					exif_dict = load(im.info["exif"])
+				except:
+					exif_dict = {}
+					pass
+
+				xRes = self.decdeg2dms(y)
+				degX = xRes[0]
+				minutesX = xRes[1]
+				secondsX = xRes[2]
+
+				yRes = self.decdeg2dms(x)
+				degY = yRes[0]
+				minutesY = yRes[1]
+				secondsY = yRes[2]
+
+				# 11 and 13 are reserved for PitchAngle and RollAngle
+
+				exif_dict['GPS'] = {0: (2, 2, 0, 0), 1: b'N', 2: ((int(degX), 1), (int(minutesX), 1), (int(round(secondsX*1000)), 1000)), 3: b'E', 4: ((int(degY), 1), (int(minutesY), 1), (int(round(secondsY*1000)), 1000)), 5: 0, 6: (int(round(z*1000)), 1000), 17: (int(round(heading * 100)), 100), 18: b'WGS-8', 24: (int(round(heading * 100)), 100)}#, 29: dates}
+
+				exif_bytes = dump(exif_dict)
+				im.save(path, "jpeg", exif=exif_bytes)
+			except Exception as e:
 				# Log goes here
-				pass
+				arcpy.AddMessage(str(e))
 
 			data[i] = {'Name': path, 'CamHeading': heading, 'CamPitch': tilt, 'CamRoll': roll, 'POINT_X': x, 'POINT_Y': y, 'POINT_Z': z}
 
