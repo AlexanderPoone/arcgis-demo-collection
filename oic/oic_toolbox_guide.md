@@ -27,6 +27,14 @@ In ArcGIS Pro, create a new **Scene** if you have not done it.
 
 ![Step 4](img/oic_toolbox/step4.png)
 
+5. If you see the success message below, you can now move your images into an Internet storage.
+
+![Step 5](img/oic_toolbox/step5.png)
+
+6. After the move is done, prepare a list of URLs of those images. You may copy the output of the command `for %f in ("*.jpg","*.jpeg","*.png") do @echo %f` on a regular Windows command prompt.
+
+![Step 6](img/oic_toolbox/step6.png)
+
 ## Riegl Start
 ...
 
