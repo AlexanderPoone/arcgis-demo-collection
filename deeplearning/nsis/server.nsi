@@ -7,10 +7,10 @@
 ;--------------------------------
 ;Include Modern UI
 
-  !include "MUI2.nsh"
-  !include "LogicLib.nsh"
+!include "MUI2.nsh"
+!include "LogicLib.nsh"
 
-!define MUI_ICON "C:\Users\Alex\Desktop\favicon.ico"
+!define MUI_ICON "favicon.ico"
 
 BrandingText "Esri China (Hong Kong)"
 ;--------------------------------
@@ -27,7 +27,7 @@ BrandingText "Esri China (Hong Kong)"
   InstallDir "$PROGRAMFILES64\Video Server for Oriented Images"
   
   ;Get installation folder from registry if available
-  ;InstallDirRegKey HKCU "Software\Modern UI Test" ""
+  ;InstallDirRegKey HKCU "Software\PtoolServer" ""
 
   ;Request application privileges for Windows Vista
   RequestExecutionLevel admin
@@ -45,7 +45,7 @@ BrandingText "Esri China (Hong Kong)"
 
   ;Remember the installer language
   ;!define MUI_LANGDLL_REGISTRY_ROOT "HKCU" 
-  ;!define MUI_LANGDLL_REGISTRY_KEY "Software\Modern UI Test" 
+  ;!define MUI_LANGDLL_REGISTRY_KEY "Software\PtoolServer" 
   ;!define MUI_LANGDLL_REGISTRY_VALUENAME "Installer Language"
 
 ;--------------------------------
@@ -72,8 +72,8 @@ BrandingText "Esri China (Hong Kong)"
   !insertmacro MUI_LANGUAGE "English" ; The first language is the default language
   !insertmacro MUI_LANGUAGE "TradChinese"
 
-LicenseLangString localizedLicenseFile ${LANG_ENGLISH} "${NSISDIR}\Examples\license_en.txt"
-LicenseLangString localizedLicenseFile ${LANG_TRADCHINESE} "${NSISDIR}\Examples\license_zh_HK.txt"
+LicenseLangString localizedLicenseFile ${LANG_ENGLISH} "license_en.txt"
+LicenseLangString localizedLicenseFile ${LANG_TRADCHINESE} "license_zh_HK.txt"
 ;--------------------------------
 ;Reserve Files
   
@@ -135,7 +135,7 @@ FunctionEnd
 
   ;Assign descriptions to sections
   !insertmacro MUI_FUNCTION_DESCRIPTION_BEGIN
-    !insertmacro MUI_DESCRIPTION_TEXT ${ServerPackage} "The server."
+  !insertmacro MUI_DESCRIPTION_TEXT ${ServerPackage} "The server."
   !insertmacro MUI_FUNCTION_DESCRIPTION_END
 
  
@@ -152,7 +152,7 @@ Section "Uninstall"
 
   RMDir "$INSTDIR"
 
-  ;DeleteRegKey /ifempty HKCU "Software\Modern UI Test"
+  ;DeleteRegKey /ifempty HKCU "Software\PtoolServer"
 
 SectionEnd
 
@@ -161,6 +161,6 @@ SectionEnd
 
 Function un.onInit
 
-  !insertmacro MUI_UNGETLANGUAGE
+!insertmacro MUI_UNGETLANGUAGE
   
 FunctionEnd
