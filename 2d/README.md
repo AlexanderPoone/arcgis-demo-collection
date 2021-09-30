@@ -10,7 +10,7 @@ Usually, floor plan images have a background colour which is not transparent, be
 
 For example:
 
-[solaria_beige_background.jpg](solaria_beige_background.jpg)
+![solaria_beige_background.jpg](test_floor_plans/solaria_beige_background.jpg)
 
 (Copyright Ka Wah Properties, Free Use only)
 
@@ -21,13 +21,17 @@ The function will be implemented as an option.
 -->
 
 ```
-magick convert yellowJacket.jpg -fuzz 10% -transparent White out.png
+"ImageMagick-7.1.0-portable-Q16-x64/magick.exe" convert yellowJacket.jpg -fuzz 10% -transparent White out.png
 ```
 
 ```
-magick convert yellowJacket.jpg -fuzz 5% -fill Red -opaque White x.png
+"ImageMagick-7.1.0-portable-Q16-x64/magick.exe" convert yellowJacket.jpg -fuzz 5% -fill Red -opaque White x.png
 ```
 
 ```
-magick convert master.JPG -fuzz 5% -fill none -draw "matte 0,0 floodfill" result.png
+"ImageMagick-7.1.0-portable-Q16-x64/magick.exe" convert master.JPG -fuzz 5% -fill none -draw "matte 0,0 floodfill" result.png
 ```
+
+### Rotation
+
+Rotation directly modifies the image stored in Base64.
