@@ -29,7 +29,7 @@ class PropagatePitchRoll(object):
 			name="in_oic",
 			datatype=["DEFile", "GPGroupLayer"],
 			parameterType="Required",
-			direction="Input")		# Input
+			direction="Input")
 
 		in_xlsx = arcpy.Parameter(
 			displayName="jointable.xlsx",
@@ -45,5 +45,6 @@ class PropagatePitchRoll(object):
 
 	def execute(self, parameters, messages):
 		resultTbl = arcpy.conversion.ExcelToTable(parameters[1].valueAsText)
-		arcpy.management.CalculateField(resultTbl, 'joinField', '$Name$.split("/")')
-		arcpy.management.Merge([resultTbl, parameters[0].valueAsText], parameters[0].valueAsText)
+		arcpy.management.CalculateField(resultTbl, 'joinField', '$Name$.split("/")[-1]')
+		joined = arcpy.management.AddJoin(parameters[0].valueAsText, 'joinField', resultTbl, 'Name')
+		arcpy.management.CopyFeatures(joined, parameters[0].valueAsText)

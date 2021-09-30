@@ -84,7 +84,7 @@ Gather the 3D models you want to use, normally one model should have more than o
 
 ### Future enhancements
 
-More open-box options, highlight peak hours <!--, people left in queues-->
+More open-box options, highlight peak hours <!--, people left in queues, flying bus bug-->
 
 ### Common Questions
 
