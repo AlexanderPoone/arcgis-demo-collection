@@ -1,13 +1,27 @@
+##############################################
+#
+#	Automatic Bug Triage and Assignment by Topic Modelling
+#   Draft only
+#
+#	Author:			Alex Poon
+#	Date:		  	Sep 28, 2021
+#	Last update:  	Sep 29, 2021
+#
+##############################################
+
 from flask import Flask, jsonify, request, send_from_directory, abort, send_file
 from urllib.parse import unquote as u
 from urllib.request import urlopen, Request
+
+from gensim import corpora, models, similarities, downloader			# Topic Modelling
+
+#  Possibly a MongoDB database
+
 
 
 #  By topic modelling, word cloud maybe
 
 '''
-from gensim import corpora, models, similarities, downloader			# Topic Modelling
-
 def topicModelling():
 	"https://github.com/SoftFeta/SWEnggTestRepo"
 
