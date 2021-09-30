@@ -40,6 +40,7 @@ For the detection to be useful, some work needs to be done beforehand. First, ru
 | K614F | 1 | Lung Cheung Road / Clear Water Bay Road |
 | K614F | 2 | Lung Cheung Road / Clear Water Bay Road |
 
+
 <!-- lat	lng	TR119F Tuen Mun Road - Sam Shing Hui
 lat	lng	TR116F Tuen Mun Road - Siu Lam Section
 lat	lng	TR107F Tuen Mun Road - Sham Tseng Section
@@ -52,7 +53,7 @@ lat	lng	TW102F Kwai Chung Road near Container Terminal
 lat	lng	TW117F Castle Peak Road near Texaco Road North
 lat	lng	TW120F Tsuen Wan Road near Tai Chung Road -->
 
-For each recognition, the Python tool tests whether the centres of the bounding box is inside each polygon, and updates the Feature Layer according to the camera code detected and vehicle position (traffic lane).
+**The polygon masks have been pickled to a single file.** For each recognition, the Python tool tests whether the centres of the bounding box is inside each polygon, and updates the Feature Layer according to the camera code detected and vehicle position (traffic lane).
 
 ### Future enhancements
 

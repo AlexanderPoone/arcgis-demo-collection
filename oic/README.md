@@ -39,7 +39,7 @@ Calculate Intersections, Historical Panel
 The Python tool leverages the open-source MaskRCNN convolutional neural network (CNN) library bundled in the [`arcgis.learn` Python library](https://developers.arcgis.com/python/api-reference/arcgis.learn.toc.html). The neural network is designed for image segmentation. The segmented boundaries are not neccessarily continuous, it can be partially occluded by something else.
 
 ### Future enhancements
-i18n, more models
+**Support for irregular buildings (no longer uses extrusion, uses i3s 3DObjects instead)**, i18n, more models
 
 ### Demos
 * [Various locations](https://dord.mynetgear.com/oiclayout)
