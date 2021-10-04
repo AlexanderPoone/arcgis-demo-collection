@@ -17,28 +17,29 @@ For the detection to be useful, some work needs to be done beforehand. First, ru
 | Camera code     | Traffic lane | Mapping       |
 |-----------------|--------------|---------------|
 | H106F | 1 | Connaught Rd Central near Exchange Square |
-| H109F | 1 | Queen's Road Central near Garden Road |
-| H109F | 2 | Queen's Road Central near Garden Road |
+| H109F | 1 | Garden Road Flyover heading towards Cotton Tree Drive |
+| H109F | 2 | Queensway heading towards Queen's Road Central |
 | H207F | 1 | Cross Harbour Tunnel Hong Kong Side |
-| H210F | 1 | Aberdeen Tunnel - Wan Chai Side |
-| H210F | 2 | Aberdeen Tunnel - Wan Chai Side |
-| H210F | 3 | Aberdeen Tunnel - Wan Chai Side |
-| H801F | 1 | Island Eastern Corridor near Ka Wah Center |
-| H801F | 2 | Island Eastern Corridor near Ka Wah Center |
-| H801F | 3 | Island Eastern Corridor near Ka Wah Center |
-| K107F | 1 | Cross Harbour Tunnel Kownloon Side |
-| K107F | 2 | Cross Harbour Tunnel Kownloon Side |
-| K109F | 1 | Chatham Road near Prince Margaret Road |
-| K109F | 2 | Chatham Road near Prince Margaret Road |
-| K409F | 1 | Princess Margaret Road / Argyle Street |
-| K409F | 2 | Princess Margaret Road / Argyle Street |
+| H210F | 1 | Aberdeen Tunnel - Wan Chai Side (entering, southwards) |
+| H210F | 2 | Aberdeen Tunnel - Wan Chai Side (exiting, northwards) |
+| H210F | 3 | Wong Nai Chung Road / Queen's Road East |
+| H801F | 1 | Island Eastern Corridor near Ka Wah Center towards Central / Causeway Bay (westwards) |
+| H801F | 2 | Island Eastern Corridor near Ka Wah Center towards Eastern Harbour Crossing (eastwards) |
+| H801F | 3 | Island Eastern Corridor near Ka Wah Center towards Shau Kei Wan / Chai Wan (eastwards) |
+| K107F | 1 | Cross Harbour Tunnel Kownloon Side (exiting, northwards) |
+| K107F | 2 | Cross Harbour Tunnel Kownloon Side (entering, southwards) |
+| K109F | 1 | Chatham Road S near Prince Margaret Road (eastwards) |
+| K109F | 2 | Chatham Road S near Prince Margaret Road heading towards West Kowloon Corridor (westwards) |
+| K409F | 1 | Princess Margaret Road near Argyle Street |
+| K409F | 2 | Argyle Street Flyover near Princess Margaret Road (eastwards) |
+| K409F | 3 | Argyle Street Flyover near Princess Margaret Road (westwards) |
 | K502F | 1 | Waterloo Road / Cornwall Street |
 | K502F | 2 | Waterloo Road / Cornwall Street |
 | K502F | 3 | Waterloo Road / Cornwall Street |
 | K502F | 4 | Waterloo Road / Cornwall Street |
 | K502F | 5 | Waterloo Road / Cornwall Street |
-| K614F | 1 | Lung Cheung Road / Clear Water Bay Road |
-| K614F | 2 | Lung Cheung Road / Clear Water Bay Road |
+| K614F | 1 | Clear Water Bay Road (eastwards) |
+| K614F | 2 | Clear Water Bay Road towards Lung Cheung Road (westwards) |
 
 
 <!-- lat	lng	TR119F Tuen Mun Road - Sam Shing Hui
