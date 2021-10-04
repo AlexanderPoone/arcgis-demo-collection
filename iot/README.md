@@ -4,7 +4,7 @@
 
 [https://demo2.hkgisportal.com/sensors2/](https://demo2.hkgisportal.com/sensors2/)
 
-<img src="img/screenshot.png" width="200px"></img>
+<img src="img/screenshot.png" width="600px"></img>
 
 This is a clone of the [Coolmaps NYC Work Orders](https://coolmaps.esri.com/NYC/NYCHA/dashboard/) app, with the residential block changed to the newly-built eResidence in To Kwa Wan, Kowloon, Hong Kong. A GeoEvent Server installation is required.
 
