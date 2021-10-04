@@ -20,13 +20,25 @@ Some data wrangling is needed. For example, the ArcGIS Pro geoprocessing tool **
 
 ![settings](img/input_settings.png)
 
+*Engineering rooms* output connector settings of GeoEvent Server used in the sample:
+
+![settings](img/output_settings.png)
+
 *Engineering rooms* service settings of GeoEvent Server used in the sample:
 
 ![settings](img/service_settings.png)
 
-*Engineering rooms* output connector settings of GeoEvent Server used in the sample:
+*CHILLER PLANT* Field Calculator settings of GeoEvent Server used in the sample:
 
-![settings](img/output_settings.png)
+![settings](img/field_calculator_settings.png)
+
+*Engineering rooms* Field Enricher settings of GeoEvent Server used in the sample:
+
+![settings](img/field_enricher_settings.png)
+
+*Engineering rooms* Field Mapper settings of GeoEvent Server used in the sample:
+
+![settings](img/field_mapper_settings.png)
 
 ## Sensor Readings
 
