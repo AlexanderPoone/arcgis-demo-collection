@@ -33,11 +33,9 @@ For the detection to be useful, some work needs to be done beforehand. First, ru
 | K409F | 1 | Princess Margaret Road near Argyle Street |
 | K409F | 2 | Argyle Street Flyover near Princess Margaret Road (eastwards) |
 | K409F | 3 | Argyle Street Flyover near Princess Margaret Road (westwards) |
-| K502F | 1 | Waterloo Road / Cornwall Street |
-| K502F | 2 | Waterloo Road / Cornwall Street |
-| K502F | 3 | Waterloo Road / Cornwall Street |
-| K502F | 4 | Waterloo Road / Cornwall Street |
-| K502F | 5 | Waterloo Road / Cornwall Street |
+| K502F | 1 | Waterloo Road Flyover (southwards) |
+| K502F | 2 | Waterloo Road Flyover (northwards) |
+| K502F | 3 | Waterloo Road heading towards Cornwall Street (northwards) |
 | K614F | 1 | Clear Water Bay Road (eastwards) |
 | K614F | 2 | Clear Water Bay Road towards Lung Cheung Road (westwards) |
 
