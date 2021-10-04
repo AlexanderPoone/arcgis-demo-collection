@@ -3,3 +3,4 @@
 *.zip
 *.pyt.xml
 _internal/
+__pycache__/
