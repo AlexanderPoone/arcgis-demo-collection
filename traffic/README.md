@@ -17,7 +17,7 @@ For the detection to be useful, some work needs to be done beforehand. First, ru
 | Camera code     | Traffic lane | Mapping       |
 |-----------------|--------------|---------------|
 | H106F | 1 | Connaught Rd Central near Exchange Square |
-| H109F | 1 | Garden Road Flyover heading towards Cotton Tree Drive |
+| H109F | 1 | Garden Road Flyover towards Cotton Tree Drive |
 | H109F | 2 | Queensway heading towards Queen's Road Central |
 | H207F | 1 | Cross Harbour Tunnel Hong Kong Side |
 | H210F | 1 | Aberdeen Tunnel - Wan Chai Side (entering, southwards) |
