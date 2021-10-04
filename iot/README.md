@@ -10,11 +10,11 @@ Some data wrangling is needed. For example, the ArcGIS Pro geoprocessing tool **
 
 ## GeoEvent Sever Settings
 
-Mapping used in the sample. For the time being only 4 endpoints (coloured) are used:
+*Engineering rooms* mapping used in the sample. For the time being only 4 endpoints (coloured) are used:
 
 ![mapping](img/mapping.png)
 
-Input connector settings of GeoEvent Server used in the sample:
+*Engineering rooms* input connector settings of GeoEvent Server used in the sample:
 
 ![settings](img/settings.png)
 
