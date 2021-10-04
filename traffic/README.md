@@ -56,7 +56,7 @@ lat	lng	TW120F Tsuen Wan Road near Tai Chung Road -->
 
 ### Future enhancements
 
-Stream output video to a HTML page
+Stream output video to a webpage for visualisation
 
 ## 2. TomTom Traffic Data
 
