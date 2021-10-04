@@ -10,7 +10,7 @@ Some data wrangling is needed. For example, the ArcGIS Pro geoprocessing tool **
 
 ## GeoEvent Sever Settings
 
-Mapping used in the sample:
+Mapping used in the sample. For the time being only 4 endpoints (coloured) are used:
 
 ![mapping](img/mapping.png)
 
