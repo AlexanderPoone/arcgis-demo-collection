@@ -34,8 +34,9 @@ For the detection to be useful, some work needs to be done beforehand. First, ru
 | K409F | 2 | Argyle Street Flyover near Princess Margaret Road (eastwards) |
 | K409F | 3 | Argyle Street Flyover near Princess Margaret Road (westwards) |
 | K502F | 1 | Waterloo Road Flyover (southwards) |
-| K502F | 2 | Waterloo Road Flyover (northwards) |
+| K502F | 2 | Waterloo Road Flyover towards Lion Rock Tunnel (northwards) |
 | K502F | 3 | Waterloo Road towards Cornwall Street (northwards) |
+| K502F | 4 | Waterloo Road (northwards) |
 | K614F | 1 | Clear Water Bay Road (eastwards) |
 | K614F | 2 | Clear Water Bay Road towards Lung Cheung Road (westwards) |
 
@@ -52,7 +53,7 @@ lat	lng	TW102F Kwai Chung Road near Container Terminal
 lat	lng	TW117F Castle Peak Road near Texaco Road North
 lat	lng	TW120F Tsuen Wan Road near Tai Chung Road -->
 
-**The polygon masks have been pickled to a single file.** For each recognition, the Python tool tests whether the centres of the bounding box is inside each polygon, and updates the Feature Layer according to the camera code detected and vehicle position (traffic lane).
+**The polygon masks (2D NumPy array of True/False) have been pickled to a single file.** For each recognition, the Python tool tests whether the centres of the bounding box is inside each polygon, and updates the Feature Layer according to the camera code detected and vehicle position (traffic lane).
 
 ### Future enhancements
 
