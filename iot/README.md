@@ -4,6 +4,8 @@
 
 [https://demo2.hkgisportal.com/sensors2/](https://demo2.hkgisportal.com/sensors2/)
 
+<img src="img/screenshot.png" width="200px"></img>
+
 This is a clone of the [Coolmaps NYC Work Orders](https://coolmaps.esri.com/NYC/NYCHA/dashboard/) app, with the residential block changed to the newly-built eResidence in To Kwa Wan, Kowloon, Hong Kong. A GeoEvent Server installation is required.
 
 Some data wrangling is needed. For example, the ArcGIS Pro geoprocessing tool **Polygon Neighbours** is used to find neighbouring units of selected flats. A ModelBuilder is made to automate data preprocessing. You can re-run the workflow using it for any other building.
