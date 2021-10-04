@@ -50,8 +50,9 @@ randomrooms = [('3739819140T20200513', 'BF', 'LIFT MACHINE ROOM (CAR LIFT)'),
 
 url = 'https://demo2.hkgisportal.com/iot_outside_access'
 
-while True:
-	tmp = choice(randomrooms)
+#while True:
+for x in range(len(randomrooms)):
+	tmp = randomrooms[x]			#choice(randomrooms)
 	onOff = choice([0,1])
 	payload = f'engineering,{tmp[0]},{tmp[1]},{tmp[2]},{datetime.utcnow().isoformat()},{onOff},'
 

@@ -18,7 +18,15 @@ Some data wrangling is needed. For example, the ArcGIS Pro geoprocessing tool **
 
 *Engineering rooms* input connector settings of GeoEvent Server used in the sample:
 
-![settings](img/settings.png)
+![settings](img/input_settings.png)
+
+*Engineering rooms* service settings of GeoEvent Server used in the sample:
+
+![settings](img/service_settings.png)
+
+*Engineering rooms* output connector settings of GeoEvent Server used in the sample:
+
+![settings](img/output_settings.png)
 
 ## Sensor Readings
 
