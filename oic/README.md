@@ -27,7 +27,7 @@ After that, an Oriented Imagery Catalogue has to be created and uploaded online.
 ### Caution!
 Unlike point clouds, the 3D buildings do not fit into the photo perfectly since they are low-poly polyhedra with smooth, flat surfaces. In reality, building exteriors (especially roofs) are bumpy. This explains why most 3D buildings appear shorter than those in the photo.
 
-For accuracy, use a `PointCloudLayer`.
+If extra-high accuracy is desired, use a `PointCloudLayer`.
 
 ### Demos
 * [Kowloon Bay/Kai Tak, Hong Kong](https://dord.mynetgear.com/oic)
