@@ -28,16 +28,18 @@ The function will be implemented as an option.
 -->
 
 ```
-"ImageMagick-7.1.0-portable-Q16-x64/magick.exe" convert yellowJacket.jpg -fuzz 10% -transparent White out.png
+magick convert solaria_beige_background.jpg -fuzz 10% -transparent White out.png
 ```
 
 ```
-"ImageMagick-7.1.0-portable-Q16-x64/magick.exe" convert yellowJacket.jpg -fuzz 5% -fill Red -opaque White x.png
+magick convert solaria_beige_background.jpg -fuzz 5% -fill Red -opaque White x.png
 ```
 
 ```
-"ImageMagick-7.1.0-portable-Q16-x64/magick.exe" convert master.JPG -fuzz 5% -fill none -draw "matte 0,0 floodfill" result.png
+"ImageMagick-7.1.0-portable-Q16-x64/magick.exe" convert solaria_beige_background.jpg -fuzz 5% -fill none -draw "matte 0,0 floodfill" result.png
 ```
+
+<!--https://01.org/node/29971?langredirect=1-->
 
 ### Rotation
 

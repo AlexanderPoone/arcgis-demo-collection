@@ -33,6 +33,11 @@ from pymssql import connect
 
 from datetime import datetime
 
+# Conversion from 4326 to 3857 needed to measure length
+'https://pyproj4.github.io/pyproj/stable/api/geod.html#pyproj.Geod.line_length'
+'https://stackoverflow.com/a/35025274'
+
+
 layer_name = 'TomTom Traffic'
 
 def create():
