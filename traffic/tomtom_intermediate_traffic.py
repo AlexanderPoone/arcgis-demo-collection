@@ -44,7 +44,7 @@ from shapely.geometry import Point, LineString
 layer_name = 'TomTom Traffic Updated'
 
 def create():
-	#gis = GIS('https://www.arcgis.com', username='<ENTER YOUR ARCGIS ONLINE USERNAME HERE>', password='<WARNING! PLEASE ENCRYPT YOUR PASSWORD AND PUT IT IN A SAFE LOCATION INSTEAD OF DIRECTLY ENTERING THE PASSWORD HERE>')
+	gis = GIS('https://www.arcgis.com', username='<ENTER YOUR ARCGIS ONLINE USERNAME HERE>', password='<WARNING! PLEASE ENCRYPT YOUR PASSWORD AND PUT IT IN A SAFE LOCATION INSTEAD OF DIRECTLY ENTERING THE PASSWORD HERE>')
 
 
 

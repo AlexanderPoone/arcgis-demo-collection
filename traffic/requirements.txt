@@ -3,3 +3,4 @@ protobuf
 pymssql
 pyshp
 selenium-wire
+shapely
