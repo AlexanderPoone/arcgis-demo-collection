@@ -36,7 +36,8 @@ from datetime import datetime
 # Conversion from 4326 to 3857 needed to measure length
 'https://pyproj4.github.io/pyproj/stable/api/geod.html#pyproj.Geod.line_length'
 'https://stackoverflow.com/a/35025274'
-
+from pyproj import Proj
+from pyproj.transformer import Transformer
 
 layer_name = 'TomTom Traffic'
 
@@ -103,7 +104,8 @@ def create():
 				'trafficCondition': speed['trafficCondition'],
 				'lastUpdate': dt
 			}
-			
+
+		
 		elif response.status_code == 500:
 			fail_openlr_dict.append((openlr,json_data['errMsg'][85:]))
 		else:
@@ -155,6 +157,7 @@ def create():
 
 	w = shapefile.Writer(expanduser(f'~/Desktop/{layer_name}.shp'))
 
+
 	"""
 	'shape': sum([x['geometry']['coordinates'] for x in json_data['features']],[]),			# Flatten array
 	'isOneway': True in [x['properties']['dir'] for x in json_data['features']],
@@ -173,7 +176,20 @@ def create():
 	w.field('condition', 'C')
 	w.field('lastUpdate', 'C')
 
+	# convert the flattened array to WebMercator so that it can be bisected
+	
+    transformer = Transformer.from_crs(
+        "epsg:4326",
+        "epsg:3857",
+        # area_of_interest=AreaOfInterest(114.200322, 22.312877, 114.215299, 22.329041),
+    )
 	for x in succeed_openlr_dict:
+		shapeInMerc = [transformer.transform(*y) for y in succeed_openlr_dict[x]['shape']]
+
+
+
+
+
 		w.line([ succeed_openlr_dict[x]['shape'] ])
 		w.record(x,
 			succeed_openlr_dict[x]['isOneway'],
