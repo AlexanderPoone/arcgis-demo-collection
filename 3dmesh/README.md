@@ -4,7 +4,7 @@
 
 Normally one model should have more than one material, which is suboptimal since loading the textures degrade the performance. Therefore, it is required to **UV unwrap** of each model and **texture bake** it into a single texture.
 
-How to know there is no baking (bad):
+How to know if there is no baking from a SLPK file (**bad**):
 
 ![img/bad.png](img/bad.png)
 
