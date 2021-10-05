@@ -118,7 +118,7 @@ def create():
 	##############################################################################
 
 	# get past keys and set speed to -1 (hide)
-	all_protos = glob('traffic_protos/*')#D:/traffic_protos/*
+	all_protos = glob('D:/traffic_protos/*')#D:/traffic_protos/*
 
 	print(len(all_protos))
 
@@ -247,7 +247,7 @@ def create():
 
 			for s in range(len(splat)):
 				# Project back to (lng, lat) for shapefile
-				out = [transformerRev.transform(*t) for t in splat[s]]
+				out = [transformerRev.transform(*t)[::-1] for t in splat[s]]
 
 				w.line([ out ])
 				w.record(x,
@@ -256,7 +256,7 @@ def create():
 					succeed_openlr_dict[x]['averageSpeedKmph'],
 					succeed_openlr_dict[x]['travelTimeSeconds'],
 					succeed_openlr_dict[x]['relativeSpeed'],
-					succeed_openlr_dict[x]['trafficCondition'],
+					succeed_openlr_dict[x]['trafficCondition'][s],
 					succeed_openlr_dict[x]['lastUpdate'])
 
 			print('*********************************')
@@ -467,4 +467,5 @@ def update():
 
 if __name__ == '__main__':
 	create()
+	nullifyAll()
 	#update()
