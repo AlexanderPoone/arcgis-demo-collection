@@ -265,7 +265,7 @@ def create():
 		else:
 			w.line([ succeed_openlr_dict[x]['shape'] ])
 			w.record(x,
-				succeed_openlr_dict[x]['startOffsetInMeters']
+				succeed_openlr_dict[x]['startOffsetInMeters'],
 				succeed_openlr_dict[x]['isOneway'],
 				succeed_openlr_dict[x]['averageSpeedKmph'],
 				succeed_openlr_dict[x]['travelTimeSeconds'],
