@@ -80,7 +80,7 @@ This is for demo only: [https://demo2.hkgisportal.com/traffic_simulation/](https
 
 ### Instructions
 
-Gather the 3D models you want to use, normally one model should have more than one material, which is suboptimal since loading the textures degrade the performance. Therefore, it is required to **UV unwrap** each model and **texture bake** it into a small texture (e.g. 256 px * 256 px). For lights, use **combined bake** instead of texture bake. Export all models into GLTB which is the only supported format. You may use the open-source software Blender to complete this task: [Official Guide from Esri](https://www.esri.com/arcgis-blog/products/arcgis/3d-gis/gis-visualization-and-storytelling-in-3d/)
+Gather the 3D models you want to use, normally one model should have more than one material, which is suboptimal since loading the textures degrade the performance. Therefore, it is required to **UV unwrap** each model and **texture bake** it into a small texture (e.g. 256 px * 256 px). For lights, use **combined bake** instead of texture bake. Export all models into GLB which is the only supported format (except raw glTF). You may use the open-source software Blender to complete this task: [Official Guide from Esri](https://www.esri.com/arcgis-blog/products/arcgis/3d-gis/gis-visualization-and-storytelling-in-3d/)
 
 ### Future enhancements
 
