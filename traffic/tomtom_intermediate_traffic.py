@@ -29,7 +29,7 @@ from pickle import dump as pdump, load as pload
 
 from os.path import expanduser
 
-from pymssql import connect
+#from pymssql import connect
 
 from datetime import datetime
 
@@ -39,10 +39,12 @@ from datetime import datetime
 from pyproj import Proj
 from pyproj.transformer import Transformer
 
-layer_name = 'TomTom Traffic'
+from shapely.geometry import Point, LineString
+
+layer_name = 'TomTom Traffic Updated'
 
 def create():
-	gis = GIS('https://www.arcgis.com', username='<ENTER YOUR ARCGIS ONLINE USERNAME HERE>', password='<WARNING! PLEASE ENCRYPT YOUR PASSWORD AND PUT IT IN A SAFE LOCATION INSTEAD OF DIRECTLY ENTERING THE PASSWORD HERE>')
+	#gis = GIS('https://www.arcgis.com', username='<ENTER YOUR ARCGIS ONLINE USERNAME HERE>', password='<WARNING! PLEASE ENCRYPT YOUR PASSWORD AND PUT IT IN A SAFE LOCATION INSTEAD OF DIRECTLY ENTERING THE PASSWORD HERE>')
 
 
 
@@ -60,23 +62,21 @@ def create():
 	# Check if there is section
 
 	for trafficflow in my_trafficFlowGroup.trafficFlow:
-		openlr = str(b64encode(trafficflow.location.openlr),"utf-8")            #average_speed_all_segments
+		openlr = str(b64encode(trafficflow.location.openlr),"utf-8")			#average_speed_all_segments
 		if len(trafficflow.sectionSpeed)>0:
-			for ss in trafficflow.sectionSpeed:
-
-			print({
-				'startOffsetInMeters': ss.startOffsetInMeters,
-				'averageSpeedKmph': ss.speed.averageSpeedKmph,
-				'travelTimeSeconds': ss.speed.travelTimeSeconds,
-				'relativeSpeed': ss.speed.relativeSpeed,
-				'trafficCondition': ss.speed.DESCRIPTOR.fields_by_name['trafficCondition'].enum_type.values_by_number[ss.speed.trafficCondition].name
+			openlr_avgspeed_dict[openlr] = ({
+				'startOffsetInMeters': [ss.startOffsetInMeters for ss in trafficflow.sectionSpeed],
+				# 'averageSpeedKmph': [ss.speed.averageSpeedKmph for ss in trafficflow.sectionSpeed],
+				# 'travelTimeSeconds': [ss.speed.travelTimeSeconds for ss in trafficflow.sectionSpeed],
+				# 'relativeSpeed': [ss.speed.relativeSpeed for ss in trafficflow.sectionSpeed],
+				'trafficCondition': [ss.speed.DESCRIPTOR.fields_by_name['trafficCondition'].enum_type.values_by_number[ss.speed.trafficCondition].name for ss in trafficflow.sectionSpeed]
 			})
 		else:
 			openlr_avgspeed_dict[openlr] = {
 				'startOffsetInMeters': 0,
-				'averageSpeedKmph': trafficflow.speed[0].averageSpeedKmph,
-				'travelTimeSeconds': trafficflow.speed[0].travelTimeSeconds,
-				'relativeSpeed': trafficflow.speed[0].relativeSpeed,
+				# 'averageSpeedKmph': trafficflow.speed[0].averageSpeedKmph,
+				# 'travelTimeSeconds': trafficflow.speed[0].travelTimeSeconds,
+				# 'relativeSpeed': trafficflow.speed[0].relativeSpeed,
 				'trafficCondition': trafficflow.speed[0].DESCRIPTOR.fields_by_name['trafficCondition'].enum_type.values_by_number[trafficflow.speed[0].trafficCondition].name
 			}
 
@@ -96,6 +96,7 @@ def create():
 		if response.status_code == 200:
 			speed = openlr_avgspeed_dict[openlr]
 			succeed_openlr_dict[openlr] = {
+				'startOffsetInMeters': speed['startOffsetInMeters'],
 				'shape': sum([x['geometry']['coordinates'] for x in json_data['features']],[]),			# Flatten array
 				'isOneway': True in [x['properties']['dir'] for x in json_data['features']],
 				'averageSpeedKmph': -1,#speed['averageSpeedKmph'],
@@ -117,7 +118,7 @@ def create():
 	##############################################################################
 
 	# get past keys and set speed to -1 (hide)
-	all_protos = glob('traffic_protos/*')
+	all_protos = glob('traffic_protos/*')#D:/traffic_protos/*
 
 	print(len(all_protos))
 
@@ -134,12 +135,22 @@ def create():
 			openlr = str(b64encode(trafficflow.location.openlr),"utf-8")
 			if openlr not in openlr_avgspeed_dict:
 				#average_speed_all_segments = trafficflow.speed[0].averageSpeedKmph
-				openlr_avgspeed_dict[openlr] =  {
-					'averageSpeedKmph': -1,
-					'travelTimeSeconds': -1,
-					'relativeSpeed': -1,
-					'trafficCondition': trafficflow.speed[0].DESCRIPTOR.fields_by_name['trafficCondition'].enum_type.values_by_number[trafficflow.speed[0].trafficCondition].name
-				}#average_speed_all_segments
+				if len(trafficflow.sectionSpeed)>0:
+					openlr_avgspeed_dict[openlr] = ({
+						'startOffsetInMeters': [ss.startOffsetInMeters for ss in trafficflow.sectionSpeed],
+						# 'averageSpeedKmph': [ss.speed.averageSpeedKmph for ss in trafficflow.sectionSpeed],
+						# 'travelTimeSeconds': [ss.speed.travelTimeSeconds for ss in trafficflow.sectionSpeed],
+						# 'relativeSpeed': [ss.speed.relativeSpeed for ss in trafficflow.sectionSpeed],
+						'trafficCondition': [ss.speed.DESCRIPTOR.fields_by_name['trafficCondition'].enum_type.values_by_number[ss.speed.trafficCondition].name for ss in trafficflow.sectionSpeed]
+					})
+				else:
+					openlr_avgspeed_dict[openlr] = {
+						'startOffsetInMeters': 0,
+						# 'averageSpeedKmph': -1,
+						# 'travelTimeSeconds': -1,
+						# 'relativeSpeed': -1,
+						'trafficCondition': trafficflow.speed[0].DESCRIPTOR.fields_by_name['trafficCondition'].enum_type.values_by_number[trafficflow.speed[0].trafficCondition].name
+					}
 
 	##############################################################################
 
@@ -151,7 +162,7 @@ def create():
 
 
 
-	print(succeed_openlr_dict)
+	#print(succeed_openlr_dict)
 
 	# Upload as CSV/JSON
 
@@ -169,6 +180,7 @@ def create():
 	"""
 
 	w.field('openLR', 'C')
+	w.field('offset', 'N')
 	w.field('isOneway', 'L')
 	w.field('avgSpdKmph', 'N')
 	w.field('traSeconds', 'N')
@@ -176,28 +188,90 @@ def create():
 	w.field('condition', 'C')
 	w.field('lastUpdate', 'C')
 
-	# convert the flattened array to WebMercator so that it can be bisected
+	# convert the flattened array to WebMercator if it can be bisected
 	
-    transformer = Transformer.from_crs(
-        "epsg:4326",
-        "epsg:3857",
-        # area_of_interest=AreaOfInterest(114.200322, 22.312877, 114.215299, 22.329041),
-    )
+	transformer = Transformer.from_crs(
+		"epsg:4326",
+		"epsg:3857",
+		# area_of_interest=AreaOfInterest(114.200322, 22.312877, 114.215299, 22.329041),
+	)	
+	transformerRev = Transformer.from_crs(
+		"epsg:3857",
+		"epsg:4326",
+		# area_of_interest=AreaOfInterest(114.200322, 22.312877, 114.215299, 22.329041),
+	)
 	for x in succeed_openlr_dict:
-		shapeInMerc = [transformer.transform(*y) for y in succeed_openlr_dict[x]['shape']]
+		if isinstance(succeed_openlr_dict[x]['startOffsetInMeters'], list):
+			print(succeed_openlr_dict[x]['shape'])
+			shapeInMerc = [transformer.transform(y[1],y[0]) for y in succeed_openlr_dict[x]['shape']]
+			#print(shapeInMerc)
+			lstr = LineString(shapeInMerc)
+			#print(lstr)
 
+			diffs = []
+			for z in range(1,len(succeed_openlr_dict[x]['startOffsetInMeters'])):
+				diffs.append(succeed_openlr_dict[x]['startOffsetInMeters'][z]-succeed_openlr_dict[x]['startOffsetInMeters'][z-1])
+			
+			print(succeed_openlr_dict[x]['startOffsetInMeters'], diffs)
 
+			def break_line_max_length(line):
+				if len(diffs) == 0:
+					dist = 999999999
+				else:
+					dist = diffs.pop(0)
 
+				if line.length <= dist:
+					return [line]
+				else: 
+					segments = cut(line, dist)
+					return [segments[0]] + break_line_max_length(segments[1])
 
+			def cut(line, distance):
+				# Cuts a line in two at a distance from its starting point
+				if distance <= 0.0 or distance >= line.length:
+					return [line]
+				coords = list(line.coords)
+				for i, p in enumerate(coords):
+					pd = line.project(Point(p)) 
+					if pd == distance:
+						return [
+							LineString(coords[:i+1]),
+							LineString(coords[i:])]
+					if pd > distance:
+						cp = line.interpolate(distance)
+						return [
+							LineString(coords[:i] + [(cp.x, cp.y)]),
+							LineString([(cp.x, cp.y)] + coords[i:])]
 
-		w.line([ succeed_openlr_dict[x]['shape'] ])
-		w.record(x,
-			succeed_openlr_dict[x]['isOneway'],
-			succeed_openlr_dict[x]['averageSpeedKmph'],
-			succeed_openlr_dict[x]['travelTimeSeconds'],
-			succeed_openlr_dict[x]['relativeSpeed'],
-			succeed_openlr_dict[x]['trafficCondition'],
-			succeed_openlr_dict[x]['lastUpdate'])
+			splat = [list(s.coords) for s in break_line_max_length(lstr)]
+
+			for s in range(len(splat)):
+				# Project back to (lng, lat) for shapefile
+				out = [transformerRev.transform(*t) for t in splat[s]]
+
+				w.line([ out ])
+				w.record(x,
+					succeed_openlr_dict[x]['startOffsetInMeters'][s]
+					succeed_openlr_dict[x]['isOneway'],
+					succeed_openlr_dict[x]['averageSpeedKmph'],
+					succeed_openlr_dict[x]['travelTimeSeconds'],
+					succeed_openlr_dict[x]['relativeSpeed'],
+					succeed_openlr_dict[x]['trafficCondition'],
+					succeed_openlr_dict[x]['lastUpdate'])
+
+			print('*********************************')
+
+			##########################################
+		else:
+			w.line([ succeed_openlr_dict[x]['shape'] ])
+			w.record(x,
+				succeed_openlr_dict[x]['startOffsetInMeters']
+				succeed_openlr_dict[x]['isOneway'],
+				succeed_openlr_dict[x]['averageSpeedKmph'],
+				succeed_openlr_dict[x]['travelTimeSeconds'],
+				succeed_openlr_dict[x]['relativeSpeed'],
+				succeed_openlr_dict[x]['trafficCondition'],
+				succeed_openlr_dict[x]['lastUpdate'])
 
 	w.close()
 
@@ -278,6 +352,10 @@ def update():
 		openlr_avgspeed_dict = {}
 
 		def payload(trafficflow):
+
+			# TODO: Handle fine sections
+
+
 			featuresToBeUpdated = []
 
 			openlr = str(b64encode(trafficflow.location.openlr),"utf-8")
@@ -388,4 +466,5 @@ def update():
 		print(allOpenLR.difference(set(openlr_avgspeed_dict.keys())))
 
 if __name__ == '__main__':
-	update()
+	create()
+	#update()

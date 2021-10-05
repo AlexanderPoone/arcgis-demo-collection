@@ -65,6 +65,53 @@ Stream output video to a webpage for visualisation
 
 See [`tomtom_intermediate_traffic.py`](tomtom_intermediate_traffic.py). The script pushes live traffic data to ArcGIS Online every half minute. Enter your own ArcGIS login credentials and TomTom Intermediate Traffic API Key into the file.
 
+The Intermediate Traffic API returns a ProtoBuf like this:
+```protobuf
+location {
+  openlr: "\013Q>\325\017\316\345#\235{\366\372\n\206#\t"
+  lengthInMeters: 7223
+}
+speed {
+  averageSpeedKmph: 40
+  travelTimeSeconds: 648
+  confidence: 98
+  relativeSpeed: 0.716
+  trafficCondition: FREE_TRAFFIC
+}
+sectionSpeed {
+  startOffsetInMeters: 0
+  speed {
+    averageSpeedKmph: 22
+    travelTimeSeconds: 160
+    confidence: 97
+    relativeSpeed: 0.452
+    trafficCondition: FREE_TRAFFIC
+  }
+}
+sectionSpeed {
+  startOffsetInMeters: 967
+  speed {
+    averageSpeedKmph: 47
+    travelTimeSeconds: 460
+    confidence: 98
+    relativeSpeed: 0.812
+    trafficCondition: FREE_TRAFFIC
+  }
+}
+sectionSpeed {
+  startOffsetInMeters: 6980
+  speed {
+    averageSpeedKmph: 30
+    travelTimeSeconds: 29
+    confidence: 99
+    relativeSpeed: 0.702
+    trafficCondition: FREE_TRAFFIC
+  }
+}
+```
+
+If a road segment has section speeds, section speeds will be used while the overall speed will be ignored. The script should be able to split the road segment into fine sections properly according to the `startOffsetInMeters` attribute.
+
 To install the dependencies, enter the following in the command line:
 ```
 pip3 install -r requirements.txt
@@ -72,7 +119,7 @@ pip3 install -r requirements.txt
 
 ### Future enhancements
 
-Handle speeds of finer sections
+None at the moment.
 
 ## 3. Traffic Emulation
 

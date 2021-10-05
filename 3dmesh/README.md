@@ -18,6 +18,6 @@ The faces should be "tessellated" nicely and space should be eliminated as much 
 
 Additionally, you can add OSGB levels of detail (pyramid) after baking to speed up loading. Yet, the levels should be controlled so that the geometry will not be oversimplified.
 
-## Future enhancements
+## TODO
 
-Hong Kong Island Bake 3*2: `tile_[3..60]_[0..33]`
+Hong Kong Island Bake 4*3: `tile_[3..60]_[0..33]` example
