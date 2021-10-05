@@ -53,7 +53,7 @@ lat	lng	TW102F Kwai Chung Road near Container Terminal
 lat	lng	TW117F Castle Peak Road near Texaco Road North
 lat	lng	TW120F Tsuen Wan Road near Tai Chung Road -->
 
-**The polygon masks (2D NumPy array of True/False) have been pickled to a single file.** For each recognition, the Python tool tests whether the centres of the bounding box is inside each polygon, and updates the Feature Layer according to the camera code detected and vehicle position (traffic lane).
+**The polygon masks (2D NumPy array of True/False) have been pickled to a single file.** For each recognition, the Python tool tests whether the centres of the bounding boxes are inside each polygon, and updates the Feature Layer according to the camera code detected and vehicle position (traffic lane).
 
 ### Future enhancements
 
