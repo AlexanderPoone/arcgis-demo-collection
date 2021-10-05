@@ -11,6 +11,11 @@ The georefrenced images are saved as tuples in the following format:
 
 `[[centroidWebMercX, centroidWebMercY, base64], ...]`
 
+### Issues in the original widget
+
+1. The opacity slider is not displayed correctly and unusable after importing several images.
+![img/b0001.png](img/b0001.png)
+
 ### Background removal
 
 Usually, floor plan images have a background colour which is not transparent, be it white, beige, or multi-coloured. As a result, other buildings, roads in the basemap will be occluded if the image is directly placed on the map.
@@ -44,3 +49,6 @@ magick convert solaria_beige_background.jpg -fuzz 5% -fill Red -opaque White x.p
 ### Rotation
 
 Rotation directly modifies the image stored in Base64.
+
+
+layer.toImage()
