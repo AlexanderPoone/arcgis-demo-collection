@@ -251,7 +251,7 @@ def create():
 
 				w.line([ out ])
 				w.record(x,
-					succeed_openlr_dict[x]['startOffsetInMeters'][s]
+					succeed_openlr_dict[x]['startOffsetInMeters'][s],
 					succeed_openlr_dict[x]['isOneway'],
 					succeed_openlr_dict[x]['averageSpeedKmph'],
 					succeed_openlr_dict[x]['travelTimeSeconds'],
