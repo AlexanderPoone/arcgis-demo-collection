@@ -2,5 +2,6 @@ requests
 protobuf
 pymssql
 pyshp
+pyproj
 selenium-wire
 shapely
