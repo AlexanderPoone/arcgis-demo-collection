@@ -6,7 +6,7 @@ Normally one model should have more than one material, which is suboptimal since
 
 How to know there is no baking (bad):
 
-![img/bad.png](img/texture.png)
+![img/bad.png](img/bad.png)
 
 One SLPK node (starts from 0) equals one material. There are 581496 materials in this 363 GB SLPK file, which is dismal.
 
