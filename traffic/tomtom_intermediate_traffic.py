@@ -56,14 +56,28 @@ def create():
 
 
 	openlr_avgspeed_dict = {}
+	# Check if there is section
+
 	for trafficflow in my_trafficFlowGroup.trafficFlow:
-		openlr = str(b64encode(trafficflow.location.openlr),"utf-8")	#average_speed_all_segments
-		openlr_avgspeed_dict[openlr] = {
-			'averageSpeedKmph': trafficflow.speed[0].averageSpeedKmph,
-			'travelTimeSeconds': trafficflow.speed[0].travelTimeSeconds,
-			'relativeSpeed': trafficflow.speed[0].relativeSpeed,
-			'trafficCondition': trafficflow.speed[0].DESCRIPTOR.fields_by_name['trafficCondition'].enum_type.values_by_number[trafficflow.speed[0].trafficCondition].name
-		}
+		openlr = str(b64encode(trafficflow.location.openlr),"utf-8")            #average_speed_all_segments
+		if len(trafficflow.sectionSpeed)>0:
+			for ss in trafficflow.sectionSpeed:
+
+			print({
+				'startOffsetInMeters': ss.startOffsetInMeters,
+				'averageSpeedKmph': ss.speed.averageSpeedKmph,
+				'travelTimeSeconds': ss.speed.travelTimeSeconds,
+				'relativeSpeed': ss.speed.relativeSpeed,
+				'trafficCondition': ss.speed.DESCRIPTOR.fields_by_name['trafficCondition'].enum_type.values_by_number[ss.speed.trafficCondition].name
+			})
+		else:
+			openlr_avgspeed_dict[openlr] = {
+				'startOffsetInMeters': 0,
+				'averageSpeedKmph': trafficflow.speed[0].averageSpeedKmph,
+				'travelTimeSeconds': trafficflow.speed[0].travelTimeSeconds,
+				'relativeSpeed': trafficflow.speed[0].relativeSpeed,
+				'trafficCondition': trafficflow.speed[0].DESCRIPTOR.fields_by_name['trafficCondition'].enum_type.values_by_number[trafficflow.speed[0].trafficCondition].name
+			}
 
 
 	fail_openlr_dict = []

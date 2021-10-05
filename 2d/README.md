@@ -9,12 +9,14 @@ For loading images that are already georeferenced (e.g. `GeoTIFF` satellite imag
 ### Storage
 The georefrenced images are saved as tuples in the following format:
 
-`[[centroidWebMercX, centroidWebMercY, base64], ...]`
+`[[centroidWebMercX, centroidWebMercY, base64Image], ...]`
 
 ### Issues in the original widget
 
 1. The opacity slider is not displayed correctly and unusable after importing several images.
 ![img/b0001.png](img/b0001.png)
+
+(Copyright Ka Wah Properties, Free Use only)
 
 ### Background removal
 
