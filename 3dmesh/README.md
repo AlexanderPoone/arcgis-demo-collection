@@ -14,4 +14,6 @@ Example of baked texture:
 
 ![img/texture.png](img/texture.png)
 
+The faces should be "tessellated" nicely and space should be eliminated as much as possible to balance so that quality is preserved under the texture size (performance) constraint.
+
 Additionally, you can add OSGB levels of detail (pyramid) after baking to speed up loading. Yet, the levels should be controlled so that the geometry will not be oversimplified.
