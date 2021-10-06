@@ -110,7 +110,9 @@ sectionSpeed {
 }
 ```
 
-If a road segment has **sectionSpeed**s, section speeds will be used while the overall speed will be ignored. The script should be able to split the road segment into fine sections properly according to the `startOffsetInMeters` attribute.
+If a road segment has **sectionSpeed**s, section speeds will be used while the overall speed will be ignored. The script should be able to split the road segment into fine sections properly according to the `startOffsetInMeters` attribute:
+
+![Section speed](img/section_speed.png)
 
 To install the dependencies, enter the following in the command line:
 ```
