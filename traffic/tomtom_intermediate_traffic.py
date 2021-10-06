@@ -41,7 +41,7 @@ from pyproj.transformer import Transformer
 
 from shapely.geometry import Point, LineString
 
-layer_name = 'TomTom Traffic Updated'
+layer_name = 'TomTom Traffic V2'
 
 def create():
 	gis = GIS('https://www.arcgis.com', username='<ENTER YOUR ARCGIS ONLINE USERNAME HERE>', password='<WARNING! PLEASE ENCRYPT YOUR PASSWORD AND PUT IT IN A SAFE LOCATION INSTEAD OF DIRECTLY ENTERING THE PASSWORD HERE>')
@@ -152,6 +152,29 @@ def create():
 						'trafficCondition': trafficflow.speed[0].DESCRIPTOR.fields_by_name['trafficCondition'].enum_type.values_by_number[trafficflow.speed[0].trafficCondition].name
 					}
 
+	req = requests.get('https://traffic.tomtom.com/tsq/hdf-detailed/HKG-HDF_DETAILED-OPENLR/<ENTER YOUR TOMTOM INTERMEDIATE TRAFFIC SERVICE API KEY HERE>/content.proto')
+	my_trafficFlowGroup = TF.TrafficFlowGroup()
+	my_trafficFlowGroup.ParseFromString(req.content)
+	for trafficflow in my_trafficFlowGroup.trafficFlow:
+		openlr = str(b64encode(trafficflow.location.openlr),"utf-8")
+
+		#average_speed_all_segments = trafficflow.speed[0].averageSpeedKmph
+		if len(trafficflow.sectionSpeed)>0:
+			openlr_avgspeed_dict[openlr] = ({
+				'startOffsetInMeters': [ss.startOffsetInMeters for ss in trafficflow.sectionSpeed],
+				# 'averageSpeedKmph': [ss.speed.averageSpeedKmph for ss in trafficflow.sectionSpeed],
+				# 'travelTimeSeconds': [ss.speed.travelTimeSeconds for ss in trafficflow.sectionSpeed],
+				# 'relativeSpeed': [ss.speed.relativeSpeed for ss in trafficflow.sectionSpeed],
+				'trafficCondition': [ss.speed.DESCRIPTOR.fields_by_name['trafficCondition'].enum_type.values_by_number[ss.speed.trafficCondition].name for ss in trafficflow.sectionSpeed]
+			})
+		else:
+			openlr_avgspeed_dict[openlr] = {
+				'startOffsetInMeters': 0,
+				# 'averageSpeedKmph': -1,
+				# 'travelTimeSeconds': -1,
+				# 'relativeSpeed': -1,
+				'trafficCondition': trafficflow.speed[0].DESCRIPTOR.fields_by_name['trafficCondition'].enum_type.values_by_number[trafficflow.speed[0].trafficCondition].name
+			}
 	##############################################################################
 
 	cnt = 0
@@ -359,12 +382,24 @@ def update():
 			featuresToBeUpdated = []
 
 			openlr = str(b64encode(trafficflow.location.openlr),"utf-8")
-			openlr_avgspeed_dict[openlr] = {
-				'averageSpeedKmph': trafficflow.speed[0].averageSpeedKmph,
-				'travelTimeSeconds': trafficflow.speed[0].travelTimeSeconds,
-				'relativeSpeed': trafficflow.speed[0].relativeSpeed,
-				'trafficCondition': trafficflow.speed[0].DESCRIPTOR.fields_by_name['trafficCondition'].enum_type.values_by_number[trafficflow.speed[0].trafficCondition].name
-			}
+			
+
+			if len(trafficflow.sectionSpeed)>0:
+				openlr_avgspeed_dict[openlr] = ({
+					'startOffsetInMeters': [ss.startOffsetInMeters for ss in trafficflow.sectionSpeed],
+					'averageSpeedKmph': [ss.speed.averageSpeedKmph for ss in trafficflow.sectionSpeed],
+					'travelTimeSeconds': [ss.speed.travelTimeSeconds for ss in trafficflow.sectionSpeed],
+					'relativeSpeed': [ss.speed.relativeSpeed for ss in trafficflow.sectionSpeed],
+					'trafficCondition': [ss.speed.DESCRIPTOR.fields_by_name['trafficCondition'].enum_type.values_by_number[ss.speed.trafficCondition].name for ss in trafficflow.sectionSpeed]
+				})
+			else:
+				openlr_avgspeed_dict[openlr] = {
+					'startOffsetInMeters': 0,
+					'averageSpeedKmph': trafficflow.speed[0].averageSpeedKmph,
+					'travelTimeSeconds': trafficflow.speed[0].travelTimeSeconds,
+					'relativeSpeed': trafficflow.speed[0].relativeSpeed,
+					'trafficCondition': trafficflow.speed[0].DESCRIPTOR.fields_by_name['trafficCondition'].enum_type.values_by_number[trafficflow.speed[0].trafficCondition].name
+				}
 
 			"""
 			try:
@@ -411,8 +446,7 @@ def update():
 			"""
 
 			findResults = [x for x in feats['features'] if x['attributes']['openLR'] == openlr]
-
-			if len(findResults) > 0:
+			if len(findResults) == 1:
 				#	May change to upsert
 
 
@@ -436,7 +470,28 @@ def update():
 
 				status = lyr.edit_features(updates=featuresToBeUpdated)
 				#print('Status: ',	status)
+			elif len(findResults) > 1:
+				speed = openlr_avgspeed_dict[openlr]
+
+				for spd in range(len(speed['startOffsetInMeters'])):
+					for res in findResults:
+						if speed['startOffsetInMeters'][spd] == res['attributes']['offset']:
+							res['attributes']['avgSpdKmph'] = speed['averageSpeedKmph'][spd]
+							res['attributes']['traSeconds'] = speed['travelTimeSeconds'][spd]
+							res['attributes']['relSpeed'] = speed['relativeSpeed'][spd]
+							res['attributes']['condition'] = speed['trafficCondition'][spd]
+							res['attributes']['lastUpdate'] = req_ts_readable
+
+							#print(findResults[0])
+							#print('Matched!', f"({res}, {speed['startOffsetInMeters'][spd]})")
+
+							featuresToBeUpdated.append(res)
+
+							break
+				status = lyr.edit_features(updates=featuresToBeUpdated)
+
 			else:
+				print('Not matched')
 			# 	# Add a new record
 
 			# 	w = shapefile.Writer(expanduser('~/Desktop/newroad.shp'))
@@ -463,9 +518,9 @@ def update():
 
 
 		#TODO: Update all keys not in -1
-		print(allOpenLR.difference(set(openlr_avgspeed_dict.keys())))
+		#print(allOpenLR.difference(set(openlr_avgspeed_dict.keys())))
 
 if __name__ == '__main__':
 	create()
 	nullifyAll()
-	#update()
+	update()
