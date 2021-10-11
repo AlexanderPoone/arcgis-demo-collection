@@ -1,0 +1,232 @@
+// ===========================================================================
+// Copyright 2021 Autodesk, Inc. All rights reserved.
+//
+// Use of this software is subject to the terms of the Autodesk license
+// agreement provided at the time of installation or download, or which
+// otherwise accompanies this software in either electronic or hard copy form.
+// ===========================================================================
+
+
+//  Procedure Name:
+//		renameUVSet
+//
+//  Description:
+//		Renames the specified uv set by popping a window for the user to enter
+//		a new name.
+//
+//  Input Arguments:
+//      $currentUvSetName:	the name of the uvSet to rename
+//
+//  Return Value:
+//      None.
+//
+global proc renameUVSet( string $currentUvSetName ) {
+
+	string $baseSetName = $currentUvSetName;
+	string $buffer[];
+	if (tokenize($currentUvSetName,"()", $buffer) > 1) {
+		$baseSetName = $buffer[0];
+	}
+		
+	// Prompt the user for a new uvSet name
+	//
+	string $ok     = (uiRes("m_uvSetEditCmd.kOk"));
+	string $cancel = (uiRes("m_uvSetEditCmd.kCancel"));
+	string $result = `promptDialog 
+		-title (uiRes("m_uvSetEditCmd.kRenameUVSet"))
+		-message (uiRes("m_uvSetEditCmd.kEnterNewUVSetName"))
+		-text $baseSetName
+		-button $ok 
+		-button $cancel 
+		-defaultButton $ok 
+		-cancelButton $cancel 
+		-dismissString $cancel
+		-parent uvSetEditor`;
+
+	// If the result was "OK", then proceed
+	//
+	if ( $result == $ok ) {
+
+		// Query the promptDialog for the name the
+		// user typed in - note: there is no checking
+		// being done for illegal characters, spaces,
+		// etc.  This should be added.
+		//
+		string $newUvSetName = `promptDialog -q`;
+		polyUVSet -rename -uvSet $baseSetName 
+			-newUVSet $newUvSetName;
+	} 
+}
+
+
+
+//  Procedure Name:
+//		uvSetEditCmd
+//
+//  Description:
+//		Creates the commands for editting multiple uv sets.
+//
+//  Input Arguments:
+//      $cmd:	the command to process. Valid commands are new, rename, delete,
+//				copy, setCurrent, propagate
+//		$uvSets: the names of uv sets which commmand work on. If
+//				this is "none" then the commands are being called from the 
+//				pulldown menu items.
+//
+//  Return Value: 
+//      None.
+//
+global proc uvSetEditCmd( string $cmd, string $uvSets[])
+{
+
+	//	typically, user will have transform selected so find mesh shapes
+	//
+	string $objects[] = 
+		`listRelatives -s -noIntermediate -fullPath -type "mesh"`;
+
+	//	if there is nothing, check to see if shapes are selected
+	//
+	if (!`size $objects`)
+		$objects = `ls -sl -type "mesh"`;
+
+	//	if there is still nothing, check to see if components are selected
+	//
+	if (!`size $objects`)
+		$objects = `listRelatives -p -noIntermediate -fullPath -type "mesh"`;
+
+	if (`size $objects`){
+
+		string $selSets[];
+		//	if size($selSets) == 0 we are working on
+		//	current set on current mesh
+		//
+		if (size($uvSets) != 0){
+			$selSets = $uvSets;
+		} else {
+			$selSets = `polyUVSet -q -currentUVSet`;
+		}
+		//string $mergeWarning = (uiRes("m_uvSetEditCmd.kMergeuvSetsWarn")) ;
+		switch( $cmd ) {
+		case "new":
+			//	create a new set on each active mesh
+			//
+			polyUVSet -create -uvSet "uvSet";
+			if (`window -exists uvSetEditor`) 
+				updateUvSetEditor;
+			break;
+		case "rename":
+			//	Rename the selected set
+			//
+			renameUVSet $selSets[0];
+			if (`window -exists uvSetEditor`) 
+				updateUvSetEditor;
+			break;
+		case "delete":
+			//	Delete the selected sets
+			//
+			for( $set in $selSets ) {
+				polyUVSet -delete -uvSet $set $objects;
+			}
+			if (`window -exists uvSetEditor`) 
+				updateUvSetEditor;
+			break;
+
+		case "copy":
+			//	copy selected uv set
+			//
+			if( size( `ls -sl` ) == 0 ) {
+				string $copyWarning =  (uiRes("m_uvSetEditCmd.kNothingSelectedWarning")) ;
+				warning( `format -s $selSets[0] $copyWarning` );
+				return;
+			}
+			for ($set in $selSets){
+				polyUVSet -copy -uvSet $set ;
+			}
+			if (`window -exists uvSetEditor`) 
+				updateUvSetEditor;
+			break;
+			
+		case "propagate":
+			//	propagate selected uv set
+			//
+			if( size( `ls -sl` ) == 0 ) {
+				string $copyWarning =  (uiRes("m_uvSetEditCmd.kNoUVSelectedWarning")) ;
+				warning( `format -s $selSets[0] $copyWarning` );
+				return;
+			}
+			for ($set in $selSets){
+				//polyUVSet -copy -uvSet $set ;
+				//print $selSets;
+				//print $objects;
+				if (size($objects) < 2) {
+					error((uiRes("m_uvSetEditCmd.kPropagateRequires")));
+				}
+
+				int $assignedCount = 0;
+				for ($object in $objects){
+					// generate the base set name to check for the case where
+					// it is per-instance
+					//
+					string $baseSetName = $set;
+					string $buffer[];
+					if (tokenize($set,"()", $buffer) > 1) {
+						$baseSetName = $buffer[0];
+					}
+					$uvSets = `polyUVSet -perInstance 1 -q -allUVSets $object`;
+					int $exists = stringArrayContains($baseSetName, $uvSets);
+					if (size($buffer) > 1) {
+						// per-instance case
+						//
+						if ($exists) {
+							// the set exists, but does it exist on this instance?
+							//
+							string $perInstanceExists[] = `polyUVSet -uvSet $baseSetName -q -pi $object`;
+							if (0 == size($perInstanceExists)) {
+								string $objectParent[] = `listRelatives -pa -p $object`;
+								
+								string $newSet[] = `polyUVSet -create -uvSet $buffer[0] -pi 1 $object`;
+								polyUVSet -currentUVSet -uvSet $newSet[0] $objectParent[0];
+								$assignedCount++;
+							}
+						} else {
+							// set doesn't exist yet at all
+							//
+							polyUVSet -create -perInstance 1 -uvSet $baseSetName $object;
+							polyUVSet -currentUVSet -uvSet $baseSetName $object;
+							$assignedCount++;
+						}
+					}
+					else if (! $exists) {
+						// does not exist, not per instance, make a new set
+						//
+						polyUVSet -create -uvSet $set $object;
+						polyUVSet -currentUVSet -uvSet $set $object;
+						$assignedCount++;
+					}
+				}
+
+				if (0 == $assignedCount) {
+					warning((uiRes("m_uvSetEditCmd.kSetsAlreadyExist")));
+				} else {
+					string $resultFmt = (uiRes("m_uvSetEditCmd.kResult"));
+					string $sizeStr = $assignedCount;
+					string $resultString = `format -s $sizeStr $resultFmt`;
+					print($resultString);
+				}
+			}
+			if (`window -exists uvSetEditor`) 
+				updateUvSetEditor;
+			break;
+			
+		case "setCurrent":
+			//	set the selected uv set current
+			//
+			polyUVSet -currentUVSet -uvSet $selSets[0];
+			break;
+		
+		}
+	}
+}
+
+
+
