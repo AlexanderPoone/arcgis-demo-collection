@@ -16,7 +16,7 @@ The georefrenced images are exported as tuples in the following format:
 
 Usually, floor plan images have a background colour which is not transparent, be it white, beige, or multi-coloured. As a result, other buildings, roads in the basemap will be occluded if the image is directly placed on the map.
 
-The minimal package only contains the `convert` module of portable version of ImageMagick, and the portable version of GhostScript for reading PDF files. The directory tree looks like this:
+The minimal package only contains the `convert` module of **portable** version of ImageMagick, and the **portable** version of GhostScript for reading PDF files. The directory tree looks like this:
 ```
 .
 └───removebg
@@ -29,7 +29,10 @@ The minimal package only contains the `convert` module of portable version of Im
             gsdll64.lib     (from GhostScript)
             gswin64c.exe    (from GhostScript)
 ```
-Both pieces of software are in their latest versions.
+Both pieces of software are in their latest versions. They can be obtained here:
+* [ImageMagick-7.1.0-portable-Q16-x64.zip](https://imagemagick.org/script/download.php#windows)
+* [GhostscriptPortable_9.55.0.paf.exe](https://portableapps.com/apps/utilities/ghostscript_portable)
+
 If you have a server, you can use `Flask` and `subprocess.check_output()` to open ImageMagick, or use `Node.js` and `child_process.execFileSync()` instead, or even compile ImageMagick to JavaScript using Emscripten.
 
 <!--https://01.org/node/29971?langredirect=1-->
