@@ -10,13 +10,15 @@ For loading images that are already georeferenced (e.g. `GeoTIFF` satellite imag
 The georefrenced images are exported as tuples in the following format:
 
 ```
+
+
 readAsArrayBuffer(): Reads the contents of the specified input file. ...
 readAsBinaryString(): Reads the contents of the specified input file. ...
 readAsDataURL(): Reads the contents of the specified input file. ...
 readAsText(): Reads the contents of the specified input file.
 ```
 
-`[[centroidWebMercX, centroidWebMercY, base64Image], ...]`
+`[[xmin, ymin, xmax, ymax, base64Image], ...]`
 
 ### Issues in the original widget
 
@@ -41,7 +43,7 @@ The function will be implemented as an option.
 <button id="btn_bgRemovals" class="esri-btn">Background removal</button>
 
 ```
-magick convert solaria_beige_background.jpg -fuzz 10% -transparent White out.png
+magick convert lohas_test.png -fuzz 10% -transparent White out.png
 ```
 
 ```
