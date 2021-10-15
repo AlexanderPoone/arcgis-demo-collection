@@ -1,5 +1,0 @@
-file -import -type "OBJ"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "chopchop5" -options "mo=1"  -pr  -importFrameRate true  -importTimeRange "override" "{}";
-
-SelectAll;
-if(!`exists MTselAll`) source MTprocs.mel; select -cl; MTselAll;
-
