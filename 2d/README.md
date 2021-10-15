@@ -23,11 +23,11 @@ The minimal package only contains the `convert` module of portable version of Im
     │   removebg.bat
     │
     └───.magick
-            convert.exe
-            delegates.xml
-            gsdll64.dll
-            gsdll64.lib
-            gswin64c.exe
+            convert.exe     (from ImageMagick)
+            delegates.xml   (from ImageMagick)
+            gsdll64.dll     (from GhostScript)
+            gsdll64.lib     (from GhostScript)
+            gswin64c.exe    (from GhostScript)
 ```
 Both pieces of software are in their latest versions.
 If you have a server, you can use `Flask` and `subprocess.check_output()` to open ImageMagick, or use `Node.js` and `child_process.execFileSync()` instead, or even compile ImageMagick to JavaScript using Emscripten.
