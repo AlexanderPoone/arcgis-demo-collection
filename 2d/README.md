@@ -8,52 +8,29 @@ For loading images that are already georeferenced (e.g. `GeoTIFF` satellite imag
 
 ### Import / Export
 The georefrenced images are exported as tuples in the following format:
-
+```js
+[{extent: [...], href: '<base64 representation of image>'}]
 ```
 
-
-readAsArrayBuffer(): Reads the contents of the specified input file. ...
-readAsBinaryString(): Reads the contents of the specified input file. ...
-readAsDataURL(): Reads the contents of the specified input file. ...
-readAsText(): Reads the contents of the specified input file.
-```
-
-`[[xmin, ymin, xmax, ymax, base64Image], ...]`
-
-### Issues in the original widget
-
-1. The opacity slider is not displayed correctly and unusable after importing several images.
-![img/b0001.png](img/b0001.png)
-
-(Copyright Ka Wah Properties, Free Use only)
-
-### Background removal
+### Background removal & PDF to Image
 
 Usually, floor plan images have a background colour which is not transparent, be it white, beige, or multi-coloured. As a result, other buildings, roads in the basemap will be occluded if the image is directly placed on the map.
 
-For example:
-
-![solaria_beige_background.jpg](test_floor_plans/solaria_beige_background.jpg)
-
-(Copyright Ka Wah Properties, Free Use only)
-
-The function will be implemented as an option.
-
-<!--
-<button id="btn_bgRemovals" class="esri-btn">Background removal</button>
-
+The minimal package only contains the `convert` module of portable version of ImageMagick, and the portable version of GhostScript for reading PDF files. The directory tree looks like this:
 ```
-magick convert lohas_test.png -fuzz 10% -transparent White out.png
+.
+└───removebg
+    │   removebg.bat
+    │
+    └───.magick
+            convert.exe
+            delegates.xml
+            gsdll64.dll
+            gsdll64.lib
+            gswin64c.exe
 ```
-
-```
-magick convert solaria_beige_background.jpg -fuzz 5% -fill Red -opaque White x.png
-```
-
-```
-"ImageMagick-7.1.0-portable-Q16-x64/magick.exe" convert solaria_beige_background.jpg -fuzz 5% -fill none -draw "matte 0,0 floodfill" result.png
-```
--->
+Both pieces of software are in their latest versions.
+If you have a server, you can use `Flask` and `subprocess.check_output()` to open ImageMagick, or use `Node.js` and `child_process.execFileSync()` instead, or even compile ImageMagick to JavaScript using Emscripten.
 
 <!--https://01.org/node/29971?langredirect=1-->
 
@@ -61,5 +38,9 @@ magick convert solaria_beige_background.jpg -fuzz 5% -fill Red -opaque White x.p
 
 Rotation directly modifies the image stored in Base64.
 
+### Issues in the original widget
 
-layer.toImage()
+1. The opacity slider is not displayed correctly and unusable after importing several images.
+![img/b0001.png](img/b0001.png)
+
+(Copyright Ka Wah Properties, Free Use only)
