@@ -43,7 +43,7 @@ Rotation directly modifies the image stored in Base64.
 
 ### Issues in the original widget
 
-1. The opacity slider is not displayed correctly and unusable after importing several images.
+1. The opacity slider is not displayed correctly and unusable after importing several images. It has been resolved since the new widget does not use an opacity slider anymore.
 ![img/b0001.png](img/b0001.png)
 
 (Copyright Ka Wah Properties, Free Use only)
