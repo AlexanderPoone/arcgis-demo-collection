@@ -20,4 +20,4 @@ Additionally, you can add OSGB levels of detail (pyramid) after baking to speed 
 
 ## TODO
 
-Hong Kong Island Bake 4*3: `tile_[3..60]_[0..33]` example
+Hong Kong Island Bake 2*2: `tile_[3..60]_[0..33]` example
