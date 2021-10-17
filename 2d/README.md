@@ -1,6 +1,7 @@
 # 2D Demos
 
 ## Georeference Plat+
+[https://demo2.hkgisportal.com/georeferencing/](https://demo2.hkgisportal.com/georeferencing/)
 
 An enhanced version of the [Georeference Plat widget](https://www.arcgis.com/home/item.html?id=68f3890767a843c0940eb7e9840c5244) by North Point Geographic Solutions. There are four additional features: saving geoferenced floor plans and loading them on the next launch, background removal, <!--skew,--> and rotate.
 
