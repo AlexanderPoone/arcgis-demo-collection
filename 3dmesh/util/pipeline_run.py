@@ -20,16 +20,36 @@ def runblender_before():
     mydict = load(f)
 
 
-  scene = bpy.context.scene
-
-  for obj in bpy.context.scene.objects:
-      if 'select' in dir(obj):
-          obj.select = True
-  bpy.ops.object.delete()
-
-  for f in glob('F:/workspace/partitions/*')[2:]:
+  for f in glob('F:/workspace/partitions/*'):
     # Clear scene
-    # bpy.ops.wm.read_homefile(use_empty=True)
+    bpy.context.preferences.filepaths.use_load_ui = False
+    bpy.ops.wm.read_homefile(use_empty=True)
+    havesetthecontext = False
+    for window in bpy.context.window_manager.windows:
+        screen = window.screen
+        for area in screen.areas:
+            print("area=", area)
+            if area.type == 'VIEW_3D':
+                override = {'window': window, 'screen': screen, 'area': area}
+                bpy.ops.screen.screen_full_area(override)   # toggle to maximize
+                bpy.ops.screen.screen_full_area()           # toggle back (must not use overridden context, else it will crash!)
+                havesetthecontext = True
+                break
+
+    if havesetthecontext:
+        rrr = bpy.ops.object.select_all(action='DESELECT')
+        print("select_all result:", rrr)
+        print(">>>>>>>>>> bpy.context:", bpy.context)
+        print(">>>>>>>>>> bpy.context.object:", bpy.context.object)
+    else:
+        print("Could not set the context to 3D View!")
+    scene = bpy.context.scene
+
+    # for obj in bpy.context.scene.objects:
+    #   if 'select' in dir(obj):
+    #       obj.select = True
+    # bpy.ops.object.delete()
+
 
     myglob = glob(f'{f}/*/*.obj')
     for g in myglob:
@@ -41,8 +61,9 @@ def runblender_before():
         obj = [ob for ob in scene.objects if ob.type == 'MESH' and not ob.hide_get()][-1]
         bpy.context.view_layer.objects.active = obj
         
-        ctx = bpy.context.copy()
-        ctx['active_object'] = obj
+        # ctx = bpy.context.copy()
+        # ctx['active_object'] = obj
+        # ctx['selected_editable_objects'] = obj
 
         bpy.ops.object.mode_set(mode = 'OBJECT')
         obj = bpy.context.active_object
