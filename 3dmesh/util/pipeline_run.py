@@ -138,14 +138,86 @@ def runmel(objName):
 
 def runblender_after():
   blender_after = f'''import bpy
-  # bake
-  
-  for material in bpy.data.materials:
-      material.user_clear()
-      bpy.data.materials.remove(material)
+from os.path import basename, expanduser
 
-  for a in range(500):
-      bpy.ops.object.material_slot_remove()
+bpy.data.objects.remove(bpy.data.objects['Cube'])
+bpy.data.objects.remove(bpy.data.objects['Light'])
+bpy.data.objects.remove(bpy.data.objects['Camera'])
+
+fbxPath = 'C:/Users/Alex/Desktop/tile_10_13.fbx'
+base = basename(fbxPath).split('.')[0]
+
+bpy.ops.import_scene.fbx(filepath=fbxPath)
+
+scene = bpy.context.scene
+
+obj = [ob for ob in scene.objects if ob.type == 'MESH' and not ob.hide_get()][-1]
+bpy.context.view_layer.objects.active = obj
+
+obj.data.uv_layers[0].active_render = True
+obj.data.uv_layers[1].active = True
+
+bpy.context.object.scale[0] = 1
+bpy.context.object.scale[1] = 1
+bpy.context.object.scale[2] = 1
+
+for material in bpy.data.materials:
+    try:
+        material.node_tree.nodes['Principled BSDF'].inputs['Metallic'].default_value = 0
+        material.node_tree.nodes['Principled BSDF'].inputs['Roughness'].default_value = 1
+    except:
+        pass
+
+bpy.ops.texture.new()
+image = bpy.data.images.new(base, width=8192, height=8192)
+image.filepath = expanduser(f'~/Desktop/{base}.png')
+bpy.data.textures["Texture"].use_alpha = False
+
+
+for x in obj.material_slots:
+    mtl = x.material.node_tree.nodes.new('ShaderNodeTexImage')
+    mtl.select = True
+    mtl.image = image
+    x.material.node_tree.nodes.active = mtl
+
+
+# Bake
+obj.select_set(True)
+bpy.context.scene.render.engine = 'CYCLES'
+bpy.context.scene.cycles.device = 'GPU'
+
+bpy.context.scene.cycles.bake_type = 'DIFFUSE'
+bpy.context.scene.render.bake.use_pass_direct = False
+bpy.context.scene.render.bake.use_pass_indirect = False
+
+bpy.context.scene.render.bake.use_clear = False
+
+bpy.ops.object.bake(type='DIFFUSE', pass_filter={'COLOR'}, use_clear=False)
+
+# Bake
+image.save()
+#image.save_render(f'{base}.png')
+
+for material in bpy.data.materials:
+  material.user_clear()
+  bpy.data.materials.remove(material)
+
+for a in range(500):
+  bpy.ops.object.material_slot_remove()
+
+# Test below
+bpy.ops.material.new()
+mtl=bpy.data.materials['Material']
+bpy.context.object.data.materials.append(mtl)
+imn = mtl.node_tree.nodes.new('ShaderNodeTexImage')
+imn.image = image
+bsdf = mtl.node_tree.nodes['Principled BSDF']
+mtl.node_tree.links.new(bsdf.inputs['Base Color'], imn.outputs['Color'])
+# obj.active_material = bpy.data.materials['Material']
+
+# Export
+bpy.ops.object.origin_set(type='ORIGIN_GEOMETRY',center='BOUNDS')
+bpy.ops.export_scene.obj(filepath=expanduser(f'~/Desktop/{base}.obj'))
   '''
   check_output('blender -t 0 -p ')
 
