@@ -1,0 +1,2 @@
+1. Drag GeoTIFF Image to `chopTiles.bat`, which in turn calls `.convert/chopTiles.exe`. A json file containing Base64-encoded WEBP tiles will be created.
+2. On the web app, the WEBP tiles will be cached into the IndexedDB.

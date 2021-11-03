@@ -10,97 +10,97 @@ from subprocess import check_output, DEVNULL
 
 def runblender_before():
   blender_before = '''
-  import bpy
-  from subprocess import run
-  from glob import glob
-  from os.path import basename, dirname
-  from pickle import load
+import bpy
+from subprocess import run
+from glob import glob
+from os.path import basename, dirname
+from pickle import load
 
-  with open('F:/workspace/addvalue_isl.pickle','rb') as f:
-    mydict = load(f)
-
-
-  for f in glob('F:/workspace/partitions/*'):
-    # Clear scene
-    bpy.context.preferences.filepaths.use_load_ui = False
-    bpy.ops.wm.read_homefile(use_empty=True)
-    havesetthecontext = False
-    for window in bpy.context.window_manager.windows:
-        screen = window.screen
-        for area in screen.areas:
-            print("area=", area)
-            if area.type == 'VIEW_3D':
-                override = {'window': window, 'screen': screen, 'area': area}
-                bpy.ops.screen.screen_full_area(override)   # toggle to maximize
-                bpy.ops.screen.screen_full_area()           # toggle back (must not use overridden context, else it will crash!)
-                havesetthecontext = True
-                break
-
-    if havesetthecontext:
-        rrr = bpy.ops.object.select_all(action='DESELECT')
-        print("select_all result:", rrr)
-        print(">>>>>>>>>> bpy.context:", bpy.context)
-        print(">>>>>>>>>> bpy.context.object:", bpy.context.object)
-    else:
-        print("Could not set the context to 3D View!")
-    scene = bpy.context.scene
-
-    # for obj in bpy.context.scene.objects:
-    #   if 'select' in dir(obj):
-    #       obj.select = True
-    # bpy.ops.object.delete()
+with open('D:/workspace/addvalue_isl.pickle','rb') as f:
+  mydict = load(f)
 
 
-    myglob = glob(f'{f}/*/*.obj')
-    for g in myglob:
-        bpy.ops.import_scene.obj(filepath=g, axis_forward='Y', axis_up='Z')
+for f in glob('D:/workspace/partitions/*')[78:]:
+  # Clear scene
+  bpy.context.preferences.filepaths.use_load_ui = False
+  bpy.ops.wm.read_homefile(use_empty=True)
+  havesetthecontext = False
+  for window in bpy.context.window_manager.windows:
+      screen = window.screen
+      for area in screen.areas:
+          print("area=", area)
+          if area.type == 'VIEW_3D':
+              override = {'window': window, 'screen': screen, 'area': area}
+              bpy.ops.screen.screen_full_area(override)   # toggle to maximize
+              bpy.ops.screen.screen_full_area()           # toggle back (must not use overridden context, else it will crash!)
+              havesetthecontext = True
+              break
+
+  if havesetthecontext:
+      rrr = bpy.ops.object.select_all(action='DESELECT')
+      print("select_all result:", rrr)
+      print(">>>>>>>>>> bpy.context:", bpy.context)
+      print(">>>>>>>>>> bpy.context.object:", bpy.context.object)
+  else:
+      print("Could not set the context to 3D View!")
+  scene = bpy.context.scene
+
+  # for obj in bpy.context.scene.objects:
+  #   if 'select' in dir(obj):
+  #       obj.select = True
+  # bpy.ops.object.delete()
 
 
-        # Remove artefact vertices - BEGIN
-
-        obj = [ob for ob in scene.objects if ob.type == 'MESH' and not ob.hide_get()][-1]
-        bpy.context.view_layer.objects.active = obj
-        
-        # ctx = bpy.context.copy()
-        # ctx['active_object'] = obj
-        # ctx['selected_editable_objects'] = obj
-
-        bpy.ops.object.mode_set(mode = 'OBJECT')
-        obj = bpy.context.active_object
-        bpy.ops.object.mode_set(mode = 'EDIT') 
-        bpy.ops.mesh.select_mode(type = 'VERT')
-        bpy.ops.mesh.select_all(action = 'DESELECT')
-        bpy.ops.object.mode_set(mode = 'OBJECT')
+  myglob = glob(f'{f}/*/*.obj')
+  for g in myglob:
+      bpy.ops.import_scene.obj(filepath=g, axis_forward='Y', axis_up='Z')
 
 
-        for v in obj.data.vertices:
-            if v.co.z < -14:
-                v.select = True
+      # Remove artefact vertices - BEGIN
 
-        bpy.ops.object.mode_set(mode = 'EDIT') 
-        bpy.ops.mesh.select_mode(type = 'VERT')
-        bpy.ops.mesh.delete(type = 'VERT')
-        bpy.ops.object.mode_set(mode = 'OBJECT')
+      obj = [ob for ob in scene.objects if ob.type == 'MESH' and not ob.hide_get()][-1]
+      bpy.context.view_layer.objects.active = obj
+      
+      # ctx = bpy.context.copy()
+      # ctx['active_object'] = obj
+      # ctx['selected_editable_objects'] = obj
 
-        # Remove artefact vertices - END
-
-        x,y = mydict[basename(dirname(g))]
-        bpy.ops.object.origin_set(type='ORIGIN_GEOMETRY',center='BOUNDS')
-
-        print(x,y)
-
-        obj.location.x = obj.location.x + x
-        obj.location.y = obj.location.y + y
+      bpy.ops.object.mode_set(mode = 'OBJECT')
+      obj = bpy.context.active_object
+      bpy.ops.object.mode_set(mode = 'EDIT') 
+      bpy.ops.mesh.select_mode(type = 'VERT')
+      bpy.ops.mesh.select_all(action = 'DESELECT')
+      bpy.ops.object.mode_set(mode = 'OBJECT')
 
 
-    # Merge
-    obs = [ob for ob in scene.objects if ob.type == 'MESH']
-    ctx = bpy.context.copy()
-    ctx['active_object'] = obs[0]
-    ctx['selected_editable_objects'] = obs
-    bpy.ops.object.join(ctx)
+      for v in obj.data.vertices:
+          if v.co.z < -14:
+              v.select = True
 
-    bpy.ops.export_scene.obj(filepath=f'F:/workspace/{basename(dirname(myglob[0]))}.obj')
+      bpy.ops.object.mode_set(mode = 'EDIT') 
+      bpy.ops.mesh.select_mode(type = 'VERT')
+      bpy.ops.mesh.delete(type = 'VERT')
+      bpy.ops.object.mode_set(mode = 'OBJECT')
+
+      # Remove artefact vertices - END
+
+      x,y = mydict[basename(dirname(g))]
+      bpy.ops.object.origin_set(type='ORIGIN_GEOMETRY',center='BOUNDS')
+
+      print(x,y)
+
+      obj.location.x = obj.location.x + x
+      obj.location.y = obj.location.y + y
+
+
+  # Merge
+  obs = [ob for ob in scene.objects if ob.type == 'MESH']
+  ctx = bpy.context.copy()
+  ctx['active_object'] = obs[0]
+  ctx['selected_editable_objects'] = obs
+  bpy.ops.object.join(ctx)
+
+  bpy.ops.export_scene.obj(filepath=f'D:/workspace/{basename(dirname(myglob[0]))}.obj')
   '''
 
   with open('blend_before.py', 'w', encoding='utf-8') as f:
@@ -144,7 +144,7 @@ bpy.data.objects.remove(bpy.data.objects['Cube'])
 bpy.data.objects.remove(bpy.data.objects['Light'])
 bpy.data.objects.remove(bpy.data.objects['Camera'])
 
-fbxPath = 'C:/Users/Alex/Desktop/tile_10_13.fbx'
+fbxPath = 'C:/Users/Alex/Desktop/{}.fbx'
 base = basename(fbxPath).split('.')[0]
 
 bpy.ops.import_scene.fbx(filepath=fbxPath)
@@ -219,7 +219,10 @@ mtl.node_tree.links.new(bsdf.inputs['Base Color'], imn.outputs['Color'])
 bpy.ops.object.origin_set(type='ORIGIN_GEOMETRY',center='BOUNDS')
 bpy.ops.export_scene.obj(filepath=expanduser(f'~/Desktop/{base}.obj'))
   '''
-  check_output('blender -t 0 -p ')
+  with open('blend_after.py', 'w', encoding='utf-8') as f:
+    f.write(mel)
+
+  check_output('blender -t 0 -p "blend_after.py"')
 
                      
 if __name__ == '__main__':        

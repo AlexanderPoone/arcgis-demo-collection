@@ -2,5 +2,8 @@
 *.tiff
 *.zip
 *.pyt.xml
+.convert/
+.convert_noneed/
 _internal/
+build/
 __pycache__/
