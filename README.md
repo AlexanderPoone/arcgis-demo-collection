@@ -9,7 +9,7 @@ We are not responsible for any misinformation, delays, or loss of properties.
 * [3D mesh](3dmesh)
 * [Captions](captions)
 * [Deep learning](deeplearning)
-* [GeoTIFF](georeferencing)
+* [GeoTIFF](geotiff)
 * [Internet of Things](iot)
 * [Oriented Imagery](oic)
 * [Repository](repo)
