@@ -1,2 +1,2 @@
 git clone https://github.com/foolwood/SiamMask
-ffmpeg
+ffmpeg -i <selenium-wire> -vf fps=1 bund%d.jpg
