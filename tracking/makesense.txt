@@ -1,0 +1,5 @@
+bus
+minibus
+truck
+taxi
+shuttle_van
