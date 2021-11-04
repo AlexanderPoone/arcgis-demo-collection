@@ -59,8 +59,9 @@ lat	lng	TW120F Tsuen Wan Road near Tai Chung Road -->
 
 Obtaining training data is simple. It is simply extracting still images from a live video stream:
 ```
-ffmpeg
+ffmpeg -i https://webcast.td.gov.hk/live/mp4:hk/~~~.m3u8?token=~~~ -vf fps=1 out%d.jpg
 ```
+The exact m3u8 URL can be obtained using `selenium-wire` (see code for details).
 
 ### Future enhancements
 
