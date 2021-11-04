@@ -55,6 +55,13 @@ lat	lng	TW120F Tsuen Wan Road near Tai Chung Road -->
 
 **The polygon masks (2D NumPy array of True/False) have been pickled to a single file.** For each recognition, the Python tool tests whether the centres of the bounding boxes are inside each polygon, and updates the Feature Layer according to the camera code detected and vehicle position (traffic lane).
 
+### Get training data
+
+Obtaining training data is simple. It is simply extracting still images from a live video stream:
+```
+ffmpeg
+```
+
 ### Future enhancements
 
 Stream output video to a webpage for visualisation
