@@ -9,7 +9,7 @@ From the official document [https://developers.arcgis.com/python/guide/track-obj
 
 > When we have data in Youtube_VOS dataset format, we can call the prepare_data function with dataset_type='ObjectTracking' and for better results use batch_size=64.
 
-The **YouTube_VOS format** (NOT to be confused with YouTube_V*I*S, which is based on COCO rather than VOC2012) is a dataset format similar to VOC2012 dataset format. To start, convert LabelMe segmentations to VOC2012 format.
+The **YouTube_VOS format** (NOT to be confused with YouTube_V*I*S, which is based on COCO rather than VOC2012) is a dataset format similar to VOC2012 dataset format. To start, convert LabelMe segmentations to the VOC2012 format.
 
 `meta.json`:
 ```json
