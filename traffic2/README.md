@@ -11,18 +11,57 @@ From the official document [https://developers.arcgis.com/python/guide/track-obj
 
 The **YouTube_VOS format** (NOT to be confused with YouTube_V*I*S, which is based on COCO rather than VOC2012) is a JSON format similar to VOC2012 dataset format. To start, convert LabelMe segmentations to VOC2012 format.
 
+`meta.json`:
 ```json
-    "videos": [{
-        "license": 1,
-        "coco_url": "",
-        "height": 720,
-        "width": 1280,
-        "length": 36,
-        "date_captured": "2019-04-11 00:18:45.652544",
-        "flickr_url": "",
-        "file_names": ["00f88c4f0a/00000.jpg", "00f88c4f0a/00005.jpg", "00f88c4f0a/00010.jpg", "00f88c4f0a/00015.jpg", "00f88c4f0a/00020.jpg", "00f88c4f0a/00025.jpg", "00f88c4f0a/00030.jpg", "00f88c4f0a/00035.jpg", "00f88c4f0a/00040.jpg", "00f88c4f0a/00045.jpg", "00f88c4f0a/00050.jpg", "00f88c4f0a/00055.jpg", "00f88c4f0a/00060.jpg", "00f88c4f0a/00065.jpg", "00f88c4f0a/00070.jpg", "00f88c4f0a/00075.jpg", "00f88c4f0a/00080.jpg", "00f88c4f0a/00085.jpg", "00f88c4f0a/00090.jpg", "00f88c4f0a/00095.jpg", "00f88c4f0a/00100.jpg", "00f88c4f0a/00105.jpg", "00f88c4f0a/00110.jpg", "00f88c4f0a/00115.jpg", "00f88c4f0a/00120.jpg", "00f88c4f0a/00125.jpg", "00f88c4f0a/00130.jpg", "00f88c4f0a/00135.jpg", "00f88c4f0a/00140.jpg", "00f88c4f0a/00145.jpg", "00f88c4f0a/00150.jpg", "00f88c4f0a/00155.jpg", "00f88c4f0a/00160.jpg", "00f88c4f0a/00165.jpg", "00f88c4f0a/00170.jpg", "00f88c4f0a/00175.jpg"],
-        "id": 1
-    }]
+{
+    "videos": {
+        "003234408d": {
+            "objects": {
+                "1": {
+                    "category": "penguin", 
+                    "frames": [
+                        "00000", 
+                        "00005", 
+                        "00010", 
+                        "00015", 
+                        "00020", 
+                        "00025", 
+                        "00030", 
+                        "00035", 
+                        "00040", 
+                        "00045", 
+                        "00050", 
+                        "00055", 
+                        "00060", 
+                        "00065", 
+                        "00070", 
+                        "00075", 
+                        "00080", 
+                        "00085", 
+                        "00090", 
+                        "00095", 
+                        "00100", 
+                        "00105", 
+                        "00110", 
+                        "00115", 
+                        "00120", 
+                        "00125", 
+                        "00130", 
+                        "00135", 
+                        "00140", 
+                        "00145", 
+                        "00150", 
+                        "00155", 
+                        "00160", 
+                        "00165", 
+                        "00170", 
+                        "00175"
+                    ]
+                }
+            }
+        }
+    }
+}
 ```
 
 It is possible to store the flight lines.
