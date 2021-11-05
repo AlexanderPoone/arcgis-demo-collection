@@ -28,34 +28,7 @@ The **YouTube_VOS format** (NOT to be confused with YouTube_V*I*S, which is base
                         "00025", 
                         "00030", 
                         "00035", 
-                        "00040", 
-                        "00045", 
-                        "00050", 
-                        "00055", 
-                        "00060", 
-                        "00065", 
-                        "00070", 
-                        "00075", 
-                        "00080", 
-                        "00085", 
-                        "00090", 
-                        "00095", 
-                        "00100", 
-                        "00105", 
-                        "00110", 
-                        "00115", 
-                        "00120", 
-                        "00125", 
-                        "00130", 
-                        "00135", 
-                        "00140", 
-                        "00145", 
-                        "00150", 
-                        "00155", 
-                        "00160", 
-                        "00165", 
-                        "00170", 
-                        "00175"
+                        "00040"
                     ]
                 }
             }
@@ -64,4 +37,10 @@ The **YouTube_VOS format** (NOT to be confused with YouTube_V*I*S, which is base
 }
 ```
 
-It is possible to store the flight lines.
+Obtaining custom training data is easy:
+
+```
+ffmpeg -i https://s35.ipcamlive.com/streams/<replace code here>/stream.m3u8 -vsync 0 -vf fps=1 one%d.png
+```
+
+The outputs should be the object identifier, vehicle type, pixel coordinates, and timestamp. Trajectories can be constructed from these four columns afterwards.
