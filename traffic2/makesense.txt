@@ -1,8 +1,8 @@
-car
+automobile
 bus
 minibus
 truck
 taxi
 ambulance
-shuttle_van
+shuttle_bus
 crane
