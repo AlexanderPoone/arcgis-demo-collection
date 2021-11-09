@@ -46,7 +46,7 @@ ffmpeg -i https://s35.ipcamlive.com/streams/<replace code here>/stream.m3u8 -vsy
 The outputs should be the vehicle type (from YOLO), object identifier (from SiamMask), oriented bounding box (from SiamMask), and timestamp. Trajectories can be constructed from these four columns afterwards.
 
 ## Installation
-Here are the dependencies of Siammask:
+To install the dependencies of Siammask, open a bundled Command Prompt and type the following:
 ```
 conda install pyarrow numpy
 conda install pyg -c pyg -c conda-forge
