@@ -40,7 +40,7 @@ The **YouTube_VOS format** (NOT to be confused with YouTube_V*I*S, which is base
 Obtaining custom training data is easy:
 
 ```
-ffmpeg -i https://s35.ipcamlive.com/streams/<replace code here>/stream.m3u8 -vsync 0 -vf fps=1 one%d.png
+ffmpeg -i https://s35.ipcamlive.com/streams/<replace id here>/stream.m3u8 -vsync 0 -vf fps=1 one%d.png
 ```
 
 The outputs should be the vehicle type (from YOLO), object identifier (from SiamMask), oriented bounding box (from SiamMask), and timestamp. Trajectories can be constructed from these four columns afterwards.
