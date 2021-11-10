@@ -43,13 +43,15 @@ Obtaining custom training data is easy:
 ffmpeg -i https://s35.ipcamlive.com/streams/<replace id here w selenium-wire>/stream.m3u8 -vsync 0 -vf fps=1 one%d.png
 ```
 
-The outputs should be the vehicle type (from YOLO), object identifier (from SiamMask), oriented bounding box (from SiamMask), and timestamp. Trajectories can be constructed from these four columns afterwards.
+The outputs should be the vehicle type (from YOLO), object identifier (from SiamMask), oriented bounding box (from SiamMask), and timestamp.
+
+Trajectories can be constructed from these four columns afterwards. One way of registering pixel coordinates to map coordinates involves warping the image.
 
 ## Installation
 To install the dependencies of Siammask, open a bundled Command Prompt and type the following:
 ```
 conda install pyarrow numpy
-conda install pyg -c pyg -c conda-forge
+conda install pyg -c conda-forge
 ```
 
 To convert annotations into YOLO:
