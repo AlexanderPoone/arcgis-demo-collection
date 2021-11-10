@@ -143,6 +143,12 @@ Gather the 3D models you want to use, normally one model should have more than o
 
 ### Future enhancements
 
+Refactor traffic lights:
+* trafficlight_0.glb -> trafficlight_frame.glb + trafficlight_red_on.glb + trafficlight_yellow_off.glb + trafficlight_green_off.glb
+* trafficlight_1.glb -> trafficlight_frame.glb + trafficlight_red_on.glb + trafficlight_yellow_on.glb + trafficlight_green_off.glb
+* trafficlight_2.glb -> trafficlight_frame.glb + trafficlight_red_on.glb + trafficlight_yellow_off.glb + trafficlight_green_on.glb
+* trafficlight_3.glb -> trafficlight_frame.glb + trafficlight_red_off.glb + trafficlight_yellow_on.glb + trafficlight_green_off.glb
+
 More open-box options, highlight peak hours <!--, people left in queues, flying bus bug-->
 
 ### Common Questions

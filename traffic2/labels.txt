@@ -7,4 +7,5 @@ truck
 taxi
 ambulance
 shuttle_bus
+motorcycle
 crane
