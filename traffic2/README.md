@@ -59,10 +59,12 @@ To convert *labelme annotations* into *YOLO format*:
 under construction
 ```
 
-To convert *labelme annotations* into *VOC2012 format*:
+To convert *labelme annotations* into *VOC2012 format* (under construction, to be refactored to Python):
 ```
 rm -rf build
-python "C:/Users/Alex/Desktop/labelme/examples/semantic_segmentation/labelme2voc.py" --labels labels.txt "_internal/CUH-Dataset/JPEGImages/two" build
+echo "git clone https://github.com/wkentaro/labelme.git"
+python "%userprofile%/Desktop/labelme/examples/semantic_segmentation/labelme2voc.py" --labels labels.txt "_internal/CUH-Dataset/JPEGImages/two" build
+echo "move back the annotations to the dataset"
 ```
 
 To convert *VOC2012 format* into *YouTube_VOS format*:
