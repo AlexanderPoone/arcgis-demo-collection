@@ -1,6 +1,11 @@
 '''
 under construction
 
+dictOfLanes.npz format:
+```
+{'camid': {'<starts from 1>': {'polygon': <binary mask>, 'description': '<lane description>'}}}
+```
+
 | Camera code     | Traffic lane | Mapping       |
 |-----------------|--------------|---------------|
 | H106F | 1 | Connaught Rd Central near Exchange Square |
