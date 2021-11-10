@@ -6,4 +6,7 @@
 .convert_noneed/
 _internal/
 build/
+charts/
+traffic3/
+unity/
 __pycache__/

@@ -40,7 +40,20 @@ The **YouTube_VOS format** (NOT to be confused with YouTube_V*I*S, which is base
 Obtaining custom training data is easy:
 
 ```
-ffmpeg -i https://s35.ipcamlive.com/streams/<replace code here>/stream.m3u8 -vsync 0 -vf fps=1 one%d.png
+ffmpeg -i https://s35.ipcamlive.com/streams/<replace id here w selenium-wire>/stream.m3u8 -vsync 0 -vf fps=1 one%d.png
 ```
 
 The outputs should be the vehicle type (from YOLO), object identifier (from SiamMask), oriented bounding box (from SiamMask), and timestamp. Trajectories can be constructed from these four columns afterwards.
+
+## Installation
+To install the dependencies of Siammask, open a bundled Command Prompt and type the following:
+```
+conda install pyarrow numpy
+conda install pyg -c pyg -c conda-forge
+```
+
+
+```
+rm -rf build
+python "C:/Users/Alex/Desktop/labelme/examples/semantic_segmentation/labelme2voc.py" --labels labels.txt "_internal/CUH-Dataset/JPEGImages/two" build
+```
