@@ -48,7 +48,7 @@ The outputs should be the vehicle type (from YOLO), object identifier (from Siam
 Trajectories can be constructed from these four columns afterwards. One way of registering pixel coordinates to map coordinates involves warping the image.
 
 ## Installation
-To install the dependencies of Siammask, open a bundled Command Prompt and type the following:
+To install the dependencies of SiamMask, open a bundled Command Prompt and type the following:
 ```
 conda install pyarrow numpy
 conda install pyg -c conda-forge
