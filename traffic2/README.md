@@ -54,18 +54,18 @@ conda install pyarrow numpy
 conda install pyg -c conda-forge
 ```
 
-To convert annotations into YOLO:
+To convert ''labelme annotations'' into ''YOLO format'':
 ```
 under construction
 ```
 
-To convert annotations into VOC2012:
+To convert ''labelme annotations'' into ''VOC2012 format'':
 ```
 rm -rf build
 python "C:/Users/Alex/Desktop/labelme/examples/semantic_segmentation/labelme2voc.py" --labels labels.txt "_internal/CUH-Dataset/JPEGImages/two" build
 ```
 
-To convert VOC2012 into YouTube_VOS:
+To convert ''VOC2012 format'' into ''YouTube_VOS format'':
 ```
 under construction
 ```
