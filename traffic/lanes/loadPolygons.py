@@ -7,5 +7,9 @@ dictOfLanes.npz format:
 ```
 '''
 import numpy as np
+import matplotlib.pyplot as plt
 
-masks = np.load('dictOfLanes.npz')
+polygons = np.load('dictOfLanes.npz', allow_pickle=True)
+dictOfLanes = polygons.get('arr_0')
+
+print(dictOfLanes)

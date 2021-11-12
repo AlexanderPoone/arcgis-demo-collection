@@ -54,26 +54,27 @@ for gui in gui_env:
     except:
         continue
 
-for k in C.imgs:
-	camid = os.path.basename(C.imgs[k]['file_name']).split('.')[0]
-	print(k,camid)
-	'''
-	print(dir(C))
-	print(C.imgs)
-	print(C.info)
-	'''
-	cnt = 1
-	for ann in C.getAnnIds(k):
-		# Syntax: C.loadAnns(imageId)[catId]
-		polygon = C.annToMask(C.loadAnns(ann)[0]).astype(bool)
-		#plt.imshow(polygon)
-		#plt.show()
-		try:
-			dictOfLanes[camid][f'{cnt}']['polygon'] = polygon
-		except:
-			pass
-		cnt += 1
-	
-	print(dictOfLanes)
+if __name__ == '__main__':
+	for k in C.imgs:
+		camid = os.path.basename(C.imgs[k]['file_name']).split('.')[0]
+		print(k,camid)
+		'''
+		print(dir(C))
+		print(C.imgs)
+		print(C.info)
+		'''
+		cnt = 1
+		for ann in C.getAnnIds(k):
+			# Syntax: C.loadAnns(imageId)[catId]
+			polygon = C.annToMask(C.loadAnns(ann)[0]).astype(bool)
+			#plt.imshow(polygon)
+			#plt.show()
+			try:
+				dictOfLanes[camid][f'{cnt}']['polygon'] = polygon
+			except:
+				pass
+			cnt += 1
+		
+		print(dictOfLanes)
 
-np.savez('dictOfLanes', dictOfLanes)
+	np.savez('dictOfLanes', dictOfLanes)

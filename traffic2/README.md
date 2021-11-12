@@ -56,18 +56,15 @@ conda install pyg -c conda-forge
 
 To convert *labelme annotations* into *YOLO format*:
 ```
-under construction
+python 1_labelme2yolo.py
 ```
 
 To convert *labelme annotations* into *VOC2012 format* (under construction, to be refactored to Python):
 ```
-rm -rf build
-echo "git clone https://github.com/wkentaro/labelme.git"
-python "%userprofile%/Desktop/labelme/examples/semantic_segmentation/labelme2voc.py" --labels labels.txt "_internal/CUH-Dataset/JPEGImages/two" build
-echo "move back the annotations to the dataset"
+python 2_labelme2voc.py
 ```
 
 To convert *VOC2012 format* into *YouTube_VOS format*:
 ```
-under construction
+python 3_voc2youtubevos.py
 ```
