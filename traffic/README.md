@@ -32,9 +32,9 @@ For the detection to be useful, some work needs to be done beforehand. First, ru
 | K107F | 2 | Cross Harbour Tunnel Kownloon Side (entering, southwards) |
 | K109F | 1 | Chatham Road S near Prince Margaret Road (eastwards) |
 | K109F | 2 | Chatham Road S near Prince Margaret Road towards West Kowloon Corridor (westwards) |
-| K409F | 1 | Princess Margaret Road near Argyle Street |
-| K409F | 2 | Argyle Street Flyover near Princess Margaret Road (eastwards) |
-| K409F | 3 | Argyle Street Flyover near Princess Margaret Road (westwards) |
+| K409F | 1 | Princess Margaret Road near Argyle Street towards Kowloon Tong (northwards) |
+| K409F | 2 | Princess Margaret Road near Argyle Street towards Hong Hom (southwards) |
+| K409F | 3 | Argyle Street Flyover near Princess Margaret Road (eastwards) |
 | K502F | 1 | Waterloo Road Flyover (southwards) |
 | K502F | 2 | Waterloo Road Flyover towards Lion Rock Tunnel (northwards) |
 | K502F | 3 | Waterloo Road towards Cornwall Street (northwards) |
