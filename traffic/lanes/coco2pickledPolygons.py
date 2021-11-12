@@ -44,9 +44,6 @@ import coco
 
 C=coco.COCO(r'annotations\instances_train2017.json')		# https://stackoverflow.com/a/69175547
 
-# Syntax: C.loadAnns(imageId)[catId]
-mask = C.annToMask(C.loadAnns(2)[0])
-
 import matplotlib
 gui_env = ['TKAgg','GTKAgg','Qt4Agg','WXAgg']
 for gui in gui_env:
@@ -57,9 +54,26 @@ for gui in gui_env:
     except:
         continue
 
-plt.imshow(mask)
-plt.show()
-
-print(mask)
+for k in C.imgs:
+	camid = os.path.basename(C.imgs[k]['file_name']).split('.')[0]
+	print(k,camid)
+	'''
+	print(dir(C))
+	print(C.imgs)
+	print(C.info)
+	'''
+	cnt = 1
+	for ann in C.getAnnIds(k):
+		# Syntax: C.loadAnns(imageId)[catId]
+		polygon = C.annToMask(C.loadAnns(ann)[0]).astype(bool)
+		#plt.imshow(polygon)
+		#plt.show()
+		try:
+			dictOfLanes[camid][f'{cnt}']['polygon'] = polygon
+		except:
+			pass
+		cnt += 1
+	
+	print(dictOfLanes)
 
 np.savez('dictOfLanes', dictOfLanes)
