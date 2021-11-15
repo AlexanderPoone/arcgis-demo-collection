@@ -1,5 +1,5 @@
 '''
-under construction
+LabelMe to VOC2012
 '''
 
 from glob import glob

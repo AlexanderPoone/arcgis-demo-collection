@@ -1,6 +1,7 @@
 '''
-under construction
+VOC2012 to YouTube_VOS
 '''
+
 from glob import glob
 from json import dumps, loads
 from os.path import basename

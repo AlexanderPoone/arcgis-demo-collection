@@ -1,5 +1,6 @@
 '''
-under construction
+Labelme To YOLO
+Courtesy of: https://github.com/rooneysh/Labelme2YOLO
 '''
 
 from glob import glob
