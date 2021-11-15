@@ -54,6 +54,8 @@ conda install pyarrow numpy
 conda install pyg -c conda-forge
 ```
 
+We label the images with suffix: `<type>_<objectid>`.
+
 To convert *labelme annotations* into *YOLO format*:
 ```
 python 1_labelme2yolo.py

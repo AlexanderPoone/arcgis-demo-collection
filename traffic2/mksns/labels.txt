@@ -4,6 +4,6 @@ bus
 crane
 minibus
 motorcycle
-shuttle_bus
+shuttlebus
 taxi
 truck

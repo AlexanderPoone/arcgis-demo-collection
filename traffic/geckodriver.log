@@ -1,0 +1,12 @@
+1636703751868	geckodriver	INFO	Listening on 127.0.0.1:7368
+1636703754913	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Alex\\AppData\\Local\\Temp\\rust_mozprofile7OoeB4"
+*** You are running in headless mode.
+1636703755498	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Alex\\AppData\\Local\\Temp\\rust_mozprofile7OoeB4\\search.json.mozlz4", (void 0)))
+1636703757130	Marionette	INFO	Listening on port 7378
+1636703757572	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1636703757575	RemoteAgent	INFO	Proxy settings initialised: {"proxyType":"manual","httpProxy":"127.0.0.1:7367","noProxy":[],"sslProxy":"127.0.0.1:7367"}
+console.log: WebExtensions: reset-default-search: starting.
+console.log: WebExtensions: reset-default-search: No addons in our list are installed.
+JavaScript error: , line 0: NotFoundError: Could not move source file(C:\Users\Alex\AppData\Local\Temp\rust_mozprofile7OoeB4\bookmarkbackups\bookmarks-2021-11-13_11_KiqgP42R9q5SQC7sUM+O8Q==.jsonlz4) because it does not exist
