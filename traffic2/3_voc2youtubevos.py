@@ -20,9 +20,9 @@ if __name__ == '__main__':
 				h3 = loads(h2.read())
 			for shape in h3['shapes']:
 				if shape['label'] in od:
-					od[shape['label']]['frames'].append(basename(h))
+					od[shape['label']]['frames'].append(basename(h).split('.')[0])
 				else:
-					od[shape['label']] = {'category': shape['label'].split('_')[0], 'frames': [basename(h)]}
+					od[shape['label']] = {'category': shape['label'].split('_')[0], 'frames': [basename(h).split('.')[0]]}
 
 
 		obj['video'][basename(g[:-1])] = {"objects": od}
