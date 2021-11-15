@@ -8,7 +8,7 @@ from natsort import natsorted
 
 if __name__ == '__main__':
 
-	obj = {'video': {}}
+	obj = {'videos': {}}
 
 	for g in glob('_internal/CUH-Dataset/JPEGImages/*/'):
 		od = {}
@@ -25,7 +25,7 @@ if __name__ == '__main__':
 					od[shape['label']] = {'category': shape['label'].split('_')[0], 'frames': [basename(h).split('.')[0]]}
 
 
-		obj['video'][basename(g[:-1])] = {"objects": od}
+		obj['videos'][basename(g[:-1])] = {"objects": od}
 
 
 	jsn=dumps(obj, indent=4)

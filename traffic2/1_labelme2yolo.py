@@ -34,6 +34,8 @@ if __name__ == '__main__':
 			copy2('yolodummy/_dummy.png', f'{copyLocation}/_dummy.png')
 
 			copyLocation2 = copyLocation.replace("\\","/")
+			f2 = f.replace("\\","/")[:-1]
+
 			print(check_output(f'python "_internal/Labelme2YOLO/labelme2yolo.py" --json_dir "{copyLocation2}"'))  #python "%userprofile%/Desktop/Labelme2YOLO/labelme2yolo.py
 
 			destFolder = f'{f}YOLODataset'
@@ -45,3 +47,25 @@ if __name__ == '__main__':
 			print(e)
 			pass
 	rmtree('_internal/CUH-Dataset/tmp')
+	for f2 in glob('_internal/CUH-Dataset/JPEGImages/*/YOLODataset/labels/*/_dummy.txt'):
+		remove(f2)
+	for f2 in glob('_internal/CUH-Dataset/JPEGImages/*/YOLODataset/images/*/_dummy.png'):
+		remove(f2)
+	if exists('_internal/CUH-Dataset/mksns'):
+		rmtree('_internal/CUH-Dataset/mksns')
+	mkdir('_internal/CUH-Dataset/mksns')
+	for f2 in glob('_internal/CUH-Dataset/JPEGImages/*/YOLODataset/images/*/*.jpg'):
+		try:
+			copy2(f2, f'_internal/CUH-Dataset/mksns/{basename(f2)}')
+		except:
+			pass
+	for f2 in glob('_internal/CUH-Dataset/JPEGImages/*/YOLODataset/images/*/*.png'):
+		try:
+			copy2(f2, f'_internal/CUH-Dataset/mksns/{basename(f2)}')
+		except:
+			pass
+	for f2 in glob('_internal/CUH-Dataset/JPEGImages/*/YOLODataset/labels/*/*.txt'):
+		try:
+			copy2(f2, f'_internal/CUH-Dataset/mksns/{basename(f2)}')
+		except:
+			pass
