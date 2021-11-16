@@ -11,3 +11,4 @@ console.log: WebExtensions: reset-default-search: starting.
 console.log: WebExtensions: reset-default-search: No addons in our list are installed.
 JavaScript error: , line 0: NotFoundError: Could not move source file(C:\Users\Alex\AppData\Local\Temp\rust_mozprofile7OoeB4\bookmarkbackups\bookmarks-2021-11-13_11_KiqgP42R9q5SQC7sUM+O8Q==.jsonlz4) because it does not exist
 JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE

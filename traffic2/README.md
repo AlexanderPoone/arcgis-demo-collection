@@ -37,22 +37,19 @@ The **YouTube_VOS format** mentioned above (NOT to be confused with YouTube_V*I*
 }
 ```
 
-Obtaining custom training data is easy:
+## Obtaining raw data for training 
+
+Obtaining custom training data is easy. Get the open-source ffmpeg and execute the following command:
 
 ```
-ffmpeg -i https://s35.ipcamlive.com/streams/<replace id here w selenium-wire>/stream.m3u8 -vsync 0 -vf fps=1 one%d.png
+ffmpeg -i https://s35.ipcamlive.com/streams/<replace id here w selenium-wire>/stream.m3u8 -vsync 0 -vf fps=1 %d.png
 ```
 
 The outputs should be the vehicle type (from YOLO), object identifier (from SiamMask), oriented bounding box (from SiamMask), and timestamp.
 
 Trajectories can be constructed from these four columns afterwards. One way of registering pixel coordinates to map coordinates involves warping the image.
 
-## Installation
-To install the dependencies of SiamMask, open a bundled Command Prompt and type the following:
-```
-conda install pyarrow numpy
-conda install pyg -c conda-forge
-```
+## Processing data for training
 
 We label the images with suffix: `<type>_<objectid>`.
 
@@ -70,3 +67,20 @@ To convert *VOC2012 format* into *YouTube_VOS format*:
 ```
 python 3_voc2youtubevos.py
 ```
+
+## Installation
+To install the dependencies of SiamMask, open a bundled Command Prompt and type the following (`conda install pyg -c pyg -c conda-forge
+` is not a typo):
+```
+conda install pyarrow fastai torchvision scikit-image opencv
+conda install pyg -c pyg -c conda-forge
+```
+**(It is the best to use CUDA 11.1)**
+
+To start the Jupyter notebook:
+```
+"C:\Program Files\ArcGIS\Pro\bin\Python\envs\arcgispro-py3\python.exe" "C:\Program Files\ArcGIS\Pro\bin\Python\envs\arcgispro-py3\Scripts\jupyter-notebook-script.py"
+```
+
+## Image coordinates to Web Mercator points
+Image warping using manually inputted homeography points
