@@ -1,3 +1,9 @@
+##################################################
+#
+#  OUTDATED - Updated needed to get Cookies
+#
+##################################################
+
 # from selenium import webdriver as wd
 # from selenium.webdriver.firefox.options import Options
 
