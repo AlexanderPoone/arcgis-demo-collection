@@ -39,10 +39,10 @@ The **YouTube_VOS format** mentioned above (NOT to be confused with YouTube_V*I*
 
 ## Obtaining raw data for training 
 
-Obtaining custom training data is easy. Get the open-source ffmpeg and execute the following command:
+Obtaining custom training data is easy. Get the open-source ffmpeg and execute the following command (JPEG must be used):
 
 ```
-ffmpeg -i https://s35.ipcamlive.com/streams/<replace id here w selenium-wire>/stream.m3u8 -vsync 0 -vf fps=1 %d.png
+ffmpeg -i https://s35.ipcamlive.com/streams/<replace id here w selenium-wire>/stream.m3u8 -vsync 0 -vf fps=1 %d.jpg
 ```
 
 The outputs should be the vehicle type (from YOLO), object identifier (from SiamMask), oriented bounding box (from SiamMask), and timestamp.
@@ -74,6 +74,7 @@ To install the dependencies of SiamMask, open a bundled Command Prompt and type 
 ```
 conda install pyarrow fastai torchvision scikit-image opencv
 conda install pyg -c pyg -c conda-forge
+conda install -c conda-forge numpy
 ```
 **(It is the best to use CUDA 11.1)**
 
