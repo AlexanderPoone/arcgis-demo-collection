@@ -69,13 +69,15 @@ python 3_voc2youtubevos.py
 ```
 
 ## Installation
-To install the dependencies of SiamMask, open a bundled Command Prompt and type the following (`conda install pyg -c pyg -c conda-forge
-` is not a typo):
+To install the dependencies of SiamMask, open a bundled Command Prompt and type the following:
 ```
+conda install pyarrow fastai torchvision scikit-image opencv pyg numpy -c pyg -c conda-forge
+```
+<!--
 conda install pyarrow fastai torchvision scikit-image opencv
 conda install pyg -c pyg -c conda-forge
 conda install -c conda-forge numpy
-```
+-->
 **(It is the best to use CUDA 11.1)**
 
 To start the Jupyter notebook:
