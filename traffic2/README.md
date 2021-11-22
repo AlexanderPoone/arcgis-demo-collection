@@ -71,8 +71,9 @@ python 3_voc2youtubevos.py
 ## Installation
 To install the dependencies of SiamMask, open a bundled Command Prompt and type the following:
 ```
-conda install pyarrow fastai torchvision scikit-image opencv pyg numpy tensorflow onnx onnx-tf -c pyg -c conda-forge
+conda install -c esri deep-learning-essentials
 ```
+<!-- conda install pyarrow fastai torchvision scikit-image opencv pyg numpy tensorflow onnx onnx-tf -c pyg -c conda-forge -->
 <!--
 conda install pyarrow fastai torchvision scikit-image opencv
 conda install pyg -c pyg -c conda-forge
