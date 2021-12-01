@@ -1,5 +1,16 @@
 # Traffic Demos
 
+## NOTE
+
+Since the Transport Department overhauled their page and added security features, the code has been outdated. A workaround is being made.
+
+The subprocess command becomes:
+```
+ffmpeg -headers "authority: www.hkemobility.gov.hk`r`nsec-ch-ua: 'Chromium';v='97', ' Not;A Brand';v='99'`r`nsec-ch-ua-mobile: ?0`r`nUser-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4691.0 Safari/537.36`r`nsec-ch-ua-platform: 'Windows'`r`naccept: */*`r`nsec-fetch-site: same-origin`r`nsec-fetch-mode: cors`r`nsec-fetch-dest: empty`r`nreferer: https://www.hkemobility.gov.hk/tc/traffic-information/live/webcast`r`naccept-language: en-US,en;q=0.9`r`ncookie:  language=zh-HK`r`n" -i "<to be completed by selenium-wire>" -vsync 0 -vf fps=1 one%d.jpg
+```
+
+On subprocess exit (one security feature added is a two-minute timeout), call `ffmpeg` again.
+
 ## 1. Car count using the YOLOv3 library from [`arcgis.learn`](https://developers.arcgis.com/python/api-reference/arcgis.learn.toc.html)
 
 [![Live Traffic View Using Object Detection & GeoEvent Server](https://img.youtube.com/vi/dG4d191XsqU/0.jpg)](https://www.youtube.com/watch?v=dG4d191XsqU "Live Traffic View Using Object Detection & GeoEvent Server")
