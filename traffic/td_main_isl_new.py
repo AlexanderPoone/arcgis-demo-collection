@@ -38,12 +38,11 @@ from os.path import expanduser
 
 # run()
 
-
-
 # Find chunk
 from seleniumwire import webdriver
 # from seleniumwire.webdriver.firefox.options import Options
 from time import sleep
+
 
 # options = Options()
 # options.headless = True
@@ -54,29 +53,24 @@ options.add_argument('--headless')
 driver = webdriver.Firefox(options=options)
 
 
-driver.get('https://traffic.td.gov.hk/LiveProcessor.do') #'https://traffic.td.gov.hk/webvideo.jsp')
+driver.get('https://www.hkemobility.gov.hk/tc/traffic-information/live/webcast') #'https://traffic.td.gov.hk/webvideo.jsp')
 
 sleep(3)
 
-driver.execute_script("document.querySelector('#kl').click()")
-
-sleep(3)
-
-driver.execute_script("document.querySelector('.vjs-big-play-button').click()")
+driver.execute_script("document.querySelector('#app > div > main > div > div > div.row.main-panel-container.no-gutters > div.app-left-panel.white.col > div > div.flex-grow-container.pa-2.white > div.flex-grow-1.fill-height.overflow-y-auto.px-1 > div > div.pb-2.flex-shrink-0.v-item-group.theme--light.v-btn-toggle.v-btn-toggle--tile.teal--text.text--accent-3 > button:nth-child(2)').click()")
 
 sleep(3)
 
 for request in driver.requests:
     if request.response:
-        if 'chunklist' in request.url:
+    	if 'chunklist' in request.url:
             print(request.url)
         # print(
         #     request.url,
         #     request.response.status_code,
         #     request.response.headers['Content-Type']
         # )
-
-            with open(expanduser(r'~\Desktop\yolov5_kln\utils\datasets.py'), 'r+') as f:
+            with open(expanduser(r'~\Desktop\yolov5\utils\datasets.py'), 'r+') as f:
                 datasets = f.read()
 
                 datasets = sub(r"(?<=sources = \[').+?(?='\])", request.url, datasets)
@@ -86,15 +80,15 @@ for request in driver.requests:
                 f.write(datasets)
 
 #python detect.py --source "http://webcast.td.gov.hk/live/mp4:hk/chunklist_w736548841.m3u8?token=0NiFTYFCx2NiExGu2AbTDg%3D%3D" --weights runs/train/exp19/weights/best.pt --save-txt --name temp
-mainpath = expanduser(r'~\Desktop\yolov5_kln\detect.py')
-process = Popen(fr'python {mainpath} --source http://webcast.td.gov.hk/live/mp4:hk/chunklist_w736548841.m3u8?token=0NiFTYFCx2NiExGu2AbTDg%3D%3D --weights C:\Users\Alex\Desktop\yolov5_kln\runs/train/exp19/weights/best.pt', shell=True, stdout=PIPE, stderr=STDOUT)
+mainpath = expanduser(r'~\Desktop\yolov5\detect.py')
+process = Popen(fr'python {mainpath} --source http://webcast.td.gov.hk/live/mp4:hk/chunklist_w736548841.m3u8?token=0NiFTYFCx2NiExGu2AbTDg%3D%3D --weights C:\Users\Alex\Desktop\yolov5\runs/train/exp18/weights/best.pt', shell=True, stdout=PIPE, stderr=STDOUT)
 
 while True:
     nextline = process.stdout.readline().decode(encoding='utf8')
     # websocket.send(nextline)
     if nextline == '' and process.poll() is not None:
         break
-    open('tmp_kln.tmp', 'w').write(nextline)
+    open('tmp.tmp', 'w').write(nextline)
     # sys.stdout.write(nextline)
     # sys.stdout.flush()
 

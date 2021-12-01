@@ -19,7 +19,7 @@ import sys
 from re import findall, sub
 import websockets
 import asyncio
-
+from os.path import expanduser
 
 # run()
 
@@ -74,7 +74,7 @@ for request in driver.requests:
         #     request.response.status_code,
         #     request.response.headers['Content-Type']
         # )
-            with open(r'C:\Users\Alex\Desktop\yolov5\utils\datasets.py', 'r+') as f:
+            with open(expanduser(r'~\Desktop\yolov5\utils\datasets.py'), 'r+') as f:
                 datasets = f.read()
 
                 datasets = sub(r"(?<=sources = \[').+?(?='\])", request.url, datasets)
@@ -84,7 +84,8 @@ for request in driver.requests:
                 f.write(datasets)
 
 #python detect.py --source "http://webcast.td.gov.hk/live/mp4:hk/chunklist_w736548841.m3u8?token=0NiFTYFCx2NiExGu2AbTDg%3D%3D" --weights runs/train/exp19/weights/best.pt --save-txt --name temp
-process = Popen(r'python C:\Users\Alex\Desktop\yolov5\detect.py --source http://webcast.td.gov.hk/live/mp4:hk/chunklist_w736548841.m3u8?token=0NiFTYFCx2NiExGu2AbTDg%3D%3D --weights C:\Users\Alex\Desktop\yolov5\runs/train/exp18/weights/best.pt', shell=True, stdout=PIPE, stderr=STDOUT)
+mainpath = expanduser(r'~\Desktop\yolov5\detect.py')
+process = Popen(fr'python {mainpath} --source http://webcast.td.gov.hk/live/mp4:hk/chunklist_w736548841.m3u8?token=0NiFTYFCx2NiExGu2AbTDg%3D%3D --weights C:\Users\Alex\Desktop\yolov5\runs/train/exp18/weights/best.pt', shell=True, stdout=PIPE, stderr=STDOUT)
 
 while True:
     nextline = process.stdout.readline().decode(encoding='utf8')
