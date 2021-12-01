@@ -4,6 +4,12 @@
 
 Since the Transport Department overhauled their page and added security features, the code has been outdated. A workaround is being made.
 
+New activate sequence:
+```
+https://www.hkemobility.gov.hk/tc/traffic-information/live/webcast
+document.querySelector('#app > div > main > div > div > div.row.main-panel-container.no-gutters > div.app-left-panel.white.col > div > div.flex-grow-container.pa-2.white > div.flex-grow-1.fill-height.overflow-y-auto.px-1 > div > div.pb-2.flex-shrink-0.v-item-group.theme--light.v-btn-toggle.v-btn-toggle--tile.teal--text.text--accent-3 > button:nth-child(<1,2,3,4>)').click()
+```
+
 The subprocess command becomes:
 ```
 ffmpeg -headers "authority: www.hkemobility.gov.hk`r`nsec-ch-ua: 'Chromium';v='97', ' Not;A Brand';v='99'`r`nsec-ch-ua-mobile: ?0`r`nUser-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4691.0 Safari/537.36`r`nsec-ch-ua-platform: 'Windows'`r`naccept: */*`r`nsec-fetch-site: same-origin`r`nsec-fetch-mode: cors`r`nsec-fetch-dest: empty`r`nreferer: https://www.hkemobility.gov.hk/tc/traffic-information/live/webcast`r`naccept-language: en-US,en;q=0.9`r`ncookie:  language=zh-HK`r`n" -i "<to be completed by selenium-wire>" -vsync 0 -vf fps=1 one%d.jpg
