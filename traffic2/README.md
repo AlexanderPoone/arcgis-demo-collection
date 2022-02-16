@@ -2,7 +2,9 @@
 
 ## Multiple Object Tracking (MOT) using DeepSORT-ResNet101
 
-Tracking demo here: [https://www.youtube.com/watch?v=a-X71Ce5R7E](https://www.youtube.com/watch?v=a-X71Ce5R7E)
+**Tracking demo here: [https://www.youtube.com/watch?v=a-X71Ce5R7E](https://www.youtube.com/watch?v=a-X71Ce5R7E)**
+
+Tested on sunny/cloudy/rainy conditions from 08:00 to 19:00.
 
 <!-- 
 ## Counting using YOLO + SiamMask
