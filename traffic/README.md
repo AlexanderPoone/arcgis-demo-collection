@@ -4,7 +4,7 @@
 
 Since the Transport Department overhauled their page and added security features, the code has been outdated. A workaround is being made.
 
-New activate sequence (replace `<1,2,3,4>` with 1, 2, 3 or 4):
+New activate sequence (replace `<1,2,3,4>` with 1 [Hong Kong Island], 2 [Kowloon], 3 [Tsuen Wan] or 4 [Tuen Mun]):
 ```
 https://www.hkemobility.gov.hk/tc/traffic-information/live/webcast
 
