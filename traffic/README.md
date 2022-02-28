@@ -4,9 +4,10 @@
 
 Since the Transport Department overhauled their page and added security features, the code has been outdated. A workaround is being made.
 
-New activate sequence:
+New activate sequence (replace `<1,2,3,4>` with 1, 2, 3 or 4):
 ```
 https://www.hkemobility.gov.hk/tc/traffic-information/live/webcast
+
 document.querySelector('#app > div > main > div > div > div.row.main-panel-container.no-gutters > div.app-left-panel.white.col > div > div.flex-grow-container.pa-2.white > div.flex-grow-1.fill-height.overflow-y-auto.px-1 > div > div.pb-2.flex-shrink-0.v-item-group.theme--light.v-btn-toggle.v-btn-toggle--tile.teal--text.text--accent-3 > button:nth-child(<1,2,3,4>)').click()
 ```
 
